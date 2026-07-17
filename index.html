@@ -1,0 +1,1233 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16バナナtype診断｜キミの中のバナナがわかる</title>
+<meta name="description" content="ヒトはバナナと遺伝子の約60%を共有——つまりキミの半分はバナナ。12の質問で、キミの中に眠るバナナの正体を診断します。全16タイプ。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="16バナナtype診断">
+<meta property="og:title" content="16バナナtype診断">
+<meta property="og:description" content="ヒトのDNAは約60%バナナ。12の質問でキミの中のバナナを診断。全16タイプ、キミはどのバナナ？">
+<link rel="canonical" href="https://16banana.jp/">
+<meta property="og:url" content="https://16banana.jp/">
+<meta property="og:image" content="https://16banana.jp/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="16バナナtype診断">
+<meta name="twitter:description" content="ヒトのDNAは約60%バナナ。12の質問でキミの中のバナナを診断。キミはどのバナナ？">
+<meta name="twitter:image" content="https://16banana.jp/og.png">
+<meta name="theme-color" content="#FFC93C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M22,22 Q28,74 76,72' fill='none' stroke='%2342280E' stroke-width='30' stroke-linecap='round'/%3E%3Cpath d='M22,22 Q28,74 76,72' fill='none' stroke='%23FFC93C' stroke-width='22' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<style>
+  :root{
+    --sun:#FFC93C;
+    --sun-deep:#F2A93B;
+    --green:#B9C94E;
+    --cream:#FFF5DB;
+    --card:#FFFDF2;
+    --ink:#42280E;
+    --muted:#8A6B43;
+    --leaf:#3E8E41;
+    --blush:#FF7A59;
+    --spot:#7A4A1D;
+    --shadow:#42280E;
+    --chip:#F6E7C6;
+    --dot:rgba(122,74,29,.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --cream:#221507;
+      --card:#31220E;
+      --ink:#FFEDC4;
+      --muted:#C7A66E;
+      --shadow:#100901;
+      --chip:#453213;
+      --dot:rgba(255,201,60,.10);
+    }
+  }
+  :root[data-theme="light"]{
+    --sun:#FFC93C; --sun-deep:#F2A93B; --green:#B9C94E;
+    --cream:#FFF5DB; --card:#FFFDF2; --ink:#42280E; --muted:#8A6B43;
+    --leaf:#3E8E41; --blush:#FF7A59; --spot:#7A4A1D; --shadow:#42280E;
+    --chip:#F6E7C6; --dot:rgba(122,74,29,.14);
+  }
+  :root[data-theme="dark"]{
+    --cream:#221507; --card:#31220E; --ink:#FFEDC4; --muted:#C7A66E;
+    --shadow:#100901; --chip:#453213; --dot:rgba(255,201,60,.10);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ height:100%; }
+  body{
+    font-family:"Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN","BIZ UDPGothic","Yu Gothic","Meiryo",sans-serif;
+    background:
+      radial-gradient(var(--dot) 2.2px, transparent 2.6px) 0 0 / 28px 28px,
+      var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:600px;
+    margin:0 auto;
+    padding:28px 18px 64px;
+  }
+
+  /* ===== sticker card ===== */
+  .card{
+    background:var(--card);
+    border:3px solid var(--ink);
+    border-radius:24px;
+    box-shadow:7px 7px 0 var(--shadow);
+    padding:28px 24px;
+    position:relative;
+  }
+
+  .eyebrow{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--card);
+    background:var(--ink);
+    border-radius:999px;
+    padding:5px 14px 4px;
+  }
+
+  /* ===== start screen ===== */
+  #scr-start{ text-align:center; }
+  .hero-banana{
+    width:190px; height:190px; margin:6px auto -2px;
+    animation:sway 3.4s ease-in-out infinite;
+    transform-origin:50% 90%;
+  }
+  @keyframes sway{
+    0%,100%{ transform:rotate(-4deg); }
+    50%{ transform:rotate(5deg); }
+  }
+  h1{
+    font-size:clamp(30px,8vw,42px);
+    line-height:1.25;
+    letter-spacing:.02em;
+    margin:10px 0 4px;
+    text-wrap:balance;
+  }
+  h1 .num{
+    font-family:"Avenir Next","Futura","Trebuchet MS",sans-serif;
+    font-weight:800;
+    font-size:1.35em;
+    color:var(--sun-deep);
+    -webkit-text-stroke:2px var(--ink);
+    paint-order:stroke fill;
+    letter-spacing:0;
+  }
+  h1 .tilt{ display:inline-block; }
+  h1 .t1{ transform:rotate(-5deg); }
+  h1 .t2{ transform:rotate(4deg) translateY(-2px); }
+  h1 .t3{ transform:rotate(-3deg); }
+  .lead{
+    color:var(--muted);
+    font-size:14.5px;
+    margin:14px auto 22px;
+    max-width:30em;
+  }
+  .lead strong{ color:var(--ink); }
+  .dna-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--chip);
+    border:2.5px solid var(--ink);
+    border-radius:14px;
+    padding:9px 16px;
+    font-size:13px;
+    font-weight:700;
+    transform:rotate(-1.5deg);
+    margin-bottom:20px;
+  }
+  .dna-badge .pct{
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-size:20px; font-weight:800; color:var(--blush);
+  }
+
+  .btn{
+    appearance:none;
+    font:inherit;
+    font-weight:800;
+    color:var(--ink);
+    background:var(--sun);
+    border:3px solid var(--ink);
+    border-radius:18px;
+    box-shadow:5px 5px 0 var(--shadow);
+    padding:15px 34px;
+    font-size:18px;
+    cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover{ transform:translate(-2px,-2px); box-shadow:7px 7px 0 var(--shadow); }
+  .btn:active{ transform:translate(4px,4px); box-shadow:0 0 0 var(--shadow); }
+  .btn:focus-visible, .choice:focus-visible, .btn-sub:focus-visible{
+    outline:3px dashed var(--blush); outline-offset:3px;
+  }
+  .btn-sub{
+    appearance:none; font:inherit; font-weight:700;
+    background:var(--card); color:var(--ink);
+    border:2.5px solid var(--ink); border-radius:14px;
+    box-shadow:4px 4px 0 var(--shadow);
+    padding:11px 20px; font-size:14px; cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn-sub:hover{ transform:translate(-1px,-1px); box-shadow:5px 5px 0 var(--shadow); }
+  .btn-sub:active{ transform:translate(3px,3px); box-shadow:0 0 0 var(--shadow); }
+
+  .start-note{ font-size:12px; color:var(--muted); margin-top:14px; }
+  .tribes{
+    display:flex; gap:8px; justify-content:center; flex-wrap:wrap;
+    margin:-6px 0 20px;
+  }
+  .tribes span{
+    font-size:11.5px; font-weight:800; letter-spacing:.04em;
+    color:#FFF8E8; background:var(--tc);
+    border:2px solid var(--ink); border-radius:999px;
+    padding:3px 11px;
+  }
+
+  /* ===== quiz ===== */
+  .quiz-head{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:10px;
+  }
+  .qnum{
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-weight:800; font-size:22px;
+  }
+  .qnum small{ font-size:13px; color:var(--muted); font-weight:700; }
+  .ripeness{ font-size:12px; font-weight:700; color:var(--muted); }
+  .bar{
+    height:18px;
+    border:2.5px solid var(--ink);
+    border-radius:999px;
+    background:var(--chip);
+    overflow:hidden;
+    margin-bottom:26px;
+  }
+  .bar-fill{
+    height:100%;
+    width:0%;
+    background:
+      radial-gradient(circle at 12px 55%, var(--spot) 2.4px, transparent 3px),
+      radial-gradient(circle at 34px 35%, var(--spot) 2px, transparent 2.6px),
+      var(--sun);
+    background-size:44px 100%, 44px 100%, auto;
+    border-right:2.5px solid var(--ink);
+    transition:width .35s ease;
+  }
+  .q-text{
+    font-size:20px;
+    font-weight:800;
+    line-height:1.55;
+    margin-bottom:24px;
+    min-height:3.1em;
+    text-wrap:balance;
+  }
+  .choices{ display:flex; flex-direction:column; gap:14px; }
+  .choice{
+    appearance:none; font:inherit; text-align:left;
+    display:flex; align-items:center; gap:14px;
+    background:var(--card);
+    color:var(--ink);
+    border:3px solid var(--ink);
+    border-radius:18px;
+    box-shadow:5px 5px 0 var(--shadow);
+    padding:16px 18px;
+    font-size:15.5px;
+    font-weight:700;
+    line-height:1.55;
+    cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+  }
+  .choice:hover{ transform:translate(-2px,-2px); box-shadow:7px 7px 0 var(--shadow); background:var(--chip); }
+  .choice:active{ transform:translate(4px,4px); box-shadow:0 0 0 var(--shadow); background:var(--sun); }
+  .choice .key{
+    flex:0 0 auto;
+    width:34px; height:34px;
+    display:grid; place-items:center;
+    border:2.5px solid var(--ink);
+    border-radius:50%;
+    background:var(--sun);
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-weight:800; font-size:15px;
+  }
+  .quiz-foot{ margin-top:22px; display:flex; justify-content:flex-start; }
+
+  .pop-in{ animation:popin .3s ease both; }
+  @keyframes popin{
+    from{ opacity:0; transform:translateY(14px) scale(.98); }
+    to{ opacity:1; transform:none; }
+  }
+
+  /* ===== result ===== */
+  .r-stamp{
+    position:absolute; top:-16px; right:14px;
+    background:var(--blush); color:#FFF6E8;
+    border:3px solid var(--ink);
+    border-radius:12px;
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-weight:800; font-size:13px; letter-spacing:.18em;
+    padding:5px 12px 4px;
+    transform:rotate(6deg);
+    box-shadow:3px 3px 0 var(--shadow);
+  }
+  .r-intro{ text-align:center; font-size:14px; font-weight:700; color:var(--muted); }
+  .r-figure{
+    width:216px; height:216px; margin:4px auto 0;
+    background:var(--grp-soft, transparent);
+    border-radius:40px;
+    animation:landing .5s cubic-bezier(.2,1.4,.4,1) both;
+  }
+  .grp-badge{
+    display:flex; justify-content:center;
+    margin:12px 0 8px;
+  }
+  .grp-badge span{
+    display:inline-block;
+    background:var(--grp, var(--muted)); color:#FFF8E8;
+    border:2.5px solid var(--ink); border-radius:999px;
+    font-size:13.5px; font-weight:800; letter-spacing:.05em;
+    padding:5px 18px;
+    box-shadow:3px 3px 0 var(--shadow);
+    transform:rotate(-1.5deg);
+  }
+  .grp-badge small{
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-size:11px; letter-spacing:.16em; margin-left:6px; opacity:.85;
+  }
+  @keyframes landing{
+    from{ opacity:0; transform:scale(.6) rotate(-14deg); }
+    to{ opacity:1; transform:none; }
+  }
+  .r-name{
+    text-align:center;
+    font-size:clamp(26px,7vw,34px);
+    line-height:1.3;
+    margin:2px 0 6px;
+    text-wrap:balance;
+  }
+  .r-tagline{
+    text-align:center; font-size:14px; font-weight:700;
+    color:var(--grp, var(--blush)); margin-bottom:16px;
+  }
+  .code-chips{
+    display:flex; justify-content:center; gap:8px; margin-bottom:8px;
+  }
+  .code-chips span{
+    width:44px; height:44px;
+    display:grid; place-items:center;
+    background:var(--grp-soft, var(--sun));
+    border:2.5px solid var(--ink);
+    border-radius:12px;
+    font-size:19px; font-weight:800;
+    box-shadow:3px 3px 0 var(--shadow);
+  }
+  .code-chips span:nth-child(2){ transform:rotate(3deg); }
+  .code-chips span:nth-child(3){ transform:rotate(-3deg); }
+  .code-chips span:nth-child(4){ transform:rotate(2deg); }
+  .rarity{
+    text-align:center; font-size:12.5px; font-weight:700;
+    color:var(--muted); margin-bottom:18px;
+  }
+  .rarity b{
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-size:17px; color:var(--ink);
+  }
+  .r-desc{
+    font-size:14.5px;
+    background:var(--chip);
+    border:2.5px dashed var(--ink);
+    border-radius:16px;
+    padding:16px 18px;
+    margin-bottom:22px;
+  }
+
+  .sec-label{
+    font-size:12px; font-weight:800; letter-spacing:.14em;
+    color:var(--muted);
+    margin-bottom:10px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .sec-label::after{ content:""; flex:1; border-top:2.5px dotted var(--muted); opacity:.5; }
+
+  .stats{ display:flex; flex-direction:column; gap:12px; margin-bottom:24px; }
+  .stat{ display:grid; grid-template-columns:7.5em 1fr 3em; align-items:center; gap:10px; font-size:13px; font-weight:700; }
+  .stat .track{
+    display:block;
+    height:14px; border:2.5px solid var(--ink); border-radius:999px;
+    background:var(--chip); overflow:hidden;
+  }
+  .stat .fill{
+    display:block;
+    height:100%; width:0%;
+    background:var(--sun);
+    border-radius:999px;
+    transition:width .8s cubic-bezier(.3,1,.4,1);
+  }
+  .stat:nth-child(2) .fill{ background:var(--blush); }
+  .stat:nth-child(3) .fill{ background:var(--leaf); }
+  .stat .val{
+    text-align:right;
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-weight:800; font-size:15px;
+  }
+
+  .mates{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:26px; }
+  .mate{
+    border:2.5px solid var(--ink); border-radius:16px;
+    background:var(--card);
+    box-shadow:4px 4px 0 var(--shadow);
+    padding:12px; text-align:center;
+  }
+  .mate .tag{
+    display:inline-block; font-size:11px; font-weight:800;
+    border:2px solid var(--ink); border-radius:999px;
+    padding:2px 10px; margin-bottom:6px;
+  }
+  .mate.good .tag{ background:var(--leaf); color:#FFF6E8; }
+  .mate.bad .tag{ background:var(--chip); }
+  .mate svg{ width:74px; height:74px; }
+  .mate .mname{ font-size:13.5px; font-weight:800; line-height:1.4; }
+  .mate .mnote{ font-size:11.5px; color:var(--muted); }
+
+  .r-actions{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+  .r-share-note{ text-align:center; font-size:12px; color:var(--muted); margin-top:10px; min-height:1.6em; }
+  .btn-x{ background:var(--ink); color:var(--card); }
+  .shared-cta{
+    text-align:center;
+    border:3px solid var(--ink);
+    border-radius:18px;
+    background:var(--sun);
+    box-shadow:5px 5px 0 var(--shadow);
+    padding:18px 16px;
+    margin-bottom:24px;
+  }
+  .shared-cta p{ font-weight:800; font-size:15px; margin-bottom:12px; }
+  .shared-cta .btn{ background:var(--card); }
+
+  .reveal{ animation:popin .45s ease both; }
+  .reveal.d1{ animation-delay:.08s; }
+  .reveal.d2{ animation-delay:.16s; }
+  .reveal.d3{ animation-delay:.26s; }
+  .reveal.d4{ animation-delay:.36s; }
+  .reveal.d5{ animation-delay:.46s; }
+
+  footer{
+    text-align:center; font-size:11px; color:var(--muted);
+    margin-top:26px; line-height:1.9;
+  }
+
+  @media (max-width:420px){
+    .card{ padding:24px 16px; }
+    .mates{ grid-template-columns:1fr; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;
+    }
+  }
+</style>
+
+<div class="wrap">
+  <main>
+    <!-- ============ START ============ -->
+    <section id="scr-start" class="card pop-in" aria-label="診断スタート">
+      <span class="eyebrow">Banana Personality Lab</span>
+      <div class="hero-banana" id="hero-banana" aria-hidden="true"></div>
+      <h1>
+        <span class="num">16</span>
+        <span class="tilt t1">バ</span><span class="tilt t2">ナ</span><span class="tilt t3">ナ</span>type診断
+      </h1>
+      <p class="lead">
+        ヒトはバナナと遺伝子のおよそ半分を共有している——。<br>
+        つまりキミの半分は、もうバナナ。<br>
+        <strong>12の質問</strong>で、4つの族・16タイプから<br>キミの中に眠るバナナの正体を特定します。
+      </p>
+      <div class="dna-badge">
+        <span>ヒトとバナナの遺伝子共有率</span>
+        <span class="pct">約60%</span>
+      </div>
+      <div class="tribes">
+        <span style="--tc:#3E8E41">つつみこみ族</span>
+        <span style="--tc:#5B6ABF">かんがえ族</span>
+        <span style="--tc:#F2812E">ひだまり族</span>
+        <span style="--tc:#C25B8A">やせい族</span>
+      </div>
+      <div>
+        <button class="btn" id="btn-start" type="button">診断をはじめる</button>
+      </div>
+      <p class="start-note">所要時間：バナナ1本ぶん（約2分）</p>
+    </section>
+
+    <!-- ============ QUIZ ============ -->
+    <section id="scr-quiz" class="card" hidden aria-label="質問">
+      <div class="quiz-head">
+        <div class="qnum">Q<span id="q-no">1</span><small> / 12</small></div>
+        <div class="ripeness">熟度 <span id="q-pct">0</span>%</div>
+      </div>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" id="q-bar">
+        <div class="bar-fill" id="q-fill"></div>
+      </div>
+      <p class="q-text" id="q-text"></p>
+      <div class="choices">
+        <button class="choice" id="opt-a" type="button"><span class="key">A</span><span id="opt-a-text"></span></button>
+        <button class="choice" id="opt-b" type="button"><span class="key">B</span><span id="opt-b-text"></span></button>
+      </div>
+      <div class="quiz-foot">
+        <button class="btn-sub" id="btn-back" type="button">← ひとつ戻る</button>
+      </div>
+    </section>
+
+    <!-- ============ RESULT ============ -->
+    <section id="scr-result" class="card" hidden aria-label="診断結果">
+      <div class="r-stamp">RESULT</div>
+      <p class="r-intro reveal" id="r-intro">キミの中のバナナは……</p>
+      <div class="r-figure reveal d1" id="r-figure"></div>
+      <div class="grp-badge reveal d1" id="r-group"></div>
+      <h2 class="r-name reveal d1" id="r-name"></h2>
+      <p class="r-tagline reveal d2" id="r-tagline"></p>
+      <div class="code-chips reveal d2" id="r-code"></div>
+      <p class="rarity reveal d2">出現率 <b id="r-rarity"></b>%（バナナ調べ）</p>
+      <div class="r-desc reveal d3" id="r-desc"></div>
+
+      <div class="reveal d4">
+        <p class="sec-label">バナナステータス</p>
+        <div class="stats" id="r-stats"></div>
+      </div>
+
+      <div class="reveal d4">
+        <p class="sec-label">バナナ相性</p>
+        <div class="mates">
+          <div class="mate good">
+            <span class="tag">ベストコンビ</span>
+            <div id="mate-good-fig"></div>
+            <p class="mname" id="mate-good-name"></p>
+            <p class="mnote">同じ房に入りたい相手</p>
+          </div>
+          <div class="mate bad">
+            <span class="tag">熟れ違い注意</span>
+            <div id="mate-bad-fig"></div>
+            <p class="mname" id="mate-bad-name"></p>
+            <p class="mnote">距離感が大事な相手</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="shared-cta reveal d5" id="shared-cta" hidden>
+        <p>友達の結果を見たキミへ——<br>キミの中にもバナナ、いるよ。</p>
+        <button class="btn" id="btn-try" type="button">自分も診断する（12問・2分）</button>
+      </div>
+
+      <div class="r-actions reveal d5">
+        <button class="btn btn-x" id="btn-x" type="button">Xでポストする</button>
+        <button class="btn-sub" id="btn-line" type="button">LINEで送る</button>
+        <button class="btn-sub" id="btn-image" type="button">画像でシェア（Instagram用）</button>
+        <button class="btn-sub" id="btn-copy" type="button">リンクをコピー</button>
+        <button class="btn-sub" id="btn-retry" type="button">もういちど剥く</button>
+      </div>
+      <p class="r-share-note" id="share-note"></p>
+    </section>
+  </main>
+
+  <footer>
+    ※ 本診断は科学的根拠ゼロのエンターテインメントです。<br>
+    ヒトとバナナが多くの遺伝子を共有しているのは本当（諸説あり）。
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ GA4（計測IDを入れると有効化） ============ */
+  var GA_ID = ""; // 例: "G-XXXXXXXXXX"
+  if(GA_ID){
+    try{
+      var gs = document.createElement("script");
+      gs.async = true;
+      gs.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+      document.head.appendChild(gs);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", GA_ID);
+    }catch(e){}
+  }
+  function track(ev, params){
+    try{ if(window.gtag) window.gtag("event", ev, params || {}); }catch(e){}
+  }
+
+  /* ============ 4軸 ============ */
+  // axis0: 房(a)/独(b)  axis1: 青(a)/熟(b)  axis2: 甘(a)/渋(b)  axis3: 厚(a)/薄(b)
+  const AXES = [["房","独"],["青","熟"],["甘","渋"],["厚","薄"]];
+
+  /* ============ 質問 ============ */
+  const QUESTIONS = [
+    { ax:0, q:"金曜の夜。いちばん幸せなのは？",
+      a:"気の合う仲間とワイワイ過ごす", b:"家でひとり、誰にも剥かれない時間" },
+    { ax:1, q:"旅行の前日、キミの状態は？",
+      a:"しおり級の計画がすでに完成している", b:"財布と勢いがあればなんとかなる" },
+    { ax:2, q:"友達から深夜の相談LINE。最初のひとことは？",
+      a:"「わかる。それはつらいよね」", b:"「原因、たぶんこれじゃない？」" },
+    { ax:3, q:"ちょっとキツいことを言われた。その後は？",
+      a:"5分後にはだいたい忘れてる", b:"布団の中で3日はリピート再生する" },
+    { ax:0, q:"悩みができたとき、どうする？",
+      a:"誰かに話してスッキリさせたい", b:"自分の中でじっくり熟成させたい" },
+    { ax:1, q:"締切との付き合い方は？",
+      a:"前倒しで終わらせて安心したい", b:"追い込まれてからが本番" },
+    { ax:2, q:"大事な決断。最後の決め手は？",
+      a:"心がときめくかどうか", b:"筋が通っているかどうか" },
+    { ax:3, q:"初めて泊まる場所では？",
+      a:"どこでも意外とすぐ眠れる", b:"枕が変わると即・寝不足" },
+    { ax:0, q:"大きなイベントが終わったあとは？",
+      a:"楽しさで逆に元気になっている", b:"楽しかったけど皮だけになっている" },
+    { ax:1, q:"新しい家電を買ったら？",
+      a:"まず説明書をひととおり読む", b:"まず電源を入れる。話はそれから" },
+    { ax:2, q:"泣ける映画を観たあとは？",
+      a:"感情のスムージーになっている", b:"「あの伏線は…」と考察が始まる" },
+    { ax:3, q:"まわりの空気について正直なところ…",
+      a:"あんまり気にしていない", b:"読みすぎて空気の成分表が作れる" },
+  ];
+
+  /* ============ 16タイプ ============ */
+  // acc: キャラのアクセサリー種別
+  const TYPES = {
+    "房青甘厚": { n:"アニキバナナ", t:"「ついてこい。房ごと面倒みる」", r:7.2, acc:"band",
+      d:"面倒見のよさで房をまとめる頼れる兄貴・姉御分。ちゃんと段取りを組んでみんなを引っ張り、多少ぶつけられてもへこまない分厚い皮メンタルの持ち主。ただし世話を焼きすぎて自分の熟れどきを逃しがち。たまには自分を甘やかそう。",
+      good:"独熟甘薄", bad:"独熟渋厚" },
+    "房青甘薄": { n:"せわやきバナナ", t:"みんなの熟れ具合、常にチェック済み", r:8.8, acc:"heart",
+      d:"房のみんなの変化にいちばん早く気づく気配りの達人。困っている仲間を放っておけない愛の人。ただ皮が薄いぶん、頑張りすぎると自分が先に傷むタイプ。人に優しくした分だけ、自分にも優しく。",
+      good:"独青渋厚", bad:"房熟渋厚" },
+    "房青渋厚": { n:"バナナ番長", t:"房の秩序はオレが守る", r:4.1, acc:"cap",
+      d:"筋を通すことに命を懸ける房の風紀委員長。ルールと計画で集団を守り、理不尽には真っ向から立ち向かう。硬派に見えて、実は仲間のためなら自分の皮が傷つくのも厭わない熱い果肉の持ち主。",
+      good:"房熟甘薄", bad:"独熟渋薄" },
+    "房青渋薄": { n:"委員長バナナ", t:"完璧な房づくり、任された", r:6.6, acc:"glasses",
+      d:"段取りの鬼にして完璧主義のまとめ役。会議のアジェンダは前日に共有済み、忘れ物はゼロ。でも実はかなり繊細で、計画が崩れると内心バナナジュース寸前。8割できてれば上出来、を合言葉に。",
+      good:"独熟甘厚", bad:"房熟甘厚" },
+    "房熟甘厚": { n:"パリピバナナ", t:"今この瞬間が、いちばん甘い", r:9.4, acc:"shades",
+      d:"その場を最高潮に持っていく天性の盛り上げ隊長。ノリと愛嬌で人を巻き込み、失敗しても「それも味！」と笑い飛ばせる強メンタル。計画性は皮ごとどこかに置いてきたが、その場対応力は全バナナ随一。",
+      good:"独青渋薄", bad:"房青渋薄" },
+    "房熟甘薄": { n:"アイドルバナナ", t:"みんなの太陽、でも楽屋ではぐったり", r:5.9, acc:"ribbon",
+      d:"いるだけで場がパッと明るくなる愛されキャラ。人の感情に敏感で、喜ばせることに全力を注ぐ。ただしステージを降りると電池切れでぐにゃぐにゃになる繊細さも。オンとオフの落差こそが魅力。",
+      good:"房青渋厚", bad:"独熟渋厚" },
+    "房熟渋厚": { n:"勝負師バナナ", t:"熟れどきは、逃さない", r:3.8, acc:"bolt",
+      d:"ここぞという瞬間を嗅ぎ分ける嗅覚と、迷わず張れる度胸の持ち主。理屈で考え、ノリで動く。負けても引きずらない切り替えの早さは、分厚い皮あってこそ。周りを置いてけぼりにしない配慮だけ忘れずに。",
+      good:"独青甘薄", bad:"房青甘薄" },
+    "房熟渋薄": { n:"トレンドバナナ", t:"その情報、皮より先に剥けてる", r:7.7, acc:"sparkle",
+      d:"流行の風向きを誰よりも早くキャッチする情報通。薄い皮は感度の高さの証で、面白いものへの反応速度は光速級。分析も鋭いが、飽きるのも早い。ハマったものを3ヶ月続けられたら本物。",
+      good:"独青甘厚", bad:"房青甘厚" },
+    "独青甘厚": { n:"職人バナナ", t:"いい熟成に、近道はない", r:6.9, acc:"band2",
+      d:"黙々と自分の道を極めるこだわりの人。派手さはないが、積み上げたものの厚みで最後に信頼を勝ち取る。優しさは口より手に出るタイプで、気づいたら誰かのために動いている。房の外にいても、みんな見てる。",
+      good:"房熟渋薄", bad:"房熟甘厚" },
+    "独青甘薄": { n:"詩人バナナ", t:"果肉の内側に、宇宙がある", r:5.4, acc:"moon",
+      d:"静かな外見の内側に、豊かすぎる感情の果肉を抱えた人。ひとりの時間に世界を深く味わい、言葉や作品ににじませる。傷つきやすいが、その繊細さこそが誰にも出せない甘みになる。",
+      good:"房熟渋厚", bad:"房熟甘厚" },
+    "独青渋厚": { n:"博士バナナ", t:"「なぜバナナは曲がるのか」考えて三日目", r:4.6, acc:"glasses2",
+      d:"気になったら底まで掘る探究の人。知識の蓄積と論理の積み上げが生きがいで、興味のスイッチが入ると寝食を忘れる。世間のノリには流されない分厚い皮を持ち、マイワールドの完成度は全タイプ1位。",
+      good:"房青甘薄", bad:"房熟甘薄" },
+    "独青渋薄": { n:"軍師バナナ", t:"三手先まで、読み終わってる", r:3.2, acc:"monocle",
+      d:"静かなる戦略家。表には出ず、全体を見渡して最善手を組み立てる参謀タイプ。観察力と分析力は随一だが、考えすぎて動けなくなる夜もある。信頼できる大将（パリピ等）と組むと無敵。",
+      good:"房熟甘厚", bad:"房熟渋厚" },
+    "独熟甘厚": { n:"ごろ寝バナナ", t:"焦らなくても、甘くなる", r:10.3, acc:"zzz",
+      d:"争いを好まない究極のマイペース。どんな環境でもだいたい快適に過ごせる適応力と、人を安心させる天然の甘さを持つ。締切? 熟せば剥かれるのがバナナの定め。周りをホッとさせる存在だが、油断すると完熟を通り越すので注意。",
+      good:"房青渋薄", bad:"房青渋厚" },
+    "独熟甘薄": { n:"芸術家バナナ", t:"今日の気分は、今日にしかない", r:5.1, acc:"beret",
+      d:"感性100%で生きるアーティスト気質。心が動いた瞬間に全エネルギーを注ぎ、動かないものには1ミリも興味がない。ムラはあるが、生み出すものの鮮度は圧倒的。その繊細さは、才能の別名。",
+      good:"房青甘厚", bad:"房青渋薄" },
+    "独熟渋厚": { n:"一匹狼バナナ", t:"房を出た。後悔はしていない", r:4.4, acc:"scar",
+      d:"自由を何より愛する野生派。群れのルールより自分の直感を信じ、単独でどこへでも行ける行動力と胆力を持つ。ドライに見えて、認めた相手にはとことん義理堅い。たまには房に顔を出すと喜ばれる。",
+      good:"房青甘薄", bad:"房青甘厚" },
+    "独熟渋薄": { n:"ミステリアスバナナ", t:"熟れ具合は、企業秘密", r:2.9, acc:"question",
+      d:"全16タイプ中もっともレアな不思議枠。直感で動くのに妙に鋭く、感情を見せないのに核心を突いてくる。本人にも自分がよくわかっていないが、それでいい。読めなさこそが最大の魅力であり武器。",
+      good:"房熟甘厚", bad:"房青渋厚" },
+  };
+
+  /* ============ 4つの族（青熟×甘渋で決まる） ============ */
+  const GROUPS = {
+    "青甘": { name:"つつみこみ族", en:"CARE",  color:"#3E8E41" },
+    "青渋": { name:"かんがえ族",   en:"MIND",  color:"#5B6ABF" },
+    "熟甘": { name:"ひだまり族",   en:"SUNNY", color:"#F2812E" },
+    "熟渋": { name:"やせい族",     en:"WILD",  color:"#C25B8A" },
+  };
+
+  /* ============ タイプ別の表情（e:目 m:口 b:まゆ ch:ほっぺ） ============ */
+  const FACES = {
+    "房青甘厚": { e:"dot",   m:"grin",  ch:true },            // アニキ: ニカッ
+    "房青甘薄": { e:"dot",   m:"smile", b:"worried", ch:true },// せわやき: 心配まゆ
+    "房青渋厚": { e:"sharp", m:"frown", b:"angry" },           // 番長: 眼光+への字
+    "房青渋薄": { e:"dot",   m:"smile" },                      // 委員長: メガネ+きちんと笑顔
+    "房熟甘厚": { e:"dot",   m:"grin",  ch:true },             // パリピ: グラサン+大口
+    "房熟甘薄": { e:"star",  m:"open",  ch:true },             // アイドル: 星目
+    "房熟渋厚": { e:"dot",   m:"smirk", b:"one" },             // 勝負師: 片まゆ+ニヤリ
+    "房熟渋薄": { e:"wink",  m:"smile" },                      // トレンド: ウインク
+    "独青甘厚": { e:"line",  m:"flat" },                       // 職人: 真剣な閉じ目
+    "独青甘薄": { e:"calm",  m:"smile", ch:true },             // 詩人: うっとり閉じ目
+    "独青渋厚": { e:"dot",   m:"open" },                       // 博士: 丸メガネ+ほほう口
+    "独青渋薄": { e:"dot",   m:"smirk" },                      // 軍師: モノクル+ニヤリ
+    "独熟甘厚": { e:"calm",  m:"open",  ch:true },             // ごろ寝: 寝目+あくび
+    "独熟甘薄": { e:"happy", m:"open",  ch:true },             // 芸術家: ひらめき顔
+    "独熟渋厚": { e:"sharp", m:"flat" },                       // 一匹狼: 傷+鋭い目
+    "独熟渋薄": { e:"calm",  m:"smirk" },                      // ミステリアス: 読めない微笑
+  };
+
+  /* ============ バナナSVG生成 ============ */
+  function bananaSVG(code, size){
+    const group = code[0] === "房";
+    const ripe  = code[1] === "熟";
+    const sweet = code[2] === "甘";
+    const acc   = (TYPES[code] || {}).acc || "";
+
+    const bodyColor = ripe ? "var(--sun)" : "var(--green)";
+    const curve = "M52,52 Q60,152 158,150";
+
+    let s = '<svg viewBox="0 0 210 210" width="'+size+'" height="'+size+'" role="img" aria-label="バナナキャラクター">';
+
+    // 仲間バナナ（房タイプ）
+    if(group){
+      s += '<g opacity="0.9">'
+        + banaMini(28, 92, -14) + banaMini(150, 88, 12)
+        + '</g>';
+    }
+
+    // 本体（アウトライン→ボディ）
+    s += '<path d="'+curve+'" fill="none" stroke="var(--ink)" stroke-width="46" stroke-linecap="round"/>';
+    s += '<path d="'+curve+'" fill="none" stroke="'+bodyColor+'" stroke-width="38" stroke-linecap="round"/>';
+    // ハイライト
+    s += '<path d="M56,62 Q64,130 130,142" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="7" stroke-linecap="round"/>';
+    // ヘタ（茎）
+    s += '<rect x="42" y="34" width="18" height="22" rx="5" fill="var(--spot)" stroke="var(--ink)" stroke-width="4" transform="rotate(-18 51 45)"/>';
+    // 先端
+    s += '<circle cx="158" cy="150" r="9" fill="var(--spot)" stroke="var(--ink)" stroke-width="4"/>';
+
+    // シュガースポット（熟タイプ）
+    if(ripe){
+      s += '<g fill="var(--spot)" opacity=".8">'
+        + '<circle cx="70" cy="96" r="3.4"/><circle cx="88" cy="132" r="2.8"/>'
+        + '<circle cx="120" cy="146" r="3.2"/><circle cx="62" cy="72" r="2.4"/>'
+        + '</g>';
+    } else {
+      // 青タイプは先端が緑
+      s += '<path d="M132,144 Q146,150 156,150" fill="none" stroke="var(--leaf)" stroke-width="34" stroke-linecap="round" opacity=".55"/>';
+    }
+
+    // 顔（体の傾きに合わせて20度回転。座標はOG画像と同じ検証済みレイアウト）
+    const fx = 80, fy = 124;
+    const spec = FACES[code] || (sweet ? { e:"happy", m:"smile", ch:true } : { e:"dot", m:"flat" });
+    s += '<g transform="rotate(20 '+fx+' '+fy+')">';
+    s += faceEyes(spec.e, fx, fy);
+    s += faceMouth(spec.m, fx, fy);
+    if(spec.b) s += faceBrows(spec.b, fx, fy);
+    if(spec.ch){
+      s += '<circle cx="'+(fx-19)+'" cy="'+(fy-3)+'" r="4.5" fill="var(--blush)" opacity=".8"/>'
+        + '<circle cx="'+(fx+19)+'" cy="'+(fy-3)+'" r="4.5" fill="var(--blush)" opacity=".8"/>';
+    }
+    // アクセサリー（顔と同じ回転グループ内）
+    s += accessory(acc, fx, fy);
+    s += '</g>';
+    s += '</svg>';
+    return s;
+  }
+
+  /* ============ 表情パーツ ============ */
+  const FACE_STROKE = 'stroke="var(--ink)" stroke-width="4.5" stroke-linecap="round" fill="none"';
+
+  function faceEyes(kind, fx, fy){
+    const ey = fy - 7;
+    switch(kind){
+      case "happy": // ∪∪ にっこり閉じ目
+        return '<g '+FACE_STROKE+'>'
+          + '<path d="M'+(fx-15)+','+(ey+2)+' q5,-8 10,0"/>'
+          + '<path d="M'+(fx+5)+','+(ey+2)+' q5,-8 10,0"/></g>';
+      case "calm": // ︶︶ まったり閉じ目
+        return '<g '+FACE_STROKE+'>'
+          + '<path d="M'+(fx-15)+','+(ey-2)+' q5,7 10,0"/>'
+          + '<path d="M'+(fx+5)+','+(ey-2)+' q5,7 10,0"/></g>';
+      case "line": // ―― 真剣な閉じ目
+        return '<g '+FACE_STROKE+'>'
+          + '<line x1="'+(fx-15)+'" y1="'+ey+'" x2="'+(fx-5)+'" y2="'+ey+'"/>'
+          + '<line x1="'+(fx+5)+'" y1="'+ey+'" x2="'+(fx+15)+'" y2="'+ey+'"/></g>';
+      case "sharp": // 鋭い目つき
+        return '<g '+FACE_STROKE+'>'
+          + '<line x1="'+(fx-15)+'" y1="'+(ey-3)+'" x2="'+(fx-4)+'" y2="'+(ey+1)+'"/>'
+          + '<line x1="'+(fx+15)+'" y1="'+(ey-3)+'" x2="'+(fx+4)+'" y2="'+(ey+1)+'"/></g>';
+      case "star": // ☆☆ 星目
+        return '<g fill="var(--sun-deep)" stroke="var(--ink)" stroke-width="2.2">'
+          + spark(fx-10, ey, 7) + spark(fx+10, ey, 7) + '</g>';
+      case "wink": // ウインク
+        return '<circle cx="'+(fx-10)+'" cy="'+ey+'" r="4.5" fill="var(--ink)"/>'
+          + '<g '+FACE_STROKE+'><path d="M'+(fx+5)+','+(ey+2)+' q5,-8 10,0"/></g>';
+      default: // ●● まる目
+        return '<circle cx="'+(fx-10)+'" cy="'+ey+'" r="4.5" fill="var(--ink)"/>'
+          + '<circle cx="'+(fx+10)+'" cy="'+ey+'" r="4.5" fill="var(--ink)"/>';
+    }
+  }
+
+  function faceMouth(kind, fx, fy){
+    switch(kind){
+      case "grin": // ニカッと大口
+        return '<path d="M'+(fx-10)+','+(fy+1)+' q10,14 20,0 Z" fill="var(--ink)"/>';
+      case "open": // まんまる口
+        return '<ellipse cx="'+fx+'" cy="'+(fy+5)+'" rx="4.5" ry="5.5" fill="var(--ink)"/>';
+      case "flat": // 一文字
+        return '<line x1="'+(fx-5)+'" y1="'+(fy+4)+'" x2="'+(fx+6)+'" y2="'+(fy+4)+'" '+FACE_STROKE+'/>';
+      case "frown": // への字
+        return '<path d="M'+(fx-8)+','+(fy+8)+' q8,-9 16,0" '+FACE_STROKE+'/>';
+      case "smirk": // ニヤリ
+        return '<path d="M'+(fx-3)+','+(fy+6)+' q7,1 11,-5" '+FACE_STROKE+'/>';
+      default: // にっこり
+        return '<path d="M'+(fx-8)+','+(fy+1)+' q8,10 16,0" '+FACE_STROKE+'/>';
+    }
+  }
+
+  function faceBrows(kind, fx, fy){
+    const st = 'stroke="var(--ink)" stroke-width="4" stroke-linecap="round"';
+    if(kind === "angry")
+      return '<g '+st+'>'
+        + '<line x1="'+(fx-16)+'" y1="'+(fy-21)+'" x2="'+(fx-5)+'" y2="'+(fy-16)+'"/>'
+        + '<line x1="'+(fx+16)+'" y1="'+(fy-21)+'" x2="'+(fx+5)+'" y2="'+(fy-16)+'"/></g>';
+    if(kind === "worried")
+      return '<g '+st+'>'
+        + '<line x1="'+(fx-16)+'" y1="'+(fy-16)+'" x2="'+(fx-5)+'" y2="'+(fy-20)+'"/>'
+        + '<line x1="'+(fx+16)+'" y1="'+(fy-16)+'" x2="'+(fx+5)+'" y2="'+(fy-20)+'"/></g>';
+    if(kind === "one")
+      return '<line x1="'+(fx+4)+'" y1="'+(fy-19)+'" x2="'+(fx+16)+'" y2="'+(fy-23)+'" '+st+'/>';
+    return "";
+  }
+
+  function banaMini(x, y, rot){
+    return '<g transform="translate('+x+','+y+') rotate('+rot+') scale(.42)">'
+      + '<path d="M0,0 Q8,66 74,64" fill="none" stroke="var(--ink)" stroke-width="34" stroke-linecap="round"/>'
+      + '<path d="M0,0 Q8,66 74,64" fill="none" stroke="var(--sun-deep)" stroke-width="26" stroke-linecap="round"/>'
+      + '</g>';
+  }
+
+  function accessory(acc, fx, fy){
+    const topY = fy - 34;
+    switch(acc){
+      case "band": // 赤鉢巻
+        return '<g transform="rotate(-8 '+fx+' '+topY+')">'
+          + '<rect x="'+(fx-26)+'" y="'+(topY-2)+'" width="52" height="12" rx="6" fill="var(--blush)" stroke="var(--ink)" stroke-width="3.5"/>'
+          + '</g>';
+      case "band2": // 白ねじり鉢巻
+        return '<g transform="rotate(-8 '+fx+' '+topY+')">'
+          + '<rect x="'+(fx-26)+'" y="'+(topY-2)+'" width="52" height="12" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="3.5"/>'
+          + '<line x1="'+(fx-12)+'" y1="'+(topY-2)+'" x2="'+(fx-6)+'" y2="'+(topY+10)+'" stroke="var(--ink)" stroke-width="2.5"/>'
+          + '<line x1="'+fx+'" y1="'+(topY-2)+'" x2="'+(fx+6)+'" y2="'+(topY+10)+'" stroke="var(--ink)" stroke-width="2.5"/>'
+          + '</g>';
+      case "heart":
+        return '<path transform="translate('+(fx+30)+','+(topY-8)+') scale(1.05)" d="M0,4 C-2,-2 -10,-2 -10,4 C-10,9 -3,13 0,16 C3,13 10,9 10,4 C10,-2 2,-2 0,4 Z" fill="var(--blush)" stroke="var(--ink)" stroke-width="3"/>';
+      case "cap": // 学帽風
+        return '<g transform="rotate(-6 '+fx+' '+topY+')">'
+          + '<path d="M'+(fx-24)+','+(topY+4)+' q24,-26 48,0 Z" fill="var(--ink)"/>'
+          + '<rect x="'+(fx-28)+'" y="'+(topY+2)+'" width="56" height="8" rx="4" fill="var(--ink)"/>'
+          + '</g>';
+      case "glasses": // 四角メガネ
+        return '<g fill="none" stroke="var(--ink)" stroke-width="4">'
+          + '<rect x="'+(fx-19)+'" y="'+(fy-14)+'" width="17" height="14" rx="3"/>'
+          + '<rect x="'+(fx+2)+'" y="'+(fy-14)+'" width="17" height="14" rx="3"/>'
+          + '<line x1="'+(fx-2)+'" y1="'+(fy-9)+'" x2="'+(fx+2)+'" y2="'+(fy-9)+'"/>'
+          + '</g>';
+      case "glasses2": // 丸メガネ
+        return '<g fill="none" stroke="var(--ink)" stroke-width="4">'
+          + '<circle cx="'+(fx-10)+'" cy="'+(fy-7)+'" r="8.5"/>'
+          + '<circle cx="'+(fx+10)+'" cy="'+(fy-7)+'" r="8.5"/>'
+          + '<line x1="'+(fx-1.5)+'" y1="'+(fy-8)+'" x2="'+(fx+1.5)+'" y2="'+(fy-8)+'"/>'
+          + '</g>';
+      case "monocle":
+        return '<g fill="none" stroke="var(--ink)" stroke-width="4">'
+          + '<circle cx="'+(fx+10)+'" cy="'+(fy-7)+'" r="9.5"/>'
+          + '<line x1="'+(fx+17)+'" y1="'+(fy)+'" x2="'+(fx+20)+'" y2="'+(fy+13)+'"/>'
+          + '</g>';
+      case "shades": // サングラス
+        return '<g>'
+          + '<rect x="'+(fx-20)+'" y="'+(fy-15)+'" width="18" height="13" rx="4" fill="var(--ink)"/>'
+          + '<rect x="'+(fx+2)+'" y="'+(fy-15)+'" width="18" height="13" rx="4" fill="var(--ink)"/>'
+          + '<line x1="'+(fx-2)+'" y1="'+(fy-10)+'" x2="'+(fx+2)+'" y2="'+(fy-10)+'" stroke="var(--ink)" stroke-width="4"/>'
+          + '</g>';
+      case "ribbon":
+        return '<g transform="translate('+(fx-2)+','+(topY-4)+') rotate(-10)" stroke="var(--ink)" stroke-width="3" fill="var(--blush)">'
+          + '<path d="M0,0 L-14,-8 L-13,9 Z"/><path d="M4,0 L18,-9 L17,8 Z"/>'
+          + '<circle cx="2" cy="0" r="4.5"/>'
+          + '</g>';
+      case "bolt":
+        return '<path transform="translate('+(fx+30)+','+(topY-12)+')" d="M4,0 L-5,13 L1,13 L-3,26 L8,11 L2,11 Z" fill="var(--sun-deep)" stroke="var(--ink)" stroke-width="2.5"/>';
+      case "sparkle":
+        return '<g fill="var(--sun-deep)" stroke="var(--ink)" stroke-width="2.2">'
+          + spark(fx+32, topY-6, 7) + spark(fx-34, fy+12, 5)
+          + '</g>';
+      case "moon":
+        return '<path transform="translate('+(fx+32)+','+(topY-8)+')" d="M6,0 A11,11 0 1,0 6,20 A9,9 0 1,1 6,0 Z" fill="var(--sun-deep)" stroke="var(--ink)" stroke-width="2.5"/>';
+      case "zzz":
+        return '<g font-family="Avenir Next,Futura,sans-serif" font-weight="800" fill="var(--ink)">'
+          + '<text x="'+(fx+26)+'" y="'+(topY-4)+'" font-size="16">Z</text>'
+          + '<text x="'+(fx+38)+'" y="'+(topY-16)+'" font-size="12">z</text>'
+          + '<text x="'+(fx+47)+'" y="'+(topY-26)+'" font-size="9">z</text>'
+          + '</g>';
+      case "beret":
+        return '<g transform="rotate(-10 '+fx+' '+topY+')">'
+          + '<ellipse cx="'+(fx-2)+'" cy="'+(topY+2)+'" rx="24" ry="10" fill="var(--blush)" stroke="var(--ink)" stroke-width="3.5"/>'
+          + '<circle cx="'+(fx-2)+'" cy="'+(topY-7)+'" r="3.5" fill="var(--ink)"/>'
+          + '</g>';
+      case "scar":
+        return '<g stroke="var(--ink)" stroke-width="3" stroke-linecap="round">'
+          + '<line x1="'+(fx-30)+'" y1="'+(fy-20)+'" x2="'+(fx-20)+'" y2="'+(fy-10)+'"/>'
+          + '<line x1="'+(fx-30)+'" y1="'+(fy-10)+'" x2="'+(fx-20)+'" y2="'+(fy-20)+'"/>'
+          + '</g>';
+      case "question":
+        return '<text x="'+(fx+28)+'" y="'+(topY-2)+'" font-family="Avenir Next,Futura,sans-serif" font-weight="800" font-size="24" fill="var(--blush)" stroke="var(--ink)" stroke-width="1" transform="rotate(12 '+(fx+28)+' '+(topY-2)+')">?</text>';
+      default:
+        return "";
+    }
+  }
+
+  function spark(x, y, r){
+    return '<path d="M'+x+','+(y-r)+' L'+(x+r*0.3)+','+(y-r*0.3)+' L'+(x+r)+','+y
+      +' L'+(x+r*0.3)+','+(y+r*0.3)+' L'+x+','+(y+r)+' L'+(x-r*0.3)+','+(y+r*0.3)
+      +' L'+(x-r)+','+y+' L'+(x-r*0.3)+','+(y-r*0.3)+' Z"/>';
+  }
+
+  /* ============ ステータス計算 ============ */
+  function statsFor(code){
+    const fusa = code[0]==="房", ripe = code[1]==="熟", sweet = code[2]==="甘", thick = code[3]==="厚";
+    // タイプ名から決定的なゆらぎを作る（毎回同じ値になる）
+    let seed = 0;
+    for(const ch of code) seed = (seed*31 + ch.charCodeAt(0)) % 97;
+    const jig = n => ((seed * n) % 11) - 5;
+    const clamp = v => Math.max(8, Math.min(98, v));
+    return [
+      { label:"甘み（共感力）",   v: clamp((sweet?78:38) + (ripe?10:0) + jig(3)) },
+      { label:"行動力（熟れ足）", v: clamp((ripe?52:28) + (fusa?34:18) + jig(5)) },
+      { label:"皮の厚さ（防御）", v: clamp((thick?82:30) + (sweet?0:6) + jig(7)) },
+    ];
+  }
+
+  /* ============ 状態 ============ */
+  let answers = [];
+
+  const $ = id => document.getElementById(id);
+  const scrStart = $("scr-start"), scrQuiz = $("scr-quiz"), scrResult = $("scr-result");
+
+  function show(scr){
+    for(const s of [scrStart, scrQuiz, scrResult]) s.hidden = (s !== scr);
+    window.scrollTo({ top:0, behavior:"smooth" });
+  }
+
+  /* ============ クイズ描画 ============ */
+  function renderQuestion(){
+    const i = answers.length;
+    const q = QUESTIONS[i];
+    $("q-no").textContent = i + 1;
+    $("q-pct").textContent = Math.round(i / QUESTIONS.length * 100);
+    $("q-fill").style.width = (i / QUESTIONS.length * 100) + "%";
+    $("q-bar").setAttribute("aria-valuenow", i);
+    $("q-text").textContent = q.q;
+    $("opt-a-text").textContent = q.a;
+    $("opt-b-text").textContent = q.b;
+    $("btn-back").style.visibility = i === 0 ? "hidden" : "visible";
+
+    // 出題アニメーションをリスタート
+    for(const el of [$("q-text"), $("opt-a"), $("opt-b")]){
+      el.classList.remove("pop-in");
+      void el.offsetWidth;
+      el.classList.add("pop-in");
+    }
+  }
+
+  function answer(side){
+    answers.push(side);
+    if(answers.length >= QUESTIONS.length){
+      renderResult(computeCode(), false);
+      show(scrResult);
+    } else {
+      renderQuestion();
+    }
+  }
+
+  /* ============ 結果 ============ */
+  function computeCode(){
+    const score = [0,0,0,0]; // aが多いほどプラス
+    QUESTIONS.forEach((q, i) => { score[q.ax] += (answers[i] === "a" ? 1 : -1); });
+    return score.map((v, ax) => v > 0 ? AXES[ax][0] : AXES[ax][1]).join("");
+  }
+
+  let lastCode = null;
+
+  function renderResult(code, sharedView){
+    lastCode = code;
+    const t = TYPES[code];
+
+    $("r-intro").textContent =
+      sharedView ? "この人の中のバナナは……" : "キミの中のバナナは……";
+    $("shared-cta").hidden = !sharedView;
+
+    // 族カラー（青熟×甘渋の4グループ）
+    const g = GROUPS[code[1] + code[2]];
+    scrResult.style.setProperty("--grp", g.color);
+    scrResult.style.setProperty("--grp-soft", g.color + "2E");
+    $("r-group").innerHTML = '<span>' + g.name + '<small>' + g.en + '</small></span>';
+    track("view_result", { banana_type: code, shared: !!sharedView });
+
+    $("r-figure").innerHTML = bananaSVG(code, 216);
+    $("r-name").textContent = t.n;
+    $("r-tagline").textContent = t.t;
+    $("r-code").innerHTML = code.split("").map(c => "<span>"+c+"</span>").join("");
+    $("r-rarity").textContent = t.r.toFixed(1);
+    $("r-desc").textContent = t.d;
+
+    const stats = statsFor(code);
+    $("r-stats").innerHTML = stats.map(s =>
+      '<div class="stat"><span>'+s.label+'</span>'
+      + '<span class="track"><span class="fill" data-v="'+s.v+'"></span></span>'
+      + '<span class="val">'+s.v+'</span></div>'
+    ).join("");
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      document.querySelectorAll("#r-stats .fill").forEach(el => { el.style.width = el.dataset.v + "%"; });
+    }));
+
+    $("mate-good-fig").innerHTML = bananaSVG(t.good, 74);
+    $("mate-good-name").textContent = TYPES[t.good].n;
+    $("mate-bad-fig").innerHTML = bananaSVG(t.bad, 74);
+    $("mate-bad-name").textContent = TYPES[t.bad].n;
+
+    $("share-note").textContent = "";
+
+    // リビール再生
+    document.querySelectorAll("#scr-result .reveal").forEach(el => {
+      el.style.animation = "none";
+      void el.offsetWidth;
+      el.style.animation = "";
+    });
+  }
+
+  /* ============ シェア ============ */
+  function shareText(code){
+    const t = TYPES[code];
+    return "【16バナナtype診断】わたしの中のバナナは「" + t.n + "」（" + code + "型）でした。"
+      + "出現率" + t.r.toFixed(1) + "%。";
+  }
+  function shareUrl(code){
+    return location.origin + location.pathname + "?t=" + encodeURIComponent(code);
+  }
+  function openShare(url){
+    window.open(url, "_blank", "noopener");
+  }
+  function shareX(){
+    if(!lastCode) return;
+    track("share", { method: "x", banana_type: lastCode });
+    openShare("https://twitter.com/intent/tweet"
+      + "?text=" + encodeURIComponent(shareText(lastCode))
+      + "&url=" + encodeURIComponent(shareUrl(lastCode))
+      + "&hashtags=" + encodeURIComponent("16バナナtype診断"));
+  }
+  function shareLine(){
+    if(!lastCode) return;
+    track("share", { method: "line", banana_type: lastCode });
+    openShare("https://line.me/R/share?text="
+      + encodeURIComponent(shareText(lastCode) + " " + shareUrl(lastCode)));
+  }
+  /* ============ 画像シェア（Instagramストーリーズ向け 1080x1920） ============ */
+  const SVG_COLORS = {
+    "var(--ink)":"#42280E", "var(--sun)":"#FFC93C", "var(--sun-deep)":"#F2A93B",
+    "var(--green)":"#B9C94E", "var(--leaf)":"#3E8E41", "var(--blush)":"#FF7A59",
+    "var(--spot)":"#7A4A1D", "var(--card)":"#FFFDF2"
+  };
+  const CARD_FONT = '"Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN",sans-serif';
+
+  function svgForImage(code, px){
+    // CSS変数は単体SVG画像では解決されないため実色に置換
+    let s = bananaSVG(code, px);
+    for(const k in SVG_COLORS) s = s.split(k).join(SVG_COLORS[k]);
+    return s;
+  }
+  function loadSvgImage(svg){
+    return new Promise((resolve, reject) => {
+      const im = new Image();
+      im.onload = () => resolve(im);
+      im.onerror = reject;
+      im.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+    });
+  }
+  function rrect(ctx, x, y, w, h, r){
+    ctx.beginPath();
+    if(ctx.roundRect) ctx.roundRect(x, y, w, h, r);
+    else ctx.rect(x, y, w, h);
+  }
+
+  async function buildShareCanvas(code){
+    const t = TYPES[code], g = GROUPS[code[1] + code[2]];
+    const W = 1080, H = 1920;
+    const cv = document.createElement("canvas");
+    cv.width = W; cv.height = H;
+    const ctx = cv.getContext("2d");
+
+    // 背景（クリーム+ドット）
+    ctx.fillStyle = "#FFF5DB"; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = "rgba(122,74,29,.14)";
+    for(let y = 27; y < H; y += 54)
+      for(let x = 27; x < W; x += 54){ ctx.beginPath(); ctx.arc(x, y, 4, 0, 7); ctx.fill(); }
+
+    // ヘッダー
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#8A6B43"; ctx.font = "700 30px " + CARD_FONT;
+    ctx.fillText("BANANA PERSONALITY LAB", W/2, 160);
+    ctx.fillStyle = "#42280E"; ctx.font = "800 62px " + CARD_FONT;
+    ctx.fillText("16バナナtype診断", W/2, 238);
+
+    // ステッカーカード
+    ctx.fillStyle = "#42280E"; rrect(ctx, 116, 316, 880, 1300, 64); ctx.fill();
+    ctx.fillStyle = "#FFFDF2"; rrect(ctx, 100, 300, 880, 1300, 64); ctx.fill();
+    ctx.lineWidth = 12; ctx.strokeStyle = "#42280E"; rrect(ctx, 100, 300, 880, 1300, 64); ctx.stroke();
+
+    ctx.fillStyle = "#8A6B43"; ctx.font = "700 40px " + CARD_FONT;
+    ctx.fillText("キミの中のバナナは……", W/2, 435);
+
+    // キャラ（族カラーの円の上に）
+    ctx.fillStyle = g.color + "2E";
+    ctx.beginPath(); ctx.arc(W/2, 765, 262, 0, 7); ctx.fill();
+    const im = await loadSvgImage(svgForImage(code, 480));
+    ctx.drawImage(im, W/2 - 240, 525, 480, 480);
+
+    // 族バッジ
+    ctx.font = "800 38px " + CARD_FONT;
+    const gt = g.name + "  " + g.en;
+    const gw = ctx.measureText(gt).width + 84;
+    ctx.fillStyle = g.color; rrect(ctx, W/2 - gw/2, 1062, gw, 74, 37); ctx.fill();
+    ctx.lineWidth = 6; ctx.strokeStyle = "#42280E"; rrect(ctx, W/2 - gw/2, 1062, gw, 74, 37); ctx.stroke();
+    ctx.fillStyle = "#FFF8E8"; ctx.fillText(gt, W/2, 1113);
+
+    // タイプ名（幅に収まるまで縮小）
+    let fs = 96;
+    ctx.fillStyle = "#42280E";
+    do{ fs -= 4; ctx.font = "800 " + fs + "px " + CARD_FONT; } while(ctx.measureText(t.n).width > 800 && fs > 48);
+    ctx.fillText(t.n, W/2, 1245);
+
+    // 肩書き
+    ctx.fillStyle = g.color; ctx.font = "700 38px " + CARD_FONT;
+    ctx.fillText(t.t, W/2, 1315);
+
+    // タイプコードチップ
+    const chip = 118, gap = 26, x0 = W/2 - (chip*4 + gap*3)/2, cy0 = 1372;
+    for(let i = 0; i < 4; i++){
+      const x = x0 + i*(chip + gap);
+      ctx.fillStyle = g.color + "2E"; rrect(ctx, x, cy0, chip, chip, 26); ctx.fill();
+      ctx.lineWidth = 6; ctx.strokeStyle = "#42280E"; rrect(ctx, x, cy0, chip, chip, 26); ctx.stroke();
+      ctx.fillStyle = "#42280E"; ctx.font = "800 60px " + CARD_FONT;
+      ctx.fillText(code[i], x + chip/2, cy0 + 82);
+    }
+
+    // 出現率
+    ctx.fillStyle = "#8A6B43"; ctx.font = "700 32px " + CARD_FONT;
+    ctx.fillText("出現率 " + t.r.toFixed(1) + "%（バナナ調べ）", W/2, 1562);
+
+    // フッター（カードの外）
+    ctx.fillStyle = "#42280E"; ctx.font = "800 38px " + CARD_FONT;
+    ctx.fillText("#16バナナtype診断", W/2, 1732);
+    let urlText = "";
+    try{ urlText = location.host + location.pathname; }catch(e){}
+    if(urlText){
+      ctx.fillStyle = "#8A6B43"; ctx.font = "700 30px " + CARD_FONT;
+      ctx.fillText(urlText, W/2, 1790);
+    }
+    return cv;
+  }
+
+  async function shareImage(){
+    if(!lastCode) return;
+    track("share", { method: "image", banana_type: lastCode });
+    const note = $("share-note");
+    note.textContent = "画像を生成中……";
+    try{
+      const cv = await buildShareCanvas(lastCode);
+      const blob = await new Promise(res => cv.toBlob(res, "image/png"));
+      if(!blob) throw new Error("no blob");
+      const file = new File([blob], "banana16.png", { type: "image/png" });
+      if(navigator.canShare && navigator.canShare({ files: [file] })){
+        await navigator.share({ files: [file], text: shareText(lastCode) + " " + shareUrl(lastCode) });
+        note.textContent = "共有メニューからInstagramを選んでね";
+      } else {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "banana16.png";
+        a.click();
+        note.textContent = "画像を保存しました。Instagramのストーリーズに貼ってね";
+      }
+    }catch(e){
+      if(e && e.name === "AbortError"){ note.textContent = ""; return; }
+      note.textContent = "画像の生成に失敗……別のブラウザで試してみてね";
+    }
+  }
+
+  async function copyLink(){
+    if(!lastCode) return;
+    track("share", { method: "copy", banana_type: lastCode });
+    const payload = shareText(lastCode) + " " + shareUrl(lastCode);
+    const note = $("share-note");
+    try{
+      await navigator.clipboard.writeText(payload);
+      note.textContent = "結果リンクをコピーしました。SNSに貼り付けてどうぞ";
+    }catch(e){
+      note.textContent = payload;
+    }
+  }
+
+  /* ============ イベント ============ */
+  $("btn-start").addEventListener("click", () => {
+    answers = [];
+    renderQuestion();
+    show(scrQuiz);
+    track("start_quiz");
+  });
+  $("opt-a").addEventListener("click", () => answer("a"));
+  $("opt-b").addEventListener("click", () => answer("b"));
+  $("btn-back").addEventListener("click", () => {
+    if(answers.length > 0){ answers.pop(); renderQuestion(); }
+  });
+  $("btn-retry").addEventListener("click", () => {
+    answers = [];
+    renderQuestion();
+    show(scrQuiz);
+  });
+  $("btn-x").addEventListener("click", shareX);
+  $("btn-line").addEventListener("click", shareLine);
+  $("btn-image").addEventListener("click", shareImage);
+  $("btn-copy").addEventListener("click", copyLink);
+  $("btn-try").addEventListener("click", () => {
+    if(window.history && history.replaceState){
+      history.replaceState(null, "", location.pathname);
+    }
+    answers = [];
+    renderQuestion();
+    show(scrQuiz);
+  });
+
+  /* ============ ヒーローバナナ（タイプ外のデフォルト笑顔） ============ */
+  $("hero-banana").innerHTML = bananaSVG("単熟甘厚", 190);
+
+  /* ============ 共有リンクからの着地（?t=タイプコード） ============ */
+  (function(){
+    try{
+      const code = new URLSearchParams(location.search).get("t");
+      if(code && TYPES[code]){
+        renderResult(code, true);
+        show(scrResult);
+      }
+    }catch(e){ /* URLSearchParams非対応環境ではトップ表示のまま */ }
+  })();
+})();
+</script>
+
+</body>
+</html>
