@@ -535,6 +535,7 @@
         <button class="btn btn-x" id="btn-x" type="button">Xでポストする</button>
         <button class="btn-sub" id="btn-line" type="button">LINEで送る</button>
         <button class="btn-sub" id="btn-image" type="button">画像でシェア（Instagram用）</button>
+        <button class="btn-sub" id="btn-save" type="button">画像を保存</button>
         <button class="btn-sub" id="btn-copy" type="button">リンクをコピー</button>
         <button class="btn-sub" id="btn-retry" type="button">もういちど剥く</button>
       </div>
@@ -693,7 +694,7 @@
     const bodyColor = ripe ? "var(--sun)" : "var(--green)";
     const curve = "M52,52 Q60,152 158,150";
 
-    let s = '<svg viewBox="0 0 210 210" width="'+size+'" height="'+size+'" role="img" aria-label="バナナキャラクター">';
+    let s = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 210" width="'+size+'" height="'+size+'" role="img" aria-label="バナナキャラクター">';
 
     // 仲間バナナ（房タイプ）
     if(group){
@@ -1144,29 +1145,56 @@
     return cv;
   }
 
+  async function resultImageBlob(){
+    const cv = await buildShareCanvas(lastCode);
+    const blob = await new Promise(res => cv.toBlob(res, "image/png"));
+    if(!blob) throw new Error("no blob");
+    return blob;
+  }
+
+  function downloadBlob(blob){
+    const a = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    a.href = url;
+    a.download = "16banana_result.png";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 30000);
+  }
+
   async function shareImage(){
     if(!lastCode) return;
     track("share", { method: "image", banana_type: lastCode });
     const note = $("share-note");
     note.textContent = "画像を生成中……";
     try{
-      const cv = await buildShareCanvas(lastCode);
-      const blob = await new Promise(res => cv.toBlob(res, "image/png"));
-      if(!blob) throw new Error("no blob");
-      const file = new File([blob], "banana16.png", { type: "image/png" });
+      const blob = await resultImageBlob();
+      const file = new File([blob], "16banana_result.png", { type: "image/png" });
       if(navigator.canShare && navigator.canShare({ files: [file] })){
         await navigator.share({ files: [file], text: shareText(lastCode) + " " + shareUrl(lastCode) });
         note.textContent = "共有メニューからInstagramを選んでね";
       } else {
-        const a = document.createElement("a");
-        a.href = URL.createObjectURL(blob);
-        a.download = "banana16.png";
-        a.click();
+        // 共有シート非対応（PC・非HTTPS等）はダウンロードにフォールバック
+        downloadBlob(blob);
         note.textContent = "画像を保存しました。Instagramのストーリーズに貼ってね";
       }
     }catch(e){
       if(e && e.name === "AbortError"){ note.textContent = ""; return; }
-      note.textContent = "画像の生成に失敗……別のブラウザで試してみてね";
+      note.textContent = "画像の生成に失敗……「画像を保存」も試してみてね";
+    }
+  }
+
+  async function saveImage(){
+    if(!lastCode) return;
+    track("share", { method: "save", banana_type: lastCode });
+    const note = $("share-note");
+    note.textContent = "画像を生成中……";
+    try{
+      downloadBlob(await resultImageBlob());
+      note.textContent = "画像を保存しました";
+    }catch(e){
+      note.textContent = "画像の生成に失敗……ブラウザを変えて試してみてね";
     }
   }
 
@@ -1203,6 +1231,7 @@
   $("btn-x").addEventListener("click", shareX);
   $("btn-line").addEventListener("click", shareLine);
   $("btn-image").addEventListener("click", shareImage);
+  $("btn-save").addEventListener("click", saveImage);
   $("btn-copy").addEventListener("click", copyLink);
   $("btn-try").addEventListener("click", () => {
     if(window.history && history.replaceState){
