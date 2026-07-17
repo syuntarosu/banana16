@@ -38,6 +38,7 @@
     --shadow:#42280E;
     --chip:#F6E7C6;
     --dot:rgba(122,74,29,.14);
+    --marker:#FFC93C;
   }
   @media (prefers-color-scheme: dark){
     :root{
@@ -48,17 +49,19 @@
       --shadow:#100901;
       --chip:#453213;
       --dot:rgba(255,201,60,.10);
+      --marker:rgba(242,169,59,.38);
     }
   }
   :root[data-theme="light"]{
     --sun:#FFC93C; --sun-deep:#F2A93B; --green:#B9C94E;
     --cream:#FFF5DB; --card:#FFFDF2; --ink:#42280E; --muted:#8A6B43;
     --leaf:#3E8E41; --blush:#FF7A59; --spot:#7A4A1D; --shadow:#42280E;
-    --chip:#F6E7C6; --dot:rgba(122,74,29,.14);
+    --chip:#F6E7C6; --dot:rgba(122,74,29,.14); --marker:#FFC93C;
   }
   :root[data-theme="dark"]{
     --cream:#221507; --card:#31220E; --ink:#FFEDC4; --muted:#C7A66E;
     --shadow:#100901; --chip:#453213; --dot:rgba(255,201,60,.10);
+    --marker:rgba(242,169,59,.38);
   }
 
   *{ box-sizing:border-box; margin:0; padding:0; }
@@ -138,7 +141,7 @@
     letter-spacing:.02em;
   }
   .motto span{
-    background:linear-gradient(transparent 62%, var(--sun) 62%);
+    background:linear-gradient(transparent 62%, var(--marker) 62%);
     padding:0 2px;
   }
   .lead{
