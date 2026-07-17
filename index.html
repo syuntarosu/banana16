@@ -187,14 +187,59 @@
   .start-note{ font-size:12px; color:var(--muted); margin-top:14px; }
   .tribes{
     display:flex; gap:8px; justify-content:center; flex-wrap:wrap;
-    margin:-6px 0 20px;
+    margin:-6px 0 8px;
   }
-  .tribes span{
-    font-size:11.5px; font-weight:800; letter-spacing:.04em;
+  .tribes button{
+    font:inherit; font-size:11.5px; font-weight:800; letter-spacing:.04em;
     color:#FFF8E8; background:var(--tc);
     border:2px solid var(--ink); border-radius:999px;
     padding:3px 11px;
+    cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease;
   }
+  .tribes button:hover{ transform:translateY(-2px); box-shadow:2px 3px 0 var(--shadow); }
+  .tribes button:focus-visible{ outline:3px dashed var(--blush); outline-offset:2px; }
+  .tribes-hint{ font-size:11px; color:var(--muted); margin:0 0 18px; }
+
+  /* ===== 図鑑 ===== */
+  .z-title{ font-size:26px; text-align:center; margin:8px 0 14px; }
+  .z-tabs{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
+  .z-tab{
+    font:inherit; font-size:12px; font-weight:800;
+    color:#FFF8E8; background:var(--tc);
+    border:2.5px solid var(--ink); border-radius:999px;
+    padding:5px 13px; cursor:pointer; opacity:.5;
+    transition:opacity .12s ease, transform .12s ease;
+  }
+  .z-tab:hover{ opacity:.85; }
+  .z-tab.active{ opacity:1; box-shadow:3px 3px 0 var(--shadow); transform:translateY(-1px); }
+  .z-tab:focus-visible{ outline:3px dashed var(--blush); outline-offset:2px; }
+  .z-desc{
+    text-align:center; font-size:13px; font-weight:700;
+    color:var(--muted); margin-bottom:16px; min-height:2.6em;
+  }
+  .z-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:14px;
+    margin-bottom:22px;
+  }
+  .z-card{
+    font:inherit; color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; gap:2px;
+    background:var(--card);
+    border:3px solid var(--ink); border-radius:18px;
+    box-shadow:4px 4px 0 var(--shadow);
+    padding:14px 10px 12px;
+    cursor:pointer; text-align:center;
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+  }
+  .z-card:hover{ transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--shadow); background:var(--grp-soft, var(--chip)); }
+  .z-card:active{ transform:translate(3px,3px); box-shadow:0 0 0 var(--shadow); }
+  .z-card:focus-visible{ outline:3px dashed var(--blush); outline-offset:3px; }
+  .z-fig{ width:110px; height:110px; pointer-events:none; }
+  .z-name{ font-size:15px; font-weight:800; }
+  .z-tag{ font-size:11px; color:var(--muted); line-height:1.5; }
+  .z-rar{ font-size:11px; font-weight:800; color:var(--grp, var(--blush)); margin-top:3px; }
+  .z-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
   /* ===== quiz ===== */
   .quiz-head{
@@ -461,15 +506,29 @@
         <span class="pct">約60%</span>
       </div>
       <div class="tribes">
-        <span style="--tc:#3E8E41">つつみこみ族</span>
-        <span style="--tc:#5B6ABF">かんがえ族</span>
-        <span style="--tc:#F2812E">ひだまり族</span>
-        <span style="--tc:#C25B8A">やせい族</span>
+        <button type="button" id="tribe-0" style="--tc:#3E8E41">つつみこみ族</button>
+        <button type="button" id="tribe-1" style="--tc:#5B6ABF">かんがえ族</button>
+        <button type="button" id="tribe-2" style="--tc:#F2812E">ひだまり族</button>
+        <button type="button" id="tribe-3" style="--tc:#C25B8A">やせい族</button>
       </div>
+      <p class="tribes-hint">族をタップするとバナナ図鑑が見られます</p>
       <div>
         <button class="btn" id="btn-start" type="button">診断をはじめる</button>
       </div>
       <p class="start-note">所要時間：バナナ1本ぶん（約2分）</p>
+    </section>
+
+    <!-- ============ 図鑑 ============ -->
+    <section id="scr-zukan" class="card" hidden aria-label="バナナ図鑑">
+      <span class="eyebrow">Banana Zukan</span>
+      <h2 class="z-title">バナナ図鑑</h2>
+      <div class="z-tabs" id="z-tabs"></div>
+      <p class="z-desc" id="z-desc"></p>
+      <div class="z-grid" id="z-grid"></div>
+      <div class="z-actions">
+        <button class="btn" id="btn-zukan-start" type="button">診断をはじめる</button>
+        <button class="btn-sub" id="btn-zukan-home" type="button">トップにもどる</button>
+      </div>
     </section>
 
     <!-- ============ QUIZ ============ -->
@@ -529,6 +588,10 @@
       <div class="shared-cta reveal d5" id="shared-cta" hidden>
         <p>友達の結果を見たキミへ——<br>キミの中にもバナナ、いるよ。</p>
         <button class="btn" id="btn-try" type="button">自分も診断する（12問・2分）</button>
+      </div>
+
+      <div class="r-actions reveal d5" id="zukan-back" hidden>
+        <button class="btn-sub" id="btn-zukan-back" type="button">図鑑にもどる</button>
       </div>
 
       <div class="r-actions reveal d5">
@@ -657,11 +720,16 @@
   };
 
   /* ============ 4つの族（青熟×甘渋で決まる） ============ */
+  const TRIBE_KEYS = ["青甘", "青渋", "熟甘", "熟渋"];
   const GROUPS = {
-    "青甘": { name:"つつみこみ族", en:"CARE",  color:"#3E8E41" },
-    "青渋": { name:"かんがえ族",   en:"MIND",  color:"#5B6ABF" },
-    "熟甘": { name:"ひだまり族",   en:"SUNNY", color:"#F2812E" },
-    "熟渋": { name:"やせい族",     en:"WILD",  color:"#C25B8A" },
+    "青甘": { name:"つつみこみ族", en:"CARE",  color:"#3E8E41",
+      d:"計画的で、ひとを支えるやさしさの房。困ったとき最初に手を差しのべるバナナたち。" },
+    "青渋": { name:"かんがえ族",   en:"MIND",  color:"#5B6ABF",
+      d:"論理と探究で世界を熟成させる頭脳派。房いちばんの参謀ぞろい。" },
+    "熟甘": { name:"ひだまり族",   en:"SUNNY", color:"#F2812E",
+      d:"いるだけで場があたたかくなる太陽バナナ。今日を楽しむ天才たち。" },
+    "熟渋": { name:"やせい族",     en:"WILD",  color:"#C25B8A",
+      d:"直感と自由で生きる、誰にも飼いならせないバナナ。勝負どころに強い。" },
   };
 
   /* ============ タイプ別の表情（e:目 m:口 b:まゆ ch:ほっぺ） ============ */
@@ -919,11 +987,43 @@
   let answers = [];
 
   const $ = id => document.getElementById(id);
-  const scrStart = $("scr-start"), scrQuiz = $("scr-quiz"), scrResult = $("scr-result");
+  const scrStart = $("scr-start"), scrQuiz = $("scr-quiz"),
+        scrResult = $("scr-result"), scrZukan = $("scr-zukan");
 
   function show(scr){
-    for(const s of [scrStart, scrQuiz, scrResult]) s.hidden = (s !== scr);
+    for(const s of [scrStart, scrQuiz, scrResult, scrZukan]) s.hidden = (s !== scr);
     window.scrollTo({ top:0, behavior:"smooth" });
+  }
+
+  /* ============ 図鑑 ============ */
+  let currentTribe = "青甘";
+
+  function renderZukan(tribe){
+    currentTribe = tribe;
+    const g = GROUPS[tribe];
+    scrZukan.style.setProperty("--grp", g.color);
+    scrZukan.style.setProperty("--grp-soft", g.color + "2E");
+    $("z-tabs").innerHTML = TRIBE_KEYS.map(k =>
+      '<button type="button" class="z-tab' + (k === tribe ? " active" : "") + '"'
+      + ' style="--tc:' + GROUPS[k].color + '" data-tribe="' + k + '">'
+      + GROUPS[k].name + '</button>'
+    ).join("");
+    $("z-desc").textContent = g.name + "——" + g.d;
+    const codes = Object.keys(TYPES).filter(c => c[1] + c[2] === tribe);
+    $("z-grid").innerHTML = codes.map(c =>
+      '<button type="button" class="z-card" data-code="' + c + '">'
+      + '<span class="z-fig">' + bananaSVG(c, 110) + '</span>'
+      + '<span class="z-name">' + TYPES[c].n + '</span>'
+      + '<span class="z-tag">' + TYPES[c].t + '</span>'
+      + '<span class="z-rar">出現率 ' + TYPES[c].r.toFixed(1) + '%</span>'
+      + '</button>'
+    ).join("");
+  }
+
+  function openZukan(tribe){
+    renderZukan(tribe);
+    show(scrZukan);
+    track("view_zukan", { tribe: GROUPS[tribe].name });
   }
 
   /* ============ クイズ描画 ============ */
@@ -950,7 +1050,7 @@
   function answer(side){
     answers.push(side);
     if(answers.length >= QUESTIONS.length){
-      renderResult(computeCode(), false);
+      renderResult(computeCode(), "self");
       show(scrResult);
     } else {
       renderQuestion();
@@ -966,20 +1066,24 @@
 
   let lastCode = null;
 
-  function renderResult(code, sharedView){
+  function renderResult(code, mode){
+    mode = mode || "self";  // self | shared | zukan
     lastCode = code;
     const t = TYPES[code];
 
     $("r-intro").textContent =
-      sharedView ? "この人の中のバナナは……" : "キミの中のバナナは……";
-    $("shared-cta").hidden = !sharedView;
+      mode === "shared" ? "この人の中のバナナは……" :
+      mode === "zukan"  ? "こんなバナナ……" :
+      "キミの中のバナナは……";
+    $("shared-cta").hidden = mode !== "shared";
+    $("zukan-back").hidden = mode !== "zukan";
 
     // 族カラー（青熟×甘渋の4グループ）
     const g = GROUPS[code[1] + code[2]];
     scrResult.style.setProperty("--grp", g.color);
     scrResult.style.setProperty("--grp-soft", g.color + "2E");
     $("r-group").innerHTML = '<span>' + g.name + '<small>' + g.en + '</small></span>';
-    track("view_result", { banana_type: code, shared: !!sharedView });
+    track("view_result", { banana_type: code, mode: mode });
 
     $("r-figure").innerHTML = bananaSVG(code, 216);
     $("r-name").textContent = t.n;
@@ -1212,11 +1316,33 @@
   }
 
   /* ============ イベント ============ */
-  $("btn-start").addEventListener("click", () => {
+  function startQuiz(){
     answers = [];
     renderQuestion();
     show(scrQuiz);
     track("start_quiz");
+  }
+  $("btn-start").addEventListener("click", startQuiz);
+  $("btn-zukan-start").addEventListener("click", startQuiz);
+  $("btn-zukan-home").addEventListener("click", () => show(scrStart));
+  $("btn-zukan-back").addEventListener("click", () => openZukan(currentTribe));
+
+  // トップの族チップ → 図鑑
+  TRIBE_KEYS.forEach((k, i) => {
+    $("tribe-" + i).addEventListener("click", () => openZukan(k));
+  });
+
+  // 図鑑内のタブ・タイプカード（動的生成のためイベント委譲）
+  $("z-tabs").addEventListener("click", (e) => {
+    const b = e && e.target && e.target.closest ? e.target.closest("[data-tribe]") : null;
+    if(b) openZukan(b.dataset.tribe);
+  });
+  $("z-grid").addEventListener("click", (e) => {
+    const b = e && e.target && e.target.closest ? e.target.closest("[data-code]") : null;
+    if(b && TYPES[b.dataset.code]){
+      renderResult(b.dataset.code, "zukan");
+      show(scrResult);
+    }
   });
   $("opt-a").addEventListener("click", () => answer("a"));
   $("opt-b").addEventListener("click", () => answer("b"));
@@ -1250,7 +1376,7 @@
     try{
       const code = new URLSearchParams(location.search).get("t");
       if(code && TYPES[code]){
-        renderResult(code, true);
+        renderResult(code, "shared");
         show(scrResult);
       }
     }catch(e){ /* URLSearchParams非対応環境ではトップ表示のまま */ }
