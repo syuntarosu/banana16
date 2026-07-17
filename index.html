@@ -158,7 +158,7 @@
     appearance:none;
     font:inherit;
     font-weight:800;
-    color:var(--ink);
+    color:#42280E; /* 黄色地の上は常にこげ茶（ダークモードでも） */
     background:var(--sun);
     border:3px solid var(--ink);
     border-radius:18px;
@@ -238,7 +238,6 @@
   .z-fig{ width:110px; height:110px; pointer-events:none; }
   .z-name{ font-size:15px; font-weight:800; }
   .z-tag{ font-size:11px; color:var(--muted); line-height:1.5; }
-  .z-rar{ font-size:11px; font-weight:800; color:var(--grp, var(--blush)); margin-top:3px; }
   .z-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
   /* ===== quiz ===== */
@@ -296,14 +295,15 @@
     transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
   }
   .choice:hover{ transform:translate(-2px,-2px); box-shadow:7px 7px 0 var(--shadow); background:var(--chip); }
-  .choice:active{ transform:translate(4px,4px); box-shadow:0 0 0 var(--shadow); background:var(--sun); }
+  .choice:active{ transform:translate(4px,4px); box-shadow:0 0 0 var(--shadow); background:var(--sun); color:#42280E; }
   .choice .key{
     flex:0 0 auto;
     width:34px; height:34px;
     display:grid; place-items:center;
-    border:2.5px solid var(--ink);
+    border:2.5px solid #42280E;
     border-radius:50%;
     background:var(--sun);
+    color:#42280E;
     font-family:"Avenir Next","Futura",sans-serif;
     font-weight:800; font-size:15px;
   }
@@ -455,7 +455,8 @@
   .r-share-note{ text-align:center; font-size:12px; color:var(--muted); margin-top:2px; min-height:1.6em; }
   .shared-cta{
     text-align:center;
-    border:3px solid var(--ink);
+    color:#42280E;
+    border:3px solid #42280E;
     border-radius:18px;
     background:var(--sun);
     box-shadow:5px 5px 0 var(--shadow);
@@ -463,7 +464,7 @@
     margin-bottom:24px;
   }
   .shared-cta p{ font-weight:800; font-size:15px; margin-bottom:12px; }
-  .shared-cta .btn{ background:var(--card); }
+  .shared-cta .btn{ background:#FFFDF2; color:#42280E; }
 
   .reveal{ animation:popin .45s ease both; }
   .reveal.d1{ animation-delay:.08s; }
@@ -563,7 +564,7 @@
       <h2 class="r-name reveal d1" id="r-name"></h2>
       <p class="r-tagline reveal d2" id="r-tagline"></p>
       <div class="code-chips reveal d2" id="r-code"></div>
-      <p class="rarity reveal d2">出現率 <b id="r-rarity"></b>%（バナナ調べ）</p>
+      <p class="rarity reveal d2" id="r-rarity-row">出現率 <b id="r-rarity"></b>%（バナナ調べ）</p>
       <div class="r-desc reveal d3" id="r-desc"></div>
 
       <div class="reveal d4">
@@ -1023,7 +1024,6 @@
       + '<span class="z-fig">' + bananaSVG(c, 110) + '</span>'
       + '<span class="z-name">' + TYPES[c].n + '</span>'
       + '<span class="z-tag">' + TYPES[c].t + '</span>'
-      + '<span class="z-rar">出現率 ' + TYPES[c].r.toFixed(1) + '%</span>'
       + '</button>'
     ).join("");
   }
@@ -1085,6 +1085,8 @@
       "キミの中のバナナは……";
     $("shared-cta").hidden = mode !== "shared";
     $("zukan-back").hidden = mode !== "zukan";
+    // 出現率は実際に診断した人（と共有された結果）だけのお楽しみ
+    $("r-rarity-row").hidden = mode === "zukan";
 
     // 族カラー（青熟×甘渋の4グループ）
     const g = GROUPS[code[1] + code[2]];
