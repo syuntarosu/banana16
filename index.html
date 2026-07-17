@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>16バナナtype診断｜キミの中のバナナがわかる</title>
-<meta name="description" content="ヒトはバナナと遺伝子の約60%を共有——つまりキミの半分はバナナ。12の質問で、キミの中に眠るバナナの正体を診断します。全16タイプ。">
+<meta name="description" content="ヒトはバナナと遺伝子の約60%を共有——つまり半分バナナだから仕方ないか。12の質問で、キミの中に眠るバナナの正体を診断します。全16タイプ。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="16バナナtype診断">
 <meta property="og:title" content="16バナナtype診断">
-<meta property="og:description" content="ヒトのDNAは約60%バナナ。12の質問でキミの中のバナナを診断。全16タイプ、キミはどのバナナ？">
+<meta property="og:description" content="ヒトのDNAは約60%バナナ——半分バナナだから仕方ないか。12の質問でキミの中のバナナを診断。全16タイプ。">
 <link rel="canonical" href="https://16banana.jp/">
 <meta property="og:url" content="https://16banana.jp/">
 <meta property="og:image" content="https://16banana.jp/og.png">
@@ -17,7 +17,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="16バナナtype診断">
-<meta name="twitter:description" content="ヒトのDNAは約60%バナナ。12の質問でキミの中のバナナを診断。キミはどのバナナ？">
+<meta name="twitter:description" content="ヒトのDNAは約60%バナナ——半分バナナだから仕方ないか。12の質問でキミの中のバナナを診断。">
 <meta name="twitter:image" content="https://16banana.jp/og.png">
 <meta name="theme-color" content="#FFC93C">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M22,22 Q28,74 76,72' fill='none' stroke='%2342280E' stroke-width='30' stroke-linecap='round'/%3E%3Cpath d='M22,22 Q28,74 76,72' fill='none' stroke='%23FFC93C' stroke-width='22' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -131,10 +131,20 @@
   h1 .t1{ transform:rotate(-5deg); }
   h1 .t2{ transform:rotate(4deg) translateY(-2px); }
   h1 .t3{ transform:rotate(-3deg); }
+  .motto{
+    font-size:16px;
+    font-weight:800;
+    margin:10px 0 2px;
+    letter-spacing:.02em;
+  }
+  .motto span{
+    background:linear-gradient(transparent 62%, var(--sun) 62%);
+    padding:0 2px;
+  }
   .lead{
     color:var(--muted);
     font-size:14.5px;
-    margin:14px auto 22px;
+    margin:12px auto 22px;
     max-width:30em;
   }
   .lead strong{ color:var(--ink); }
@@ -447,6 +457,13 @@
     padding:16px 18px;
     margin-bottom:22px;
   }
+  .d-motto{
+    display:block;
+    margin-top:10px;
+    font-weight:800;
+    text-align:right;
+    color:var(--ink);
+  }
 
   .sec-label{
     font-size:12px; font-weight:800; letter-spacing:.14em;
@@ -551,6 +568,7 @@
         <span class="num">16</span>
         <span class="tilt t1">バ</span><span class="tilt t2">ナ</span><span class="tilt t3">ナ</span>type診断
       </h1>
+      <p class="motto">「<span>半分バナナだから仕方ないか</span>」</p>
       <p class="lead">
         ヒトはバナナと遺伝子のおよそ半分を共有している——。<br>
         つまりキミの半分は、もうバナナ。<br>
@@ -656,7 +674,7 @@
       <p class="r-tagline reveal d2" id="r-tagline"></p>
       <div class="code-chips reveal d2" id="r-code"></div>
       <p class="rarity reveal d2" id="r-rarity-row">出現率 <b id="r-rarity"></b>%（バナナ調べ）</p>
-      <div class="r-desc reveal d3" id="r-desc"></div>
+      <div class="r-desc reveal d3"><span id="r-desc"></span><span class="d-motto">……まあ、半分バナナだから仕方ないか。</span></div>
 
       <div class="reveal d4">
         <p class="sec-label">バナナステータス</p>
@@ -1379,7 +1397,7 @@
   function shareText(code){
     const t = TYPES[code];
     return "【16バナナtype診断】わたしの中のバナナは「" + t.n + "」（" + code + "型）でした。"
-      + "出現率" + t.r.toFixed(1) + "%。";
+      + "出現率" + t.r.toFixed(1) + "%。半分バナナだから仕方ないか。";
   }
   function shareUrl(code){
     // 本番（ルート配信）ではタイプ別OGP付きの /t/◯◯.html を使う
@@ -1499,13 +1517,15 @@
     ctx.fillText("出現率 " + t.r.toFixed(1) + "%（バナナ調べ）", W/2, 1562);
 
     // フッター（カードの外）
-    ctx.fillStyle = "#42280E"; ctx.font = "800 38px " + CARD_FONT;
-    ctx.fillText("#16バナナtype診断", W/2, 1732);
+    ctx.fillStyle = "#42280E"; ctx.font = "800 42px " + CARD_FONT;
+    ctx.fillText("半分バナナだから仕方ないか。", W/2, 1690);
+    ctx.font = "800 34px " + CARD_FONT;
+    ctx.fillText("#16バナナtype診断", W/2, 1752);
     let urlText = "";
     try{ urlText = location.host + location.pathname; }catch(e){}
     if(urlText){
       ctx.fillStyle = "#8A6B43"; ctx.font = "700 30px " + CARD_FONT;
-      ctx.fillText(urlText, W/2, 1790);
+      ctx.fillText(urlText, W/2, 1806);
     }
     return cv;
   }
