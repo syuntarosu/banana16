@@ -725,7 +725,8 @@
 
   <footer>
     ※ 本診断は科学的根拠ゼロのエンターテインメントです。<br>
-    ヒトとバナナが多くの遺伝子を共有しているのは本当（諸説あり）。
+    ヒトとバナナが多くの遺伝子を共有しているのは本当（諸説あり）。<br>
+    アクセス解析にGoogle Analyticsを使用しています（匿名の利用状況のみ／個人を特定する情報は収集しません）。
   </footer>
 </div>
 
@@ -1265,6 +1266,7 @@
     $("f-item").textContent = item;
     $("f-mate").textContent = TYPES[mate].n;
     $("fortune").hidden = false;
+    track("view_fortune", { banana_type: code });
   }
 
   /* ============ 図鑑 ============ */
@@ -1319,6 +1321,7 @@
   }
 
   function answer(side){
+    track("answer", { q: answers.length + 1, side: side });
     answers.push(side);
     if(answers.length >= QUESTIONS.length){
       renderResult(computeCode(), "self");
