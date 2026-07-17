@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>タイプ別OG画像ジェネレータ｜16バナナtype診断</title>
+<style>
+  body{ font-family:"Hiragino Maru Gothic ProN",sans-serif; background:#FFF5DB; color:#42280E; padding:32px; line-height:1.8; }
+  button{ font:inherit; font-weight:800; font-size:17px; padding:14px 28px; background:#FFC93C; color:#42280E; border:3px solid #42280E; border-radius:14px; cursor:pointer; }
+  pre{ background:#FFFDF2; border:2px solid #42280E; border-radius:10px; padding:14px; margin-top:18px; min-height:4em; }
+</style>
+</head>
+<body>
+<h1>タイプ別OG画像ジェネレータ</h1>
+<p>ボタンを押すと16タイプぶんのOGカード（1200×630 PNG）が順番にダウンロードされます。<br>
+ブラウザが「複数ファイルのダウンロードを許可しますか」と聞いてきたら<strong>許可</strong>してください。</p>
+<button id="go" type="button">16枚まとめて生成してダウンロード</button>
+<pre id="log">待機中……</pre>
+<iframe src="/" id="fr" style="width:0;height:0;border:0;visibility:hidden"></iframe>
+<script>
+  const logEl = document.getElementById("log");
+  const log = m => { logEl.textContent += "\n" + m; };
+  document.getElementById("go").addEventListener("click", async () => {
+    const B = document.getElementById("fr").contentWindow.BANANA;
+    if(!B){ log("本体の読み込み待ちです。数秒おいてもう一度押してください"); return; }
+    logEl.textContent = "生成開始……";
+    for(const code of Object.keys(B.TYPES)){
+      try{
+        const cv = await B.buildOgCanvas(code);
+        const blob = await new Promise(r => cv.toBlob(r, "image/png"));
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = B.SLUG[code] + ".png";
+        document.body.appendChild(a); a.click(); a.remove();
+        log(code + " " + B.TYPES[code].n + " → " + B.SLUG[code] + ".png");
+      }catch(e){
+        log("失敗: " + code + " (" + e.message + ")");
+      }
+      await new Promise(r => setTimeout(r, 500));
+    }
+    log("\n完了。ダウンロードした16枚を リポジトリの og/ フォルダに移動してpushしてください");
+  });
+</script>
+</body>
+</html>

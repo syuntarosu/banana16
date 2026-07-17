@@ -185,6 +185,56 @@
   .btn-sub:active{ transform:translate(3px,3px); box-shadow:0 0 0 var(--shadow); }
 
   .start-note{ font-size:12px; color:var(--muted); margin-top:14px; }
+  .start-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center; }
+
+  /* ===== きょうの運勢 ===== */
+  .fortune{
+    margin:20px auto 0; max-width:430px;
+    text-align:left;
+    background:var(--chip);
+    border:2.5px dashed var(--ink);
+    border-radius:16px;
+    padding:14px 18px 12px;
+  }
+  .fortune .f-title{ font-size:13px; font-weight:800; margin-bottom:2px; }
+  .fortune .f-stars{ color:var(--sun-deep); font-size:17px; letter-spacing:.12em; margin-bottom:4px; }
+  .fortune .f-text{ font-size:13px; margin-bottom:7px; line-height:1.6; }
+  .fortune .f-lucky{ font-size:11.5px; color:var(--muted); }
+
+  /* ===== 相性診断 ===== */
+  .a-lead{ text-align:center; font-size:13.5px; font-weight:700; color:var(--muted); margin-bottom:18px; }
+  .a-pick{ display:flex; align-items:flex-start; justify-content:center; gap:6px; margin-bottom:20px; }
+  .a-side{ flex:1; max-width:190px; display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .a-side > p{ font-size:12px; font-weight:800; color:var(--muted); }
+  .a-fig{ width:120px; height:120px; }
+  .a-side select{
+    font:inherit; font-size:13px; font-weight:700; color:var(--ink);
+    width:100%;
+    background:var(--card);
+    border:2.5px solid var(--ink); border-radius:12px;
+    padding:8px 10px;
+  }
+  .a-side select:focus-visible{ outline:3px dashed var(--blush); outline-offset:2px; }
+  .a-x{ font-size:22px; font-weight:800; color:var(--muted); margin-top:70px; }
+  .a-go{ display:flex; justify-content:center; margin-bottom:6px; }
+  .a-score{
+    text-align:center;
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-weight:800; font-size:64px; line-height:1.1;
+    margin-top:14px;
+  }
+  .a-score span{ font-size:28px; }
+  .a-tier{ text-align:center; font-size:16px; font-weight:800; color:var(--blush); margin-bottom:14px; }
+  .a-notes{
+    list-style:none;
+    display:flex; flex-direction:column; gap:8px;
+    background:var(--chip);
+    border:2.5px dashed var(--ink); border-radius:14px;
+    padding:14px 16px;
+    margin-bottom:18px;
+    font-size:13px; font-weight:700; line-height:1.6;
+  }
+  .a-notes li::before{ content:"● "; color:var(--sun-deep); }
   .tribes{
     display:flex; gap:8px; justify-content:center; flex-wrap:wrap;
     margin:-6px 0 8px;
@@ -517,8 +567,15 @@
         <button type="button" id="tribe-3" style="--tc:#C25B8A">やせい族</button>
       </div>
       <p class="tribes-hint">族をタップするとバナナ図鑑が見られます</p>
-      <div>
+      <div class="start-actions">
         <button class="btn" id="btn-start" type="button">診断をはじめる</button>
+        <button class="btn-sub" id="btn-aisho-open" type="button">バナナ相性診断</button>
+      </div>
+      <div class="fortune" id="fortune" hidden>
+        <p class="f-title">きょうの<span id="f-type"></span>運勢</p>
+        <p class="f-stars" id="f-stars" aria-hidden="true"></p>
+        <p class="f-text" id="f-text"></p>
+        <p class="f-lucky">ラッキーアイテム：<span id="f-item"></span>／きょうの相性バナナ：<span id="f-mate"></span></p>
       </div>
       <p class="start-note">所要時間：バナナ1本ぶん（約2分）</p>
     </section>
@@ -533,6 +590,40 @@
       <div class="z-actions">
         <button class="btn" id="btn-zukan-start" type="button">診断をはじめる</button>
         <button class="btn-sub" id="btn-zukan-home" type="button">トップにもどる</button>
+      </div>
+    </section>
+
+    <!-- ============ 相性診断 ============ -->
+    <section id="scr-aisho" class="card" hidden aria-label="バナナ相性診断">
+      <span class="eyebrow">Banana Aisho Lab</span>
+      <h2 class="z-title">バナナ相性診断</h2>
+      <p class="a-lead">2本のバナナ、同じ房に入れたらどうなる？</p>
+      <div class="a-pick">
+        <div class="a-side">
+          <p>じぶん</p>
+          <div class="a-fig" id="a-fig-1"></div>
+          <select id="a-sel-1" aria-label="じぶんのタイプ"></select>
+        </div>
+        <div class="a-x" aria-hidden="true">×</div>
+        <div class="a-side">
+          <p>あいて</p>
+          <div class="a-fig" id="a-fig-2"></div>
+          <select id="a-sel-2" aria-label="あいてのタイプ"></select>
+        </div>
+      </div>
+      <div class="a-go"><button class="btn" id="btn-aisho" type="button">相性をみる</button></div>
+      <div id="a-result" hidden>
+        <p class="a-score"><b id="a-pct"></b><span>%</span></p>
+        <p class="a-tier" id="a-tier"></p>
+        <ul class="a-notes" id="a-notes"></ul>
+        <div class="r-actions">
+          <button class="btn-sub" id="btn-aisho-x" type="button">Xでポストする</button>
+          <button class="btn-sub" id="btn-aisho-copy" type="button">結果をコピー</button>
+        </div>
+        <p class="r-share-note" id="a-share-note"></p>
+      </div>
+      <div class="z-actions">
+        <button class="btn-sub" id="btn-aisho-home" type="button">トップにもどる</button>
       </div>
     </section>
 
@@ -735,6 +826,14 @@
       d:"いるだけで場があたたかくなる太陽バナナ。今日を楽しむ天才たち。" },
     "熟渋": { name:"やせい族",     en:"WILD",  color:"#C25B8A",
       d:"直感と自由で生きる、誰にも飼いならせないバナナ。勝負どころに強い。" },
+  };
+
+  /* ============ タイプ別スラッグ（/t/◯◯.html 用） ============ */
+  const SLUG = {
+    "房青甘厚":"aniki",    "房青甘薄":"sewayaki", "房青渋厚":"bancho",  "房青渋薄":"iincho",
+    "房熟甘厚":"paripi",   "房熟甘薄":"idol",     "房熟渋厚":"shobushi","房熟渋薄":"trend",
+    "独青甘厚":"shokunin", "独青甘薄":"shijin",   "独青渋厚":"hakase",  "独青渋薄":"gunshi",
+    "独熟甘厚":"gorone",   "独熟甘薄":"geijutsuka","独熟渋厚":"okami",  "独熟渋薄":"mystery",
   };
 
   /* ============ タイプ別の表情（e:目 m:口 b:まゆ ch:ほっぺ） ============ */
@@ -997,11 +1096,154 @@
 
   const $ = id => document.getElementById(id);
   const scrStart = $("scr-start"), scrQuiz = $("scr-quiz"),
-        scrResult = $("scr-result"), scrZukan = $("scr-zukan");
+        scrResult = $("scr-result"), scrZukan = $("scr-zukan"),
+        scrAisho = $("scr-aisho");
 
   function show(scr){
-    for(const s of [scrStart, scrQuiz, scrResult, scrZukan]) s.hidden = (s !== scr);
+    for(const s of [scrStart, scrQuiz, scrResult, scrZukan, scrAisho]) s.hidden = (s !== scr);
     window.scrollTo({ top:0, behavior:"smooth" });
+  }
+
+  function savedType(){
+    try{
+      const c = localStorage.getItem("banana16_type");
+      return TYPES[c] ? c : null;
+    }catch(e){ return null; }
+  }
+
+  /* ============ 相性診断 ============ */
+  const AISHO_TIERS = [
+    [90, "運命の房"], [80, "最高のコンビ"], [70, "いいかんじの房"],
+    [58, "じわじわ熟成中"], [0, "熟れ違い注意報"],
+  ];
+
+  function aishoCalc(a, b){
+    let score = 50;
+    const notes = [];
+    const add = (pt, text) => { score += pt; notes.push([Math.abs(pt), text]); };
+
+    if(a[0] !== b[0]) add(12, "外へ誘う房パワーと、内で整えるソロ時間。世界が2倍に広がる組み合わせ");
+    else if(a[0] === "房") add(10, "どっちも房好き。予定がなくても集まってしまう、にぎやかな2本");
+    else add(8, "おたがい一人の時間を尊重できる、静かでラクな距離感");
+
+    if(a[1] === b[1]){
+      if(a[1] === "青") add(15, "計画派どうし。旅のしおりが2冊できるけど、そこがいい");
+      else add(15, "ノリと勢いのシンクロ率が高い。思い立ったら即出発できる2本");
+    } else add(5, "計画派と勢い派。出発前にひと悶着あるけど、旅の満足度は高い");
+
+    if(a[2] !== b[2]) add(12, "感情担当と理屈担当。2本あわせてようやく完全体");
+    else if(a[2] === "甘") add(10, "共感の無限おかわり。話が終わらないので終電にだけ注意");
+    else add(6, "議論が白熱しがち。でも決着したあとは妙にスッキリしてる");
+
+    if(a[3] !== b[3]) add(10, "皮厚がタンク役、薄皮がセンサー役。攻守のバランスがいい");
+    else if(a[3] === "厚") add(8, "多少ぶつかっても翌日ケロッとしてる、頑丈な関係");
+    else add(4, "繊細×繊細。深くわかり合えるぶん、共倒れにだけ注意");
+
+    if(TYPES[a].good === b || TYPES[b].good === a) add(15, "公式認定ベストコンビ。同じ房に並ぶべき2本");
+    if(TYPES[a].bad === b || TYPES[b].bad === a) add(-20, "公式認定・熟れ違い注意の間柄。距離感をつかめば化ける");
+    if(a === b) add(3, "同じタイプどうし。鏡を見ているようで落ち着く");
+
+    score = Math.max(38, Math.min(99, score));
+    notes.sort((x, y) => y[0] - x[0]);
+    const tier = AISHO_TIERS.find(t => score >= t[0])[1];
+    return { score: score, tier: tier, notes: notes.slice(0, 3).map(n => n[1]) };
+  }
+
+  function fillAishoSelect(sel, def){
+    sel.innerHTML = TRIBE_KEYS.map(k =>
+      '<optgroup label="' + GROUPS[k].name + '">'
+      + Object.keys(TYPES).filter(c => c[1] + c[2] === k).map(c =>
+        '<option value="' + c + '"' + (c === def ? ' selected' : '') + '>' + TYPES[c].n + '</option>'
+      ).join("")
+      + '</optgroup>'
+    ).join("");
+    sel.value = def;
+  }
+
+  function updateAishoFigs(){
+    const a = $("a-sel-1").value, b = $("a-sel-2").value;
+    if(TYPES[a]) $("a-fig-1").innerHTML = bananaSVG(a, 120);
+    if(TYPES[b]) $("a-fig-2").innerHTML = bananaSVG(b, 120);
+    $("a-result").hidden = true;
+  }
+
+  function openAisho(){
+    const mine = savedType() || "房青甘厚";
+    fillAishoSelect($("a-sel-1"), mine);
+    fillAishoSelect($("a-sel-2"), TYPES[mine].good);
+    updateAishoFigs();
+    show(scrAisho);
+    track("view_aisho");
+  }
+
+  let lastAisho = null;
+
+  function runAisho(){
+    const a = $("a-sel-1").value, b = $("a-sel-2").value;
+    if(!TYPES[a] || !TYPES[b]) return;
+    const r = aishoCalc(a, b);
+    lastAisho = { a: a, b: b, r: r };
+    $("a-pct").textContent = r.score;
+    $("a-tier").textContent = r.tier;
+    $("a-notes").innerHTML = r.notes.map(n => "<li>" + n + "</li>").join("");
+    $("a-result").hidden = false;
+    $("a-share-note").textContent = "";
+    track("aisho_result", { pair: TYPES[a].n + "x" + TYPES[b].n, score: r.score });
+  }
+
+  function aishoShareText(){
+    return "【バナナ相性診断】「" + TYPES[lastAisho.a].n + "」×「" + TYPES[lastAisho.b].n
+      + "」の相性は " + lastAisho.r.score + "%（" + lastAisho.r.tier + "）でした。";
+  }
+
+  /* ============ きょうのバナナ運勢 ============ */
+  const FORTUNE_TEXTS = [
+    "熟れごろの一日。迷ったら甘いほうを選ぶと吉",
+    "皮がむけるように物事がスルスル進む日。大事な連絡は午前中に",
+    "今日は房のちから。ひとに頼ると想像の3倍うまくいく",
+    "青さが武器になる日。準備と下調べが夕方に効いてくる",
+    "シュガースポット出現中。小さなラッキーを見逃さないで",
+    "ちょっと打たれ弱い日。皮を厚めにして、無理せず過ごそう",
+    "直感が冴えるバナナ日和。最初にピンときた選択が正解",
+    "誰かの相談が舞い込みそう。聞くだけで株が上がる",
+    "追熟の一日。結果が出なくても、確実に甘くなってる",
+    "新しいものに手を伸ばすと吉。いつもと違う道で帰ってみて",
+    "房の外に出ると運が動く日。知らない場所、知らない人",
+    "今日はごろ寝も立派な戦略。休むほど明日が伸びる",
+  ];
+  const FORTUNE_ITEMS = [
+    "牛乳", "ホットケーキ", "黄色い靴下", "昼寝", "散歩", "観葉植物",
+    "アイス", "新しい音楽", "ふわふわの毛布", "コンビニの新商品",
+    "ストレッチ", "手書きのメモ", "あたたかい飲みもの", "早起き", "ラジオ", "深呼吸",
+  ];
+
+  function mulberry(a){
+    return function(){
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      let t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  function initFortune(){
+    const code = savedType();
+    if(!code) return;
+    const d = new Date();
+    const day = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+    const codes = Object.keys(TYPES);
+    const rnd = mulberry(day * 131 + codes.indexOf(code) * 7);
+    const stars = 1 + Math.floor(rnd() * 5);
+    const text = FORTUNE_TEXTS[Math.floor(rnd() * FORTUNE_TEXTS.length)];
+    const item = FORTUNE_ITEMS[Math.floor(rnd() * FORTUNE_ITEMS.length)];
+    const mates = codes.filter(c => c !== code);
+    const mate = mates[Math.floor(rnd() * mates.length)];
+    $("f-type").textContent = TYPES[code].n;
+    $("f-stars").textContent = "★★★★★".slice(0, stars) + "☆☆☆☆☆".slice(0, 5 - stars);
+    $("f-text").textContent = text;
+    $("f-item").textContent = item;
+    $("f-mate").textContent = TYPES[mate].n;
+    $("fortune").hidden = false;
   }
 
   /* ============ 図鑑 ============ */
@@ -1088,6 +1330,12 @@
     // 出現率は実際に診断した人（と共有された結果）だけのお楽しみ
     $("r-rarity-row").hidden = mode === "zukan";
 
+    // 自分の診断結果は記憶して「きょうの運勢」に使う
+    if(mode === "self"){
+      try{ localStorage.setItem("banana16_type", code); }catch(e){}
+      initFortune();
+    }
+
     // 族カラー（青熟×甘渋の4グループ）
     const g = GROUPS[code[1] + code[2]];
     scrResult.style.setProperty("--grp", g.color);
@@ -1134,6 +1382,9 @@
       + "出現率" + t.r.toFixed(1) + "%。";
   }
   function shareUrl(code){
+    // 本番（ルート配信）ではタイプ別OGP付きの /t/◯◯.html を使う
+    const atRoot = location.pathname === "/" || /\/index\.html$/.test(location.pathname);
+    if(atRoot && SLUG[code]) return location.origin + "/t/" + SLUG[code] + ".html";
     return location.origin + location.pathname + "?t=" + encodeURIComponent(code);
   }
   function openShare(url){
@@ -1259,6 +1510,68 @@
     return cv;
   }
 
+  /* ============ タイプ別OGカード（1200x630・og_gen.htmlから利用） ============ */
+  async function buildOgCanvas(code){
+    const t = TYPES[code], g = GROUPS[code[1] + code[2]];
+    const W = 1200, H = 630;
+    const cv = document.createElement("canvas");
+    cv.width = W; cv.height = H;
+    const ctx = cv.getContext("2d");
+
+    ctx.fillStyle = "#FFF5DB"; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = "rgba(122,74,29,.14)";
+    for(let y = 15; y < H; y += 30)
+      for(let x = 15; x < W; x += 30){ ctx.beginPath(); ctx.arc(x, y, 2.4, 0, 7); ctx.fill(); }
+
+    ctx.fillStyle = "#42280E"; rrect(ctx, 52, 52, 1104, 534, 44); ctx.fill();
+    ctx.fillStyle = "#FFFDF2"; rrect(ctx, 40, 40, 1104, 534, 44); ctx.fill();
+    ctx.lineWidth = 7; ctx.strokeStyle = "#42280E"; rrect(ctx, 40, 40, 1104, 534, 44); ctx.stroke();
+
+    // 右: キャラ
+    ctx.fillStyle = g.color + "2E";
+    ctx.beginPath(); ctx.arc(890, 300, 212, 0, 7); ctx.fill();
+    const im = await loadSvgImage(svgForImage(code, 400));
+    ctx.drawImage(im, 690, 100, 400, 400);
+
+    // 左: テキスト
+    ctx.textAlign = "left";
+    ctx.fillStyle = "#8A6B43"; ctx.font = "700 27px " + CARD_FONT;
+    ctx.fillText("16バナナtype診断", 96, 126);
+    ctx.font = "700 34px " + CARD_FONT;
+    ctx.fillText("わたしの中のバナナは……", 96, 206);
+
+    let fs = 80;
+    ctx.fillStyle = "#42280E";
+    do{ fs -= 4; ctx.font = "800 " + fs + "px " + CARD_FONT; } while(ctx.measureText(t.n).width > 540 && fs > 40);
+    ctx.fillText(t.n, 96, 298);
+
+    let fs2 = 32;
+    ctx.fillStyle = g.color;
+    do{ fs2 -= 2; ctx.font = "700 " + fs2 + "px " + CARD_FONT; } while(ctx.measureText(t.t).width > 540 && fs2 > 18);
+    ctx.fillText(t.t, 96, 354);
+
+    ctx.font = "800 28px " + CARD_FONT;
+    const gt = g.name + "  " + g.en;
+    const gw = ctx.measureText(gt).width + 56;
+    ctx.fillStyle = g.color; rrect(ctx, 96, 390, gw, 54, 27); ctx.fill();
+    ctx.lineWidth = 5; ctx.strokeStyle = "#42280E"; rrect(ctx, 96, 390, gw, 54, 27); ctx.stroke();
+    ctx.fillStyle = "#FFF8E8"; ctx.fillText(gt, 124, 428);
+
+    const chip = 74, gap = 16, cy0 = 472;
+    ctx.textAlign = "center";
+    for(let i = 0; i < 4; i++){
+      const x = 96 + i * (chip + gap);
+      ctx.fillStyle = g.color + "2E"; rrect(ctx, x, cy0, chip, chip, 18); ctx.fill();
+      ctx.lineWidth = 5; ctx.strokeStyle = "#42280E"; rrect(ctx, x, cy0, chip, chip, 18); ctx.stroke();
+      ctx.fillStyle = "#42280E"; ctx.font = "800 38px " + CARD_FONT;
+      ctx.fillText(code[i], x + chip / 2, cy0 + 51);
+    }
+
+    ctx.fillStyle = "#8A6B43"; ctx.font = "700 25px " + CARD_FONT;
+    ctx.fillText("キミの中のバナナは？ → 16banana.jp", 890, 560);
+    return cv;
+  }
+
   async function resultImageBlob(){
     const cv = await buildShareCanvas(lastCode);
     const blob = await new Promise(res => cv.toBlob(res, "image/png"));
@@ -1342,6 +1655,32 @@
     $("tribe-" + i).addEventListener("click", () => openZukan(k));
   });
 
+  // 相性診断
+  $("btn-aisho-open").addEventListener("click", openAisho);
+  $("btn-aisho-home").addEventListener("click", () => show(scrStart));
+  $("a-sel-1").addEventListener("change", updateAishoFigs);
+  $("a-sel-2").addEventListener("change", updateAishoFigs);
+  $("btn-aisho").addEventListener("click", runAisho);
+  $("btn-aisho-x").addEventListener("click", () => {
+    if(!lastAisho) return;
+    track("share", { method: "x", kind: "aisho" });
+    openShare("https://twitter.com/intent/tweet"
+      + "?text=" + encodeURIComponent(aishoShareText())
+      + "&url=" + encodeURIComponent(location.origin + "/")
+      + "&hashtags=" + encodeURIComponent("16バナナtype診断"));
+  });
+  $("btn-aisho-copy").addEventListener("click", async () => {
+    if(!lastAisho) return;
+    track("share", { method: "copy", kind: "aisho" });
+    const payload = aishoShareText() + " " + location.origin + "/";
+    try{
+      await navigator.clipboard.writeText(payload);
+      $("a-share-note").textContent = "結果をコピーしました";
+    }catch(e){
+      $("a-share-note").textContent = payload;
+    }
+  });
+
   // 図鑑内のタブ・タイプカード（動的生成のためイベント委譲）
   $("z-tabs").addEventListener("click", (e) => {
     const b = e && e.target && e.target.closest ? e.target.closest("[data-tribe]") : null;
@@ -1380,6 +1719,15 @@
 
   /* ============ ヒーローバナナ（タイプ外のデフォルト笑顔） ============ */
   $("hero-banana").innerHTML = bananaSVG("単熟甘厚", 190);
+
+  /* ============ きょうの運勢（再訪ユーザー向け） ============ */
+  initFortune();
+
+  /* ============ ビルドツール・OG画像ジェネレータ用フック ============ */
+  window.BANANA = {
+    TYPES: TYPES, GROUPS: GROUPS, SLUG: SLUG, FACES: FACES,
+    bananaSVG: bananaSVG, buildOgCanvas: buildOgCanvas,
+  };
 
   /* ============ 共有リンクからの着地（?t=タイプコード） ============ */
   (function(){
