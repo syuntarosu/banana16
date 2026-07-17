@@ -446,9 +446,13 @@
   .mate .mname{ font-size:13.5px; font-weight:800; line-height:1.4; }
   .mate .mnote{ font-size:11.5px; color:var(--muted); }
 
-  .r-actions{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
-  .r-share-note{ text-align:center; font-size:12px; color:var(--muted); margin-top:10px; min-height:1.6em; }
-  .btn-x{ background:var(--ink); color:var(--card); }
+  .r-actions{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+  .r-actions .btn, .r-actions .btn-sub{
+    width:100%; padding:13px 8px; font-size:13.5px; line-height:1.45;
+  }
+  #zukan-back{ display:flex; justify-content:center; }
+  #zukan-back .btn-sub{ width:auto; padding:11px 24px; }
+  .r-share-note{ text-align:center; font-size:12px; color:var(--muted); margin-top:2px; min-height:1.6em; }
   .shared-cta{
     text-align:center;
     border:3px solid var(--ink);
@@ -595,7 +599,7 @@
       </div>
 
       <div class="r-actions reveal d5">
-        <button class="btn btn-x" id="btn-x" type="button">Xでポストする</button>
+        <button class="btn-sub" id="btn-x" type="button">Xでポストする</button>
         <button class="btn-sub" id="btn-line" type="button">LINEで送る</button>
         <button class="btn-sub" id="btn-image" type="button">画像でシェア（Instagram用）</button>
         <button class="btn-sub" id="btn-save" type="button">画像を保存</button>
@@ -771,7 +775,8 @@
         + '</g>';
     }
 
-    // 本体（アウトライン→ボディ）
+    // 本体（ステッカー白フチ→アウトライン→ボディ）
+    s += '<path d="'+curve+'" fill="none" stroke="#FFFDF2" stroke-width="56" stroke-linecap="round"/>';
     s += '<path d="'+curve+'" fill="none" stroke="var(--ink)" stroke-width="46" stroke-linecap="round"/>';
     s += '<path d="'+curve+'" fill="none" stroke="'+bodyColor+'" stroke-width="38" stroke-linecap="round"/>';
     // ハイライト
@@ -807,6 +812,8 @@
     s += accessory(acc, fx, fy);
     s += '</g>';
     s += '</svg>';
+    // キャラはテーマ（ダークモード）に連動させず常に固定色で描く
+    for(const k in SVG_COLORS) s = s.split(k).join(SVG_COLORS[k]);
     return s;
   }
 
@@ -878,6 +885,7 @@
 
   function banaMini(x, y, rot){
     return '<g transform="translate('+x+','+y+') rotate('+rot+') scale(.42)">'
+      + '<path d="M0,0 Q8,66 74,64" fill="none" stroke="#FFFDF2" stroke-width="44" stroke-linecap="round"/>'
       + '<path d="M0,0 Q8,66 74,64" fill="none" stroke="var(--ink)" stroke-width="34" stroke-linecap="round"/>'
       + '<path d="M0,0 Q8,66 74,64" fill="none" stroke="var(--sun-deep)" stroke-width="26" stroke-linecap="round"/>'
       + '</g>';
