@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /og_gen.html
+
+Sitemap: https://16banana.jp/sitemap.xml

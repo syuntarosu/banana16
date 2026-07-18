@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>16バナナtype診断｜キミの中のバナナがわかる</title>
+<title>16バナナtype診断｜キミの中のバナナがわかる無料性格診断（全16タイプ）</title>
 <meta name="description" content="ヒトはバナナと遺伝子の約60%を共有——つまり半分バナナだから仕方ないか。12の質問で、キミの中に眠るバナナの正体を診断します。全16タイプ。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="16バナナtype診断">
@@ -20,6 +20,17 @@
 <meta name="twitter:description" content="ヒトのDNAは約60%バナナ——半分バナナだから仕方ないか。12の質問でキミの中のバナナを診断。">
 <meta name="twitter:image" content="https://16banana.jp/og.png">
 <meta name="theme-color" content="#FFC93C">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "16バナナtype診断",
+  "alternateName": "半分バナナだから仕方ないか",
+  "url": "https://16banana.jp/",
+  "description": "ヒトはバナナと遺伝子の約60%を共有——12の質問でキミの中のバナナを診断する無料性格診断。全16タイプ。",
+  "inLanguage": "ja"
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M22,22 Q28,74 76,72' fill='none' stroke='%2342280E' stroke-width='30' stroke-linecap='round'/%3E%3Cpath d='M22,22 Q28,74 76,72' fill='none' stroke='%23FFC93C' stroke-width='22' stroke-linecap='round'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -467,6 +478,13 @@
     text-align:right;
     color:var(--ink);
   }
+  .r-more{
+    text-align:right;
+    font-size:13px; font-weight:800;
+    margin:-14px 4px 22px 0;
+  }
+  .r-more a{ color:var(--grp, var(--blush)); text-decoration:none; }
+  .r-more a:hover{ text-decoration:underline; }
 
   .sec-label{
     font-size:12px; font-weight:800; letter-spacing:.14em;
@@ -714,6 +732,7 @@
       <div class="code-chips reveal d2" id="r-code"></div>
       <p class="rarity reveal d2" id="r-rarity-row">出現率 <b id="r-rarity"></b>%（バナナ調べ）</p>
       <div class="r-desc reveal d3"><span id="r-desc"></span><span class="d-motto">……まあ、半分バナナだから仕方ないか。</span></div>
+      <p class="r-more reveal d3" id="r-more-wrap" hidden><a id="r-more" href="#">解説ページへ →</a></p>
 
       <div class="reveal d4">
         <p class="sec-label">バナナステータス</p>
@@ -1461,6 +1480,14 @@
     // コラボ枠（診断した本人だけの特典）
     renderCollab(code, mode);
 
+    // タイプ別解説ページへのリンク（ルート配信時のみ）
+    const atRoot = location.pathname === "/" || /\/index\.html$/.test(location.pathname);
+    $("r-more-wrap").hidden = !atRoot;
+    if(atRoot){
+      $("r-more").href = "/banana/" + SLUG[code] + ".html";
+      $("r-more").textContent = t.n + "をもっと詳しく →";
+    }
+
     // 族カラー（青熟×甘渋の4グループ）
     const g = GROUPS[code[1] + code[2]];
     scrResult.style.setProperty("--grp", g.color);
@@ -1864,8 +1891,9 @@
 
   /* ============ ビルドツール・OG画像ジェネレータ用フック ============ */
   window.BANANA = {
-    TYPES: TYPES, GROUPS: GROUPS, SLUG: SLUG, FACES: FACES,
+    TYPES: TYPES, GROUPS: GROUPS, SLUG: SLUG, FACES: FACES, TRIBE_KEYS: TRIBE_KEYS,
     bananaSVG: bananaSVG, buildOgCanvas: buildOgCanvas,
+    aishoCalc: aishoCalc, statsFor: statsFor,
   };
 
   /* ============ 共有リンクからの着地（?t=タイプコード） ============ */
