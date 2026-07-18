@@ -731,7 +731,7 @@
       <p class="r-tagline reveal d2" id="r-tagline"></p>
       <div class="code-chips reveal d2" id="r-code"></div>
       <p class="rarity reveal d2" id="r-rarity-row">出現率 <b id="r-rarity"></b>%（バナナ調べ）</p>
-      <div class="r-desc reveal d3"><span id="r-desc"></span><span class="d-motto">……まあ、半分バナナだから仕方ないか。</span></div>
+      <div class="r-desc reveal d3"><span id="r-desc"></span><span class="d-motto" id="d-motto"></span></div>
       <p class="r-more reveal d3" id="r-more-wrap" hidden><a id="r-more" href="#">解説ページへ →</a></p>
 
       <div class="reveal d4">
@@ -951,6 +951,26 @@
     "独熟甘薄": { e:"happy", m:"open",  ch:true },             // 芸術家: ひらめき顔
     "独熟渋厚": { e:"sharp", m:"flat" },                       // 一匹狼: 傷+鋭い目
     "独熟渋薄": { e:"calm",  m:"smirk" },                      // ミステリアス: 読めない微笑
+  };
+
+  /* ============ タイプ別の決めゼリフ（「半分バナナだから仕方ないか」のキャラ版） ============ */
+  const MOTTO = {
+    "房青甘厚": "半分バナナだから仕方ねえ、あとは任せとけ。",
+    "房青甘薄": "半分バナナだもん、お互い様だよ。",
+    "房青渋厚": "半分バナナなんだ、文句あるか。",
+    "房青渋薄": "半分バナナにつき、仕方ないものとします。",
+    "房熟甘厚": "半分バナナだし、しゃーなし！",
+    "房熟甘薄": "半分バナナなので、ゆるしてね。",
+    "房熟渋厚": "半分バナナ。それも織り込み済みだ。",
+    "房熟渋薄": "半分バナナとか、逆にアリでしょ。",
+    "独青甘厚": "……半分バナナ。仕方あるまい。",
+    "独青甘薄": "わたしの半分は、バナナでできている。",
+    "独青渋厚": "遺伝子の約60%がバナナ。仕方ないですね。",
+    "独青渋薄": "半分バナナ——想定の範囲内です。",
+    "独熟甘厚": "はんぶんバナナだし、まあいっか……。",
+    "独熟甘薄": "半分バナナ？ 最高じゃん、それ。",
+    "独熟渋厚": "半分バナナだ。それがどうした。",
+    "独熟渋薄": "半分バナナ……いや、どっちが半分だったかな。",
   };
 
   /* ============ バナナSVG生成 ============ */
@@ -1501,6 +1521,7 @@
     $("r-code").innerHTML = code.split("").map(c => "<span>"+c+"</span>").join("");
     $("r-rarity").textContent = t.r.toFixed(1);
     $("r-desc").textContent = t.d;
+    $("d-motto").textContent = "……" + (MOTTO[code] || "半分バナナだから仕方ないか。");
 
     const stats = statsFor(code);
     $("r-stats").innerHTML = stats.map(s =>
@@ -1531,7 +1552,7 @@
   function shareText(code){
     const t = TYPES[code];
     return "【16バナナtype診断】わたしの中のバナナは「" + t.n + "」（" + code + "型）でした。"
-      + "出現率" + t.r.toFixed(1) + "%。半分バナナだから仕方ないか。";
+      + "出現率" + t.r.toFixed(1) + "%。" + (MOTTO[code] || "半分バナナだから仕方ないか。");
   }
   function shareUrl(code){
     // 本番（ルート配信）ではタイプ別OGP付きの /t/◯◯.html を使う
@@ -1650,9 +1671,12 @@
     ctx.fillStyle = "#8A6B43"; ctx.font = "700 32px " + CARD_FONT;
     ctx.fillText("出現率 " + t.r.toFixed(1) + "%（バナナ調べ）", W/2, 1562);
 
-    // フッター（カードの外）
-    ctx.fillStyle = "#42280E"; ctx.font = "800 42px " + CARD_FONT;
-    ctx.fillText("半分バナナだから仕方ないか。", W/2, 1690);
+    // フッター（カードの外）— キャラごとの決めゼリフ
+    const motto = MOTTO[code] || "半分バナナだから仕方ないか。";
+    let mfs = 44;
+    ctx.fillStyle = "#42280E";
+    do{ mfs -= 2; ctx.font = "800 " + mfs + "px " + CARD_FONT; } while(ctx.measureText(motto).width > 980 && mfs > 24);
+    ctx.fillText(motto, W/2, 1690);
     ctx.font = "800 34px " + CARD_FONT;
     ctx.fillText("#16バナナtype診断", W/2, 1752);
     let urlText = "";
@@ -1891,7 +1915,7 @@
 
   /* ============ ビルドツール・OG画像ジェネレータ用フック ============ */
   window.BANANA = {
-    TYPES: TYPES, GROUPS: GROUPS, SLUG: SLUG, FACES: FACES, TRIBE_KEYS: TRIBE_KEYS,
+    TYPES: TYPES, GROUPS: GROUPS, SLUG: SLUG, FACES: FACES, TRIBE_KEYS: TRIBE_KEYS, MOTTO: MOTTO,
     bananaSVG: bananaSVG, buildOgCanvas: buildOgCanvas,
     aishoCalc: aishoCalc, statsFor: statsFor,
   };
