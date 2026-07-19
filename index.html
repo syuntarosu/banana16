@@ -20,6 +20,23 @@
 <meta name="twitter:description" content="ヒトのDNAは約60%バナナ——半分バナナだから仕方ないか。12の質問でキミの中のバナナを診断。">
 <meta name="twitter:image" content="https://16banana.jp/og.png">
 <meta name="theme-color" content="#FFC93C">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "16バナナtype診断は無料ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "完全無料です。会員登録もありません。" } },
+    { "@type": "Question", "name": "何分かかりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "12問・約2分。バナナ1本食べるくらいの時間です。" } },
+    { "@type": "Question", "name": "科学的な根拠はありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "ありません。エンターテインメントです。ただし、ヒトとバナナが多くの遺伝子を共有しているのは本当です（諸説あり）。" } },
+    { "@type": "Question", "name": "結果は保存されますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "結果はお使いのブラウザにだけ記憶され、サーバーには送信されません。再訪すると「きょうの運勢」が見られます。" } }
+  ]
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -274,6 +291,26 @@
   .tribes button:hover{ transform:translateY(-2px); box-shadow:2px 3px 0 var(--shadow); }
   .tribes button:focus-visible{ outline:3px dashed var(--blush); outline-offset:2px; }
   .tribes-hint{ font-size:11px; color:var(--muted); margin:0 0 18px; }
+  .about{
+    margin-top:28px;
+    padding-top:22px;
+    border-top:2.5px dotted var(--muted);
+    text-align:left;
+  }
+  .about-title{ font-size:15px; margin-bottom:8px; }
+  .about-text{ font-size:12.5px; color:var(--muted); margin-bottom:14px; }
+  .faq{ display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+  .faq details{
+    background:var(--chip);
+    border:2px solid var(--ink);
+    border-radius:12px;
+    padding:9px 14px;
+    font-size:12.5px;
+  }
+  .faq summary{ font-weight:800; cursor:pointer; }
+  .faq p{ margin-top:6px; color:var(--muted); }
+  .type-links{ font-size:11px; line-height:2.1; color:var(--muted); }
+  .type-links a{ color:var(--muted); }
 
   /* ===== 図鑑 ===== */
   .z-title{ font-size:26px; text-align:center; margin:8px 0 14px; }
@@ -653,6 +690,18 @@
         <p class="f-lucky">ラッキーアイテム：<span id="f-item"></span>／きょうの相性バナナ：<span id="f-mate"></span></p>
       </div>
       <p class="start-note">所要時間：バナナ1本ぶん（約2分）</p>
+
+      <div class="about">
+        <h2 class="about-title">16バナナtype診断とは</h2>
+        <p class="about-text">ヒトとバナナが遺伝子の約60%を共有している——という科学の小ネタを入口に、12の質問でキミの中の「バナナ」を16タイプに分類する無料の性格診断です。会員登録なし・約2分。結果はシェアでき、タイプごとの相性診断や日替わりの運勢も楽しめます。</p>
+        <div class="faq">
+          <details><summary>無料ですか？</summary><p>完全無料です。会員登録もありません。</p></details>
+          <details><summary>何分かかりますか？</summary><p>12問・約2分。バナナ1本食べるくらいの時間です。</p></details>
+          <details><summary>科学的な根拠はありますか？</summary><p>ありません。エンターテインメントです。ただし、ヒトとバナナが多くの遺伝子を共有しているのは本当です（諸説あり）。</p></details>
+          <details><summary>結果は保存されますか？</summary><p>結果はお使いのブラウザにだけ記憶され、サーバーには送信されません。再訪すると「きょうの運勢」が見られます。</p></details>
+        </div>
+        <p class="type-links" id="type-links" hidden></p>
+      </div>
     </section>
 
     <!-- ============ 図鑑 ============ -->
@@ -794,6 +843,11 @@
         <button class="btn-sub" id="btn-retry" type="button">もういちど剥く</button>
       </div>
       <p class="r-share-note" id="share-note"></p>
+
+      <div class="r-actions reveal d5" style="margin-top:10px">
+        <button class="btn-sub" id="btn-to-zukan" type="button">バナナ図鑑を見る</button>
+        <button class="btn-sub" id="btn-to-aisho" type="button">相性を診断する</button>
+      </div>
     </section>
   </main>
 
@@ -1236,8 +1290,8 @@
     enabled: (function(){ try{ return location.host !== "16banana.jp"; }catch(e){ return true; } })(),
     brand: "ON° × 16バナナtype診断",
     copySuffix: "のキミに、ON°からひとつ。",
-    itemName: "ON° シグネチャーアイテム BANANA EDITION（仮称）",
-    price: "¥8,800 → クーポンで ¥7,920（仮）",
+    itemName: "“半分の螺旋” HALF HELIX チャーム（仮）",
+    price: "¥9,900 → クーポンで ¥8,415（仮）",
     limit: "エディションNo.タグ付き・先着20点／7月31日まで",
     couponRate: "10%OFF",
     couponPrefix: "BANANA",
@@ -1403,7 +1457,13 @@
     $("f-item").textContent = item;
     $("f-mate").textContent = TYPES[mate].n;
     $("fortune").hidden = false;
-    track("view_fortune", { banana_type: code });
+    // 計測は1日1回だけ（表示のたびに発火すると実態より多く見えるため）
+    try{
+      if(localStorage.getItem("banana16_fortune_day") !== String(day)){
+        localStorage.setItem("banana16_fortune_day", String(day));
+        track("view_fortune", { banana_type: code });
+      }
+    }catch(e){}
   }
 
   /* ============ 図鑑 ============ */
@@ -1897,6 +1957,10 @@
   $("btn-line").addEventListener("click", shareLine);
   $("btn-image").addEventListener("click", shareImage);
   $("btn-save").addEventListener("click", saveImage);
+  $("btn-to-zukan").addEventListener("click", () => {
+    openZukan(lastCode ? lastCode[1] + lastCode[2] : "青甘");
+  });
+  $("btn-to-aisho").addEventListener("click", openAisho);
   $("btn-copy").addEventListener("click", copyLink);
   $("btn-try").addEventListener("click", () => {
     if(window.history && history.replaceState){
@@ -1912,6 +1976,17 @@
 
   /* ============ きょうの運勢（再訪ユーザー向け） ============ */
   initFortune();
+
+  /* ============ タイプ解説ページへのリンク一覧（ルート配信時のみ） ============ */
+  (function(){
+    const atRoot = location.pathname === "/" || /\/index\.html$/.test(location.pathname);
+    if(!atRoot) return;
+    const el = $("type-links");
+    el.innerHTML = "タイプ別解説: "
+      + Object.keys(TYPES).map(c => '<a href="/banana/' + SLUG[c] + '.html">' + TYPES[c].n + '</a>').join("／")
+      + '／<a href="/banana/"><b>全タイプ一覧</b></a>';
+    el.hidden = false;
+  })();
 
   /* ============ ビルドツール・OG画像ジェネレータ用フック ============ */
   window.BANANA = {
