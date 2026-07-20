@@ -582,6 +582,70 @@
   .collab-cta{ display:block; text-align:center; text-decoration:none; font-size:15px; }
   .collab-note{ font-size:11px; color:var(--muted); line-height:1.7; }
 
+  /* ===== 言語切替 ===== */
+  .lang-switch{
+    position:fixed; top:14px; right:14px; z-index:40;
+    font-size:12px; font-weight:800; letter-spacing:.06em;
+    color:var(--ink); background:var(--card);
+    border:2.5px solid var(--ink); border-radius:999px;
+    padding:6px 14px; text-decoration:none;
+    box-shadow:3px 3px 0 var(--shadow);
+    transition:transform .12s ease;
+  }
+  .lang-switch:hover{ transform:translateY(-2px); }
+
+  /* ===== シェアCTA・モーダル ===== */
+  .share-cta{ display:flex; justify-content:center; margin-bottom:22px; }
+  .share-big{
+    font-size:17px; padding:16px 36px;
+    animation:sharepulse 2.6s ease-in-out 1.2s 3;
+  }
+  @keyframes sharepulse{
+    0%, 100%{ transform:none; }
+    6%{ transform:scale(1.06) rotate(-1.2deg); }
+    12%{ transform:scale(1); }
+  }
+  .modal-overlay{
+    position:fixed; inset:0; z-index:60;
+    background:rgba(24, 12, 2, .58);
+    display:flex; align-items:center; justify-content:center;
+    padding:18px;
+  }
+  .modal-overlay[hidden]{ display:none; }
+  .modal-sheet{
+    position:relative;
+    width:min(430px, 100%);
+    max-height:88vh; overflow-y:auto;
+    background:var(--card);
+    border:3px solid var(--ink); border-radius:22px;
+    box-shadow:8px 8px 0 var(--shadow);
+    padding:24px 18px 16px;
+    animation:popin .25s ease both;
+  }
+  .modal-close{
+    position:absolute; top:10px; right:12px;
+    font:inherit; font-size:18px; font-weight:800; line-height:1;
+    width:34px; height:34px;
+    background:var(--chip); color:var(--ink);
+    border:2.5px solid var(--ink); border-radius:50%;
+    cursor:pointer;
+  }
+  .share-hook{
+    font-size:14.5px; font-weight:800; line-height:1.7;
+    text-align:center; margin:2px 26px 14px;
+  }
+  .share-preview{
+    display:flex; justify-content:center; align-items:center;
+    min-height:110px; margin-bottom:14px;
+    color:var(--muted); font-size:12px; font-weight:700;
+  }
+  .share-preview img{
+    width:52%; max-width:190px;
+    border:3px solid var(--ink); border-radius:14px;
+    box-shadow:5px 5px 0 var(--shadow);
+    transform:rotate(-2deg);
+  }
+
   .r-actions{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
   .r-actions .btn, .r-actions .btn-sub{
     width:100%; padding:13px 8px; font-size:13.5px; line-height:1.45;
@@ -629,6 +693,7 @@
 </style>
 
 <div class="wrap">
+  <a class="lang-switch" id="lang-switch" href="#" hidden>EN</a>
   <main>
     <!-- ============ START ============ -->
     <section id="scr-start" class="card pop-in" aria-label="診断スタート">
@@ -759,6 +824,10 @@
       <div class="r-desc reveal d3"><span id="r-desc"></span><span class="d-motto" id="d-motto"></span></div>
       <p class="r-more reveal d3" id="r-more-wrap" hidden><a id="r-more" href="#">解説ページへ →</a></p>
 
+      <div class="share-cta reveal d3">
+        <button class="btn share-big" id="btn-share-open" type="button">この結果をシェアする</button>
+      </div>
+
       <div class="reveal d4">
         <p class="sec-label">バナナステータス</p>
         <div class="stats" id="r-stats"></div>
@@ -810,22 +879,34 @@
         <button class="btn-sub" id="btn-zukan-back" type="button">図鑑にもどる</button>
       </div>
 
-      <div class="r-actions reveal d5">
-        <button class="btn-sub" id="btn-x" type="button">Xでポストする</button>
-        <button class="btn-sub" id="btn-line" type="button">LINEで送る</button>
-        <button class="btn-sub" id="btn-image" type="button">画像でシェア（Instagram用）</button>
-        <button class="btn-sub" id="btn-save" type="button">画像を保存</button>
-        <button class="btn-sub" id="btn-copy" type="button">リンクをコピー</button>
-        <button class="btn-sub" id="btn-retry" type="button">もういちど剥く</button>
+      <div class="share-cta reveal d5">
+        <button class="btn share-big" id="btn-share-open2" type="button">この結果をシェアする</button>
       </div>
-      <p class="r-share-note" id="share-note"></p>
-
       <div class="r-actions reveal d5" style="margin-top:10px">
+        <button class="btn-sub" id="btn-retry" type="button">もういちど剥く</button>
         <button class="btn-sub" id="btn-to-zukan" type="button">バナナ図鑑を見る</button>
         <button class="btn-sub" id="btn-to-aisho" type="button">相性を診断する</button>
       </div>
     </section>
   </main>
+
+  <!-- ============ シェアモーダル ============ -->
+  <div class="modal-overlay" id="share-modal" hidden>
+    <div class="modal-sheet" role="dialog" aria-modal="true" aria-label="シェア">
+      <button class="modal-close" id="share-close" type="button" aria-label="閉じる">×</button>
+      <p class="share-hook" id="share-hook"></p>
+      <div class="share-preview" id="share-preview"></div>
+      <div class="r-actions">
+        <button class="btn-sub" id="btn-x" type="button">Xでポストする</button>
+        <button class="btn-sub" id="btn-line" type="button">LINEで送る</button>
+        <button class="btn-sub" id="btn-image" type="button">画像でシェア（Instagram用）</button>
+        <button class="btn-sub" id="btn-save" type="button">画像を保存</button>
+        <button class="btn-sub" id="btn-copy" type="button">リンクをコピー</button>
+        <button class="btn-sub" id="share-close2" type="button">閉じる</button>
+      </div>
+      <p class="r-share-note" id="share-note"></p>
+    </div>
+  </div>
 
   <footer>
     ※ 本診断は科学的根拠ゼロのエンターテインメントです。<br>
@@ -1939,6 +2020,42 @@
   $("collab-cta").addEventListener("click", () => {
     track("collab_click", { banana_type: lastCode || "" });
   });
+  /* ============ シェアモーダル ============ */
+  const previewCache = {};
+
+  async function openShareModal(){
+    if(!lastCode) return;
+    track("share_open", { banana_type: lastCode });
+    const t = TYPES[lastCode];
+    $("share-hook").textContent = t.r <= 4.5
+      ? L("全国のバナナの" + t.r.toFixed(1) + "%しかいないレア枠。これは自慢案件です。",
+          "Only " + t.r.toFixed(1) + "% of bananas are this type. Go brag a little.")
+      : L("キミの中の" + t.n + "、みんなにも見せびらかそう。",
+          "Show everyone your inner " + t.n + ".");
+    $("share-note").textContent = "";
+    $("share-modal").hidden = false;
+    const pv = $("share-preview");
+    try{
+      if(!previewCache[lastCode]){
+        pv.textContent = L("プレビューを生成中……", "Generating preview...");
+        const cv = await buildShareCanvas(lastCode);
+        previewCache[lastCode] = cv.toDataURL("image/jpeg", 0.8);
+      }
+      pv.innerHTML = '<img src="' + previewCache[lastCode] + '" alt="">';
+    }catch(e){
+      pv.textContent = "";
+    }
+  }
+  function closeShareModal(){ $("share-modal").hidden = true; }
+
+  $("btn-share-open").addEventListener("click", openShareModal);
+  $("btn-share-open2").addEventListener("click", openShareModal);
+  $("share-close").addEventListener("click", closeShareModal);
+  $("share-close2").addEventListener("click", closeShareModal);
+  $("share-modal").addEventListener("click", (e) => {
+    if(e && e.target === $("share-modal")) closeShareModal();
+  });
+
   $("btn-x").addEventListener("click", shareX);
   $("btn-line").addEventListener("click", shareLine);
   $("btn-image").addEventListener("click", shareImage);
@@ -2142,6 +2259,9 @@
     set(".mate.bad .tag", el => { el.textContent = "Handle with care"; });
     set(".mate.good .mnote", el => { el.textContent = "You belong in the same bunch"; });
     set(".mate.bad .mnote", el => { el.textContent = "Mind the distance — it works"; });
+    set("#btn-share-open", el => { el.textContent = "Share my result"; });
+    set("#btn-share-open2", el => { el.textContent = "Share my result"; });
+    set("#share-close2", el => { el.textContent = "Close"; });
     set("#btn-x", el => { el.textContent = "Post on X"; });
     set("#btn-line", el => { el.textContent = "Share on LINE"; });
     set("#btn-image", el => { el.textContent = "Share as image (Instagram)"; });
@@ -2160,6 +2280,20 @@
 
   /* ============ 英語モード適用（描画より先に実行） ============ */
   if(EN) applyEnglish();
+
+  /* ============ 言語切替ボタン ============ */
+  (function(){
+    const el = $("lang-switch");
+    try{
+      if(location.host === "16banana.jp"){
+        el.href = EN ? "/" : "/en/";
+      }else{
+        el.href = EN ? location.pathname : location.pathname + "?lang=en";
+      }
+      el.textContent = EN ? "日本語" : "EN";
+      el.hidden = false;
+    }catch(e){}
+  })();
 
   /* ============ ヒーローバナナ（タイプ外のデフォルト笑顔） ============ */
   $("hero-banana").innerHTML = bananaSVG("単熟甘厚", 190);
