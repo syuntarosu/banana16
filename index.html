@@ -624,8 +624,36 @@
   /* ===== シェアCTA・モーダル ===== */
   .share-cta{ display:flex; justify-content:center; margin-bottom:22px; }
   .share-big{
-    font-size:17px; padding:16px 36px;
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:17px; padding:16px 32px;
     animation:sharepulse 2.6s ease-in-out 1.2s 3;
+  }
+  .share-big svg{ width:20px; height:20px; flex:0 0 auto; }
+  .sbtn{
+    display:flex; align-items:center; gap:10px;
+    text-align:left; padding:10px 12px;
+  }
+  .sic{
+    flex:0 0 auto;
+    width:30px; height:30px;
+    display:grid; place-items:center;
+    border:2px solid var(--ink); border-radius:9px;
+    color:#FFFFFF;
+  }
+  .sic svg{ width:16px; height:16px; }
+  .sic-x{ background:#0F1419; }
+  .sic-line{ background:#06C755; }
+  .sic-ig{ background:#E1306C; }
+  .sic-save{ background:var(--sun); color:#42280E; }
+  .sic-copy{ background:var(--chip); color:var(--ink); }
+  .sic-close{ background:var(--card); color:var(--ink); }
+  .nbtn{
+    display:flex; align-items:center; justify-content:center; gap:7px;
+  }
+  .nbtn svg{ width:16px; height:16px; flex:0 0 auto; opacity:.85; }
+  @media (max-width:420px){
+    .modal-sheet .r-actions{ grid-template-columns:1fr; }
+    .sbtn .sbl{ font-size:14px; }
   }
   @keyframes sharepulse{
     0%, 100%{ transform:none; }
@@ -809,8 +837,8 @@
         <p class="a-tier" id="a-tier"></p>
         <ul class="a-notes" id="a-notes"></ul>
         <div class="r-actions">
-          <button class="btn-sub" id="btn-aisho-x" type="button">Xでポストする</button>
-          <button class="btn-sub" id="btn-aisho-copy" type="button">結果をコピー</button>
+          <button class="btn-sub sbtn" id="btn-aisho-x" type="button"><span class="sic sic-x"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.2h3.7l-8 9.2L24 22.8h-7.4l-5.8-7.6-6.6 7.6H.5l8.6-9.8L0 1.2h7.6l5.2 6.9 6.1-6.9Zm-1.3 19.5h2L6.5 3.2h-2.2l13.3 17.5Z"/></svg></span><span class="sbl">Xでポストする</span></button>
+          <button class="btn-sub sbtn" id="btn-aisho-copy" type="button"><span class="sic sic-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l2.5-2.5a5 5 0 0 0-7-7L11 6"/><path d="M14 10a5 5 0 0 0-7 0L4.5 12.5a5 5 0 0 0 7 7L13 18"/></svg></span><span class="sbl">結果をコピー</span></button>
         </div>
         <p class="r-share-note" id="a-share-note"></p>
       </div>
@@ -852,7 +880,7 @@
       <p class="r-more reveal d3" id="r-more-wrap" hidden><a id="r-more" href="#">解説ページへ →</a></p>
 
       <div class="share-cta reveal d3">
-        <button class="btn share-big" id="btn-share-open" type="button">この結果をシェアする</button>
+        <button class="btn share-big" id="btn-share-open" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span class="sbl">この結果をシェアする</span></button>
       </div>
 
       <div class="reveal d4">
@@ -907,12 +935,12 @@
       </div>
 
       <div class="share-cta reveal d5">
-        <button class="btn share-big" id="btn-share-open2" type="button">この結果をシェアする</button>
+        <button class="btn share-big" id="btn-share-open2" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span class="sbl">この結果をシェアする</span></button>
       </div>
       <div class="r-actions reveal d5" style="margin-top:10px">
-        <button class="btn-sub" id="btn-retry" type="button">もういちど剥く</button>
-        <button class="btn-sub" id="btn-to-zukan" type="button">バナナ図鑑を見る</button>
-        <button class="btn-sub" id="btn-to-aisho" type="button">相性を診断する</button>
+        <button class="btn-sub nbtn" id="btn-retry" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><span class="sbl">もういちど剥く</span></button>
+        <button class="btn-sub nbtn" id="btn-to-zukan" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6.5A2.5 2.5 0 0 0 4 19.5Zm0 0A2.5 2.5 0 0 0 6.5 22H20"/></svg><span class="sbl">バナナ図鑑</span></button>
+        <button class="btn-sub nbtn" id="btn-to-aisho" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21C7 16.5 3 13.3 3 9.2 3 6.4 5.2 4 8 4c1.6 0 3.1.8 4 2 .9-1.2 2.4-2 4-2 2.8 0 5 2.4 5 5.2 0 4.1-4 7.3-9 11.8Z"/></svg><span class="sbl">相性を診断</span></button>
       </div>
     </section>
   </main>
@@ -924,12 +952,12 @@
       <p class="share-hook" id="share-hook"></p>
       <div class="share-preview" id="share-preview"></div>
       <div class="r-actions">
-        <button class="btn-sub" id="btn-x" type="button">Xでポストする</button>
-        <button class="btn-sub" id="btn-line" type="button">LINEで送る</button>
-        <button class="btn-sub" id="btn-image" type="button">画像でシェア（Instagram用）</button>
-        <button class="btn-sub" id="btn-save" type="button">画像を保存</button>
-        <button class="btn-sub" id="btn-copy" type="button">リンクをコピー</button>
-        <button class="btn-sub" id="share-close2" type="button">閉じる</button>
+        <button class="btn-sub sbtn" id="btn-x" type="button"><span class="sic sic-x"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.2h3.7l-8 9.2L24 22.8h-7.4l-5.8-7.6-6.6 7.6H.5l8.6-9.8L0 1.2h7.6l5.2 6.9 6.1-6.9Zm-1.3 19.5h2L6.5 3.2h-2.2l13.3 17.5Z"/></svg></span><span class="sbl">Xでポストする</span></button>
+        <button class="btn-sub sbtn" id="btn-line" type="button"><span class="sic sic-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8 0 0 1-8.5 8c-1 0-2-.13-2.9-.4L5 20.5l1-3A8 8 0 1 1 21 11.5Z"/></svg></span><span class="sbl">LINEで送る</span></button>
+        <button class="btn-sub sbtn" id="btn-image" type="button"><span class="sic sic-ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor" stroke="none"/></svg></span><span class="sbl">画像でシェア</span></button>
+        <button class="btn-sub sbtn" id="btn-save" type="button"><span class="sic sic-save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></span><span class="sbl">画像を保存</span></button>
+        <button class="btn-sub sbtn" id="btn-copy" type="button"><span class="sic sic-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l2.5-2.5a5 5 0 0 0-7-7L11 6"/><path d="M14 10a5 5 0 0 0-7 0L4.5 12.5a5 5 0 0 0 7 7L13 18"/></svg></span><span class="sbl">リンクをコピー</span></button>
+        <button class="btn-sub sbtn" id="share-close2" type="button"><span class="sic sic-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="sbl">閉じる</span></button>
       </div>
       <p class="r-share-note" id="share-note"></p>
     </div>
@@ -2271,8 +2299,8 @@
     set("#scr-aisho .a-side:first-child > p", el => { el.textContent = "You"; });
     set("#scr-aisho .a-side:last-child > p", el => { el.textContent = "Them"; });
     set("#btn-aisho", el => { el.textContent = "Check the match"; });
-    set("#btn-aisho-x", el => { el.textContent = "Post on X"; });
-    set("#btn-aisho-copy", el => { el.textContent = "Copy result"; });
+    set("#btn-aisho-x .sbl", el => { el.textContent = "Post on X"; });
+    set("#btn-aisho-copy .sbl", el => { el.textContent = "Copy result"; });
     set("#btn-aisho-home", el => { el.textContent = "Back to top"; });
     set(".ripeness", el => { el.innerHTML = 'Ripeness <span id="q-pct">0</span>%'; });
     set("#btn-back", el => { el.textContent = "← Back"; });
@@ -2286,17 +2314,17 @@
     set(".mate.bad .tag", el => { el.textContent = "Handle with care"; });
     set(".mate.good .mnote", el => { el.textContent = "You belong in the same bunch"; });
     set(".mate.bad .mnote", el => { el.textContent = "Mind the distance — it works"; });
-    set("#btn-share-open", el => { el.textContent = "Share my result"; });
-    set("#btn-share-open2", el => { el.textContent = "Share my result"; });
-    set("#share-close2", el => { el.textContent = "Close"; });
-    set("#btn-x", el => { el.textContent = "Post on X"; });
-    set("#btn-line", el => { el.textContent = "Share on LINE"; });
-    set("#btn-image", el => { el.textContent = "Share as image (Instagram)"; });
-    set("#btn-save", el => { el.textContent = "Save image"; });
-    set("#btn-copy", el => { el.textContent = "Copy link"; });
-    set("#btn-retry", el => { el.textContent = "Peel again"; });
-    set("#btn-to-zukan", el => { el.textContent = "Browse the Banana Dex"; });
-    set("#btn-to-aisho", el => { el.textContent = "Try the match test"; });
+    set("#btn-share-open .sbl", el => { el.textContent = "Share my result"; });
+    set("#btn-share-open2 .sbl", el => { el.textContent = "Share my result"; });
+    set("#share-close2 .sbl", el => { el.textContent = "Close"; });
+    set("#btn-x .sbl", el => { el.textContent = "Post on X"; });
+    set("#btn-line .sbl", el => { el.textContent = "Share on LINE"; });
+    set("#btn-image .sbl", el => { el.textContent = "Share as image"; });
+    set("#btn-save .sbl", el => { el.textContent = "Save image"; });
+    set("#btn-copy .sbl", el => { el.textContent = "Copy link"; });
+    set("#btn-retry .sbl", el => { el.textContent = "Peel again"; });
+    set("#btn-to-zukan .sbl", el => { el.textContent = "Banana Dex"; });
+    set("#btn-to-aisho .sbl", el => { el.textContent = "Match test"; });
     set("#btn-zukan-back", el => { el.textContent = "Back to the Dex"; });
     set("footer", el => { el.innerHTML =
       "This test is pure entertainment with zero scientific basis.<br>"
