@@ -19,6 +19,9 @@
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FFC93C">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"시인 바나나 (SGHD형) — 성격·공감 포인트·궁합 랭킹","description":"시인 바나나의 성격 해설. 과육 안쪽에 우주가 있다","mainEntityOfPage":"https://16banana.jp/ko/banana/shijin.html","image":"https://16banana.jp/og/ko/shijin.png","inLanguage":"ko","isPartOf":{"@type":"WebSite","name":"16바나나 유형 테스트","url":"https://16banana.jp/ko/"}}
 </script>
@@ -41,7 +44,11 @@ header a{color:var(--ink);font-weight:800;font-size:14px;text-decoration:none;le
 h1{text-align:center;font-size:clamp(26px,7vw,34px);line-height:1.35;margin-bottom:4px;text-wrap:balance}
 .tagline{text-align:center;font-weight:800;color:var(--grp);font-size:14.5px;margin-bottom:10px}
 .fig{width:200px;height:200px;margin:0 auto 8px;background:var(--grp-soft);border-radius:36px}
-.lead{font-size:14.5px;margin-bottom:26px}
+.lead{font-size:14.5px;margin-bottom:26px;text-wrap:pretty}
+p,li{text-wrap:pretty}
+:lang(ja){word-break:auto-phrase}
+:lang(ko){word-break:keep-all}
+:lang(ko) p,:lang(ko) li{overflow-wrap:anywhere}
 section{background:var(--card);border:3px solid var(--ink);border-radius:20px;
 box-shadow:6px 6px 0 var(--shadow);padding:22px 20px;margin-bottom:22px}
 h2{font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
@@ -52,6 +59,7 @@ ul,ol{padding-left:1.4em;display:flex;flex-direction:column;gap:6px}
 table{width:100%;border-collapse:collapse;font-size:13.5px}
 th,td{text-align:left;padding:7px 8px;border-bottom:2px dotted var(--chip)}
 th{color:var(--muted);font-weight:800;white-space:nowrap}
+th small{display:block;font-size:10.5px;font-weight:700;color:var(--muted);opacity:.85;letter-spacing:.02em}
 .rank-table td:nth-child(3){font-family:"Avenir Next","Futura",sans-serif;font-weight:800;white-space:nowrap}
 .rank-table a{color:var(--ink);font-weight:800;text-decoration:none}
 .rank-table a:hover{text-decoration:underline}
@@ -91,9 +99,9 @@ footer b{display:block;font-size:13px;color:var(--ink)}
 <tr><th>희귀도</th><td>5.4% (바나나 조사)</td></tr>
 </table>
 <h3>바나나 스탯</h3>
-<table><tr><th>단맛 (공감력)</th><td><span class="bar" style="width:81%"></span></td><td>81</td></tr>
-<tr><th>숙성 속도 (행동력)</th><td><span class="bar" style="width:47%"></span></td><td>47</td></tr>
-<tr><th>껍질 두께 (맷집)</th><td><span class="bar" style="width:29%"></span></td><td>29</td></tr></table>
+<table><tr><th>단맛<small>공감력</small></th><td><span class="bar" style="width:81%"></span></td><td>81</td></tr>
+<tr><th>숙성 속도<small>행동력</small></th><td><span class="bar" style="width:47%"></span></td><td>47</td></tr>
+<tr><th>껍질 두께<small>맷집</small></th><td><span class="bar" style="width:29%"></span></td><td>29</td></tr></table>
 </section>
 
 <section>

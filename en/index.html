@@ -25,7 +25,8 @@
 <meta name="twitter:image" content="https://16banana.jp/og/en.png">
 <meta name="theme-color" content="#FFC93C">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M22,22 Q28,74 76,72' fill='none' stroke='%2342280E' stroke-width='30' stroke-linecap='round'/%3E%3Cpath d='M22,22 Q28,74 76,72' fill='none' stroke='%23FFC93C' stroke-width='22' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
 </head>
 <body>
 <style>
@@ -509,7 +510,9 @@
   .sec-label::after{ content:""; flex:1; border-top:2.5px dotted var(--muted); opacity:.5; }
 
   .stats{ display:flex; flex-direction:column; gap:12px; margin-bottom:24px; }
-  .stat{ display:grid; grid-template-columns:7.5em 1fr 3em; align-items:center; gap:10px; font-size:13px; font-weight:700; }
+  .stat{ display:grid; grid-template-columns:8em 1fr 3em; align-items:center; gap:10px; font-size:13px; font-weight:700; }
+  .stat .s-label{ display:flex; flex-direction:column; line-height:1.35; white-space:nowrap; }
+  .stat .s-label small{ font-size:10px; font-weight:700; color:var(--muted); letter-spacing:.02em; }
   .stat .track{
     display:block;
     height:14px; border:2.5px solid var(--ink); border-radius:999px;
@@ -722,6 +725,15 @@
       transition-duration:.01ms !important;
     }
   }
+
+  /* ===== 改行コントロール（読みやすい位置で折り返す） ===== */
+  h1, h2, #r-name, .r-tagline, .motto span, .d-motto, .z-tag, .mate .mnote{ text-wrap:balance; }
+  .lead, .about-text, .r-desc, #z-desc, #share-hook, .a-lead{ text-wrap:pretty; }
+  /* 日本語: 文節の途中で折り返さない（Chrome 119+、他ブラウザは従来どおり） */
+  :lang(ja){ word-break:auto-phrase; }
+  /* 韓国語: 単語（어절）の途中で折り返さない */
+  :lang(ko) body, body:lang(ko){ word-break:keep-all; }
+  :lang(ko) p, :lang(ko) li{ overflow-wrap:anywhere; }
 </style>
 
 <div class="wrap">
@@ -1348,10 +1360,14 @@
     for(const ch of code) seed = (seed*31 + ch.charCodeAt(0)) % 97;
     const jig = n => ((seed * n) % 11) - 5;
     const clamp = v => Math.max(8, Math.min(98, v));
+    // label: バナナ語 / sub: 補足（別行で表示して途中改行を防ぐ）
     return [
-      { label: L("甘み（共感力）", "Sweetness (empathy)", "단맛 (공감력)"),    v: clamp((sweet?78:38) + (ripe?10:0) + jig(3)) },
-      { label: L("熟れ足（行動力）", "Ripening speed (drive)", "숙성 속도 (행동력)"), v: clamp((ripe?52:28) + (fusa?34:18) + jig(5)) },
-      { label: L("皮の厚さ（打たれ強さ）", "Peel thickness (toughness)", "껍질 두께 (맷집)"), v: clamp((thick?82:30) + (sweet?0:6) + jig(7)) },
+      { label: L("甘み", "Sweetness", "단맛"), sub: L("共感力", "empathy", "공감력"),
+        v: clamp((sweet?78:38) + (ripe?10:0) + jig(3)) },
+      { label: L("熟れ足", "Ripening speed", "숙성 속도"), sub: L("行動力", "drive", "행동력"),
+        v: clamp((ripe?52:28) + (fusa?34:18) + jig(5)) },
+      { label: L("皮の厚さ", "Peel thickness", "껍질 두께"), sub: L("打たれ強さ", "toughness", "맷집"),
+        v: clamp((thick?82:30) + (sweet?0:6) + jig(7)) },
     ];
   }
 
@@ -1688,7 +1704,7 @@
 
     const stats = statsFor(code);
     $("r-stats").innerHTML = stats.map(s =>
-      '<div class="stat"><span>'+s.label+'</span>'
+      '<div class="stat"><span class="s-label">'+s.label+'<small>'+s.sub+'</small></span>'
       + '<span class="track"><span class="fill" data-v="'+s.v+'"></span></span>'
       + '<span class="val">'+s.v+'</span></div>'
     ).join("");
@@ -2136,6 +2152,7 @@
   const EN = LANG === "en";
   const KO = LANG === "ko";
   const LANG_PREFIX = LANG === "ja" ? "" : "/" + LANG;
+  try{ document.documentElement.lang = LANG; }catch(e){} // ?lang= 起動時もCSSの:lang()を効かせる
 
   function L(ja, en, ko){ return KO ? (ko !== undefined ? ko : en) : (EN ? en : ja); }
 

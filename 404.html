@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>404 - ページが見つかりません｜16バナナtype診断</title>
 <meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
 <style>:root{--sun:#FFC93C;--sun-deep:#F2A93B;--cream:#FFF5DB;--card:#FFFDF2;--ink:#42280E;
 --muted:#8A6B43;--blush:#FF7A59;--chip:#F6E7C6;--shadow:#42280E;--dot:rgba(122,74,29,.14);}
 @media (prefers-color-scheme:dark){:root{--cream:#221507;--card:#31220E;--ink:#FFEDC4;
@@ -21,7 +23,11 @@ header a{color:var(--ink);font-weight:800;font-size:14px;text-decoration:none;le
 h1{text-align:center;font-size:clamp(26px,7vw,34px);line-height:1.35;margin-bottom:4px;text-wrap:balance}
 .tagline{text-align:center;font-weight:800;color:var(--grp);font-size:14.5px;margin-bottom:10px}
 .fig{width:200px;height:200px;margin:0 auto 8px;background:var(--grp-soft);border-radius:36px}
-.lead{font-size:14.5px;margin-bottom:26px}
+.lead{font-size:14.5px;margin-bottom:26px;text-wrap:pretty}
+p,li{text-wrap:pretty}
+:lang(ja){word-break:auto-phrase}
+:lang(ko){word-break:keep-all}
+:lang(ko) p,:lang(ko) li{overflow-wrap:anywhere}
 section{background:var(--card);border:3px solid var(--ink);border-radius:20px;
 box-shadow:6px 6px 0 var(--shadow);padding:22px 20px;margin-bottom:22px}
 h2{font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
@@ -32,6 +38,7 @@ ul,ol{padding-left:1.4em;display:flex;flex-direction:column;gap:6px}
 table{width:100%;border-collapse:collapse;font-size:13.5px}
 th,td{text-align:left;padding:7px 8px;border-bottom:2px dotted var(--chip)}
 th{color:var(--muted);font-weight:800;white-space:nowrap}
+th small{display:block;font-size:10.5px;font-weight:700;color:var(--muted);opacity:.85;letter-spacing:.02em}
 .rank-table td:nth-child(3){font-family:"Avenir Next","Futura",sans-serif;font-weight:800;white-space:nowrap}
 .rank-table a{color:var(--ink);font-weight:800;text-decoration:none}
 .rank-table a:hover{text-decoration:underline}
