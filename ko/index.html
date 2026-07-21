@@ -1350,8 +1350,8 @@
     const clamp = v => Math.max(8, Math.min(98, v));
     return [
       { label: L("甘み（共感力）", "Sweetness (empathy)", "단맛 (공감력)"),    v: clamp((sweet?78:38) + (ripe?10:0) + jig(3)) },
-      { label: L("行動力（熟れ足）", "Drive (ripening speed)", "행동력 (숙성 속도)"), v: clamp((ripe?52:28) + (fusa?34:18) + jig(5)) },
-      { label: L("皮の厚さ（防御）", "Peel thickness (defense)", "껍질 두께 (방어력)"), v: clamp((thick?82:30) + (sweet?0:6) + jig(7)) },
+      { label: L("熟れ足（行動力）", "Ripening speed (drive)", "숙성 속도 (행동력)"), v: clamp((ripe?52:28) + (fusa?34:18) + jig(5)) },
+      { label: L("皮の厚さ（打たれ強さ）", "Peel thickness (toughness)", "껍질 두께 (맷집)"), v: clamp((thick?82:30) + (sweet?0:6) + jig(7)) },
     ];
   }
 
