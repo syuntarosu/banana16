@@ -1,0 +1,2583 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>16바나나 유형 테스트｜내 안의 바나나를 찾는 무료 성격 테스트 (전체 16타입)</title>
+<meta name="description" content="인간과 바나나는 유전자의 약 60%를 공유 — 즉 당신은 이미 반쯤 바나나. 12개의 질문으로 내 안에 잠든 바나나의 정체를 알아보는 무료 2분 테스트. 전체 16타입.">
+<link rel="canonical" href="https://16banana.jp/ko/">
+<link rel="alternate" hreflang="ja" href="https://16banana.jp/">
+<link rel="alternate" hreflang="en" href="https://16banana.jp/en/">
+<link rel="alternate" hreflang="ko" href="https://16banana.jp/ko/">
+<link rel="alternate" hreflang="x-default" href="https://16banana.jp/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="16바나나 유형 테스트">
+<meta property="og:title" content="16바나나 유형 테스트">
+<meta property="og:description" content="당신의 DNA는 약 60%가 바나나. 12개의 질문으로 내 안의 바나나를 찾는 무료 테스트 — 전체 16타입, 약 2분.">
+<meta property="og:url" content="https://16banana.jp/ko/">
+<meta property="og:image" content="https://16banana.jp/og/ko.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="16바나나 유형 테스트">
+<meta name="twitter:description" content="당신의 DNA는 약 60%가 바나나. 12개의 질문으로 내 안의 바나나를 찾아보세요.">
+<meta name="twitter:image" content="https://16banana.jp/og/ko.png">
+<meta name="theme-color" content="#FFC93C">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M22,22 Q28,74 76,72' fill='none' stroke='%2342280E' stroke-width='30' stroke-linecap='round'/%3E%3Cpath d='M22,22 Q28,74 76,72' fill='none' stroke='%23FFC93C' stroke-width='22' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<style>
+  :root{
+    --sun:#FFC93C;
+    --sun-deep:#F2A93B;
+    --green:#B9C94E;
+    --cream:#FFF5DB;
+    --card:#FFFDF2;
+    --ink:#42280E;
+    --muted:#8A6B43;
+    --leaf:#3E8E41;
+    --blush:#FF7A59;
+    --spot:#7A4A1D;
+    --shadow:#42280E;
+    --chip:#F6E7C6;
+    --dot:rgba(122,74,29,.14);
+    --marker:#FFC93C;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --cream:#221507;
+      --card:#31220E;
+      --ink:#FFEDC4;
+      --muted:#C7A66E;
+      --shadow:#100901;
+      --chip:#453213;
+      --dot:rgba(255,201,60,.10);
+      --marker:rgba(242,169,59,.38);
+    }
+  }
+  :root[data-theme="light"]{
+    --sun:#FFC93C; --sun-deep:#F2A93B; --green:#B9C94E;
+    --cream:#FFF5DB; --card:#FFFDF2; --ink:#42280E; --muted:#8A6B43;
+    --leaf:#3E8E41; --blush:#FF7A59; --spot:#7A4A1D; --shadow:#42280E;
+    --chip:#F6E7C6; --dot:rgba(122,74,29,.14); --marker:#FFC93C;
+  }
+  :root[data-theme="dark"]{
+    --cream:#221507; --card:#31220E; --ink:#FFEDC4; --muted:#C7A66E;
+    --shadow:#100901; --chip:#453213; --dot:rgba(255,201,60,.10);
+    --marker:rgba(242,169,59,.38);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ height:100%; }
+  body{
+    font-family:"Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN","BIZ UDPGothic","Yu Gothic","Meiryo",sans-serif;
+    background:
+      radial-gradient(var(--dot) 2.2px, transparent 2.6px) 0 0 / 28px 28px,
+      var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:600px;
+    margin:0 auto;
+    padding:28px 18px 64px;
+  }
+
+  /* ===== sticker card ===== */
+  .card{
+    background:var(--card);
+    border:3px solid var(--ink);
+    border-radius:24px;
+    box-shadow:7px 7px 0 var(--shadow);
+    padding:28px 24px;
+    position:relative;
+  }
+
+  .eyebrow{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--card);
+    background:var(--ink);
+    border-radius:999px;
+    padding:5px 14px 4px;
+  }
+
+  /* ===== start screen ===== */
+  #scr-start{ text-align:center; }
+  .hero-banana{
+    width:190px; height:190px; margin:6px auto -2px;
+    animation:sway 3.4s ease-in-out infinite;
+    transform-origin:50% 90%;
+  }
+  @keyframes sway{
+    0%,100%{ transform:rotate(-4deg); }
+    50%{ transform:rotate(5deg); }
+  }
+  h1{
+    font-size:clamp(30px,8vw,42px);
+    line-height:1.25;
+    letter-spacing:.02em;
+    margin:10px 0 4px;
+    text-wrap:balance;
+  }
+  h1 .num{
+    font-family:"Avenir Next","Futura","Trebuchet MS",sans-serif;
+    font-weight:800;
+    font-size:1.35em;
+    color:var(--sun-deep);
+    -webkit-text-stroke:2px var(--ink);
+    paint-order:stroke fill;
+    letter-spacing:0;
+  }
+  h1 .tilt{ display:inline-block; }
+  h1 .t1{ transform:rotate(-5deg); }
+  h1 .t2{ transform:rotate(4deg) translateY(-2px); }
+  h1 .t3{ transform:rotate(-3deg); }
+  .motto{
+    font-size:16px;
+    font-weight:800;
+    margin:10px 0 2px;
+    letter-spacing:.02em;
+  }
+  .motto span{
+    background:linear-gradient(transparent 62%, var(--marker) 62%);
+    padding:0 2px;
+  }
+  .lead{
+    color:var(--muted);
+    font-size:14.5px;
+    margin:12px auto 22px;
+    max-width:30em;
+  }
+  .lead strong{ color:var(--ink); }
+  .dna-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--chip);
+    border:2.5px solid var(--ink);
+    border-radius:14px;
+    padding:9px 16px;
+    font-size:13px;
+    font-weight:700;
+    transform:rotate(-1.5deg);
+    margin-bottom:20px;
+  }
+  .dna-badge .pct{
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-size:20px; font-weight:800; color:var(--blush);
+  }
+
+  .btn{
+    appearance:none;
+    font:inherit;
+    font-weight:800;
+    color:#42280E; /* 黄色地の上は常にこげ茶（ダークモードでも） */
+    background:var(--sun);
+    border:3px solid var(--ink);
+    border-radius:18px;
+    box-shadow:5px 5px 0 var(--shadow);
+    padding:15px 34px;
+    font-size:18px;
+    cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover{ transform:translate(-2px,-2px); box-shadow:7px 7px 0 var(--shadow); }
+  .btn:active{ transform:translate(4px,4px); box-shadow:0 0 0 var(--shadow); }
+  .btn:focus-visible, .choice:focus-visible, .btn-sub:focus-visible{
+    outline:3px dashed var(--blush); outline-offset:3px;
+  }
+  .btn-sub{
+    appearance:none; font:inherit; font-weight:700;
+    background:var(--card); color:var(--ink);
+    border:2.5px solid var(--ink); border-radius:14px;
+    box-shadow:4px 4px 0 var(--shadow);
+    padding:11px 20px; font-size:14px; cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn-sub:hover{ transform:translate(-1px,-1px); box-shadow:5px 5px 0 var(--shadow); }
+  .btn-sub:active{ transform:translate(3px,3px); box-shadow:0 0 0 var(--shadow); }
+
+  .start-note{ font-size:12px; color:var(--muted); margin-top:14px; }
+  .start-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center; }
+
+  /* ===== きょうの運勢 ===== */
+  .fortune{
+    margin:20px auto 0; max-width:430px;
+    text-align:left;
+    background:var(--chip);
+    border:2.5px dashed var(--ink);
+    border-radius:16px;
+    padding:14px 18px 12px;
+  }
+  .fortune .f-title{ font-size:13px; font-weight:800; margin-bottom:2px; }
+  .fortune .f-stars{ color:var(--sun-deep); font-size:17px; letter-spacing:.12em; margin-bottom:4px; }
+  .fortune .f-text{ font-size:13px; margin-bottom:7px; line-height:1.6; }
+  .fortune .f-lucky{ font-size:11.5px; color:var(--muted); }
+
+  /* ===== 相性診断 ===== */
+  .a-lead{ text-align:center; font-size:13.5px; font-weight:700; color:var(--muted); margin-bottom:18px; }
+  .a-pick{ display:flex; align-items:flex-start; justify-content:center; gap:6px; margin-bottom:20px; }
+  .a-side{ flex:1; max-width:190px; display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .a-side > p{ font-size:12px; font-weight:800; color:var(--muted); }
+  .a-fig{ width:120px; height:120px; }
+  .a-side select{
+    font:inherit; font-size:13px; font-weight:700; color:var(--ink);
+    width:100%;
+    background:var(--card);
+    border:2.5px solid var(--ink); border-radius:12px;
+    padding:8px 10px;
+  }
+  .a-side select:focus-visible{ outline:3px dashed var(--blush); outline-offset:2px; }
+  .a-x{ font-size:22px; font-weight:800; color:var(--muted); margin-top:70px; }
+  .a-go{ display:flex; justify-content:center; margin-bottom:6px; }
+  .a-score{
+    text-align:center;
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-weight:800; font-size:64px; line-height:1.1;
+    margin-top:14px;
+  }
+  .a-score span{ font-size:28px; }
+  .a-tier{ text-align:center; font-size:16px; font-weight:800; color:var(--blush); margin-bottom:14px; }
+  .a-notes{
+    list-style:none;
+    display:flex; flex-direction:column; gap:8px;
+    background:var(--chip);
+    border:2.5px dashed var(--ink); border-radius:14px;
+    padding:14px 16px;
+    margin-bottom:18px;
+    font-size:13px; font-weight:700; line-height:1.6;
+  }
+  .a-notes li::before{ content:"● "; color:var(--sun-deep); }
+  .tribes{
+    display:flex; gap:8px; justify-content:center; flex-wrap:wrap;
+    margin:-6px 0 8px;
+  }
+  .tribes button{
+    font:inherit; font-size:11.5px; font-weight:800; letter-spacing:.04em;
+    color:#FFF8E8; background:var(--tc);
+    border:2px solid var(--ink); border-radius:999px;
+    padding:3px 11px;
+    cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .tribes button:hover{ transform:translateY(-2px); box-shadow:2px 3px 0 var(--shadow); }
+  .tribes button:focus-visible{ outline:3px dashed var(--blush); outline-offset:2px; }
+  .tribes-hint{ font-size:11px; color:var(--muted); margin:0 0 18px; }
+  .about{
+    margin-top:28px;
+    padding-top:22px;
+    border-top:2.5px dotted var(--muted);
+    text-align:left;
+  }
+  .about-title{ font-size:15px; margin-bottom:8px; }
+  .about-text{ font-size:12.5px; color:var(--muted); margin-bottom:14px; }
+  .faq{ display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+  .faq details{
+    background:var(--chip);
+    border:2px solid var(--ink);
+    border-radius:12px;
+    padding:9px 14px;
+    font-size:12.5px;
+  }
+  .faq summary{ font-weight:800; cursor:pointer; }
+  .faq p{ margin-top:6px; color:var(--muted); }
+  .type-links{ font-size:11px; line-height:2.1; color:var(--muted); }
+  .type-links a{ color:var(--muted); }
+
+  /* ===== 図鑑 ===== */
+  .z-title{ font-size:26px; text-align:center; margin:8px 0 14px; }
+  .z-tabs{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
+  .z-tab{
+    font:inherit; font-size:12px; font-weight:800;
+    color:#FFF8E8; background:var(--tc);
+    border:2.5px solid var(--ink); border-radius:999px;
+    padding:5px 13px; cursor:pointer; opacity:.5;
+    transition:opacity .12s ease, transform .12s ease;
+  }
+  .z-tab:hover{ opacity:.85; }
+  .z-tab.active{ opacity:1; box-shadow:3px 3px 0 var(--shadow); transform:translateY(-1px); }
+  .z-tab:focus-visible{ outline:3px dashed var(--blush); outline-offset:2px; }
+  .z-desc{
+    text-align:center; font-size:13px; font-weight:700;
+    color:var(--muted); margin-bottom:16px; min-height:2.6em;
+  }
+  .z-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:14px;
+    margin-bottom:22px;
+  }
+  .z-card{
+    font:inherit; color:var(--ink);
+    display:flex; flex-direction:column; align-items:center; gap:2px;
+    background:var(--card);
+    border:3px solid var(--ink); border-radius:18px;
+    box-shadow:4px 4px 0 var(--shadow);
+    padding:14px 10px 12px;
+    cursor:pointer; text-align:center;
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+  }
+  .z-card:hover{ transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--shadow); background:var(--grp-soft, var(--chip)); }
+  .z-card:active{ transform:translate(3px,3px); box-shadow:0 0 0 var(--shadow); }
+  .z-card:focus-visible{ outline:3px dashed var(--blush); outline-offset:3px; }
+  .z-fig{ width:110px; height:110px; pointer-events:none; }
+  .z-name{ font-size:15px; font-weight:800; }
+  .z-tag{ font-size:11px; color:var(--muted); line-height:1.5; }
+  .z-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+  /* ===== quiz ===== */
+  .quiz-head{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:10px;
+  }
+  .qnum{
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-weight:800; font-size:22px;
+  }
+  .qnum small{ font-size:13px; color:var(--muted); font-weight:700; }
+  .ripeness{ font-size:12px; font-weight:700; color:var(--muted); }
+  .bar{
+    height:18px;
+    border:2.5px solid var(--ink);
+    border-radius:999px;
+    background:var(--chip);
+    overflow:hidden;
+    margin-bottom:26px;
+  }
+  .bar-fill{
+    height:100%;
+    width:0%;
+    background:
+      radial-gradient(circle at 12px 55%, var(--spot) 2.4px, transparent 3px),
+      radial-gradient(circle at 34px 35%, var(--spot) 2px, transparent 2.6px),
+      var(--sun);
+    background-size:44px 100%, 44px 100%, auto;
+    border-right:2.5px solid var(--ink);
+    transition:width .35s ease;
+  }
+  .q-text{
+    font-size:20px;
+    font-weight:800;
+    line-height:1.55;
+    margin-bottom:24px;
+    min-height:3.1em;
+    text-wrap:balance;
+  }
+  .choices{ display:flex; flex-direction:column; gap:14px; }
+  .choice{
+    appearance:none; font:inherit; text-align:left;
+    display:flex; align-items:center; gap:14px;
+    background:var(--card);
+    color:var(--ink);
+    border:3px solid var(--ink);
+    border-radius:18px;
+    box-shadow:5px 5px 0 var(--shadow);
+    padding:16px 18px;
+    font-size:15.5px;
+    font-weight:700;
+    line-height:1.55;
+    cursor:pointer;
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+  }
+  .choice:hover{ transform:translate(-2px,-2px); box-shadow:7px 7px 0 var(--shadow); background:var(--chip); }
+  .choice:active{ transform:translate(4px,4px); box-shadow:0 0 0 var(--shadow); background:var(--sun); color:#42280E; }
+  .choice .key{
+    flex:0 0 auto;
+    width:34px; height:34px;
+    display:grid; place-items:center;
+    border:2.5px solid #42280E;
+    border-radius:50%;
+    background:var(--sun);
+    color:#42280E;
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-weight:800; font-size:15px;
+  }
+  .quiz-foot{ margin-top:22px; display:flex; justify-content:flex-start; }
+
+  .pop-in{ animation:popin .3s ease both; }
+  @keyframes popin{
+    from{ opacity:0; transform:translateY(14px) scale(.98); }
+    to{ opacity:1; transform:none; }
+  }
+
+  /* ===== result ===== */
+  .r-stamp{
+    position:absolute; top:-16px; right:14px;
+    background:var(--blush); color:#FFF6E8;
+    border:3px solid var(--ink);
+    border-radius:12px;
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-weight:800; font-size:13px; letter-spacing:.18em;
+    padding:5px 12px 4px;
+    transform:rotate(6deg);
+    box-shadow:3px 3px 0 var(--shadow);
+  }
+  .r-intro{ text-align:center; font-size:14px; font-weight:700; color:var(--muted); }
+  .r-figure{
+    width:216px; height:216px; margin:4px auto 0;
+    background:var(--grp-soft, transparent);
+    border-radius:40px;
+    animation:landing .5s cubic-bezier(.2,1.4,.4,1) both;
+  }
+  .grp-badge{
+    display:flex; justify-content:center;
+    margin:12px 0 8px;
+  }
+  .grp-badge span{
+    display:inline-block;
+    background:var(--grp, var(--muted)); color:#FFF8E8;
+    border:2.5px solid var(--ink); border-radius:999px;
+    font-size:13.5px; font-weight:800; letter-spacing:.05em;
+    padding:5px 18px;
+    box-shadow:3px 3px 0 var(--shadow);
+    transform:rotate(-1.5deg);
+  }
+  .grp-badge small{
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-size:11px; letter-spacing:.16em; margin-left:6px; opacity:.85;
+  }
+  @keyframes landing{
+    from{ opacity:0; transform:scale(.6) rotate(-14deg); }
+    to{ opacity:1; transform:none; }
+  }
+  .r-name{
+    text-align:center;
+    font-size:clamp(26px,7vw,34px);
+    line-height:1.3;
+    margin:2px 0 6px;
+    text-wrap:balance;
+  }
+  .r-tagline{
+    text-align:center; font-size:14px; font-weight:700;
+    color:var(--grp, var(--blush)); margin-bottom:16px;
+  }
+  .code-chips{
+    display:flex; justify-content:center; gap:8px; margin-bottom:8px;
+  }
+  .code-chips span{
+    width:44px; height:44px;
+    display:grid; place-items:center;
+    background:var(--grp-soft, var(--sun));
+    border:2.5px solid var(--ink);
+    border-radius:12px;
+    font-size:19px; font-weight:800;
+    box-shadow:3px 3px 0 var(--shadow);
+  }
+  .code-chips span:nth-child(2){ transform:rotate(3deg); }
+  .code-chips span:nth-child(3){ transform:rotate(-3deg); }
+  .code-chips span:nth-child(4){ transform:rotate(2deg); }
+  .rarity{
+    text-align:center; font-size:12.5px; font-weight:700;
+    color:var(--muted); margin-bottom:18px;
+  }
+  .rarity b{
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-size:17px; color:var(--ink);
+  }
+  .r-desc{
+    font-size:14.5px;
+    background:var(--chip);
+    border:2.5px dashed var(--ink);
+    border-radius:16px;
+    padding:16px 18px;
+    margin-bottom:22px;
+  }
+  .d-motto{
+    display:block;
+    margin-top:10px;
+    font-weight:800;
+    text-align:right;
+    color:var(--ink);
+  }
+  .r-more{
+    text-align:right;
+    font-size:13px; font-weight:800;
+    margin:-14px 4px 22px 0;
+  }
+  .r-more a{ color:var(--grp, var(--blush)); text-decoration:none; }
+  .r-more a:hover{ text-decoration:underline; }
+
+  .sec-label{
+    font-size:12px; font-weight:800; letter-spacing:.14em;
+    color:var(--muted);
+    margin-bottom:10px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .sec-label::after{ content:""; flex:1; border-top:2.5px dotted var(--muted); opacity:.5; }
+
+  .stats{ display:flex; flex-direction:column; gap:12px; margin-bottom:24px; }
+  .stat{ display:grid; grid-template-columns:7.5em 1fr 3em; align-items:center; gap:10px; font-size:13px; font-weight:700; }
+  .stat .track{
+    display:block;
+    height:14px; border:2.5px solid var(--ink); border-radius:999px;
+    background:var(--chip); overflow:hidden;
+  }
+  .stat .fill{
+    display:block;
+    height:100%; width:0%;
+    background:var(--sun);
+    border-radius:999px;
+    transition:width .8s cubic-bezier(.3,1,.4,1);
+  }
+  .stat:nth-child(2) .fill{ background:var(--blush); }
+  .stat:nth-child(3) .fill{ background:var(--leaf); }
+  .stat .val{
+    text-align:right;
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-weight:800; font-size:15px;
+  }
+
+  .mates{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:26px; }
+  .mate{
+    border:2.5px solid var(--ink); border-radius:16px;
+    background:var(--card);
+    box-shadow:4px 4px 0 var(--shadow);
+    padding:12px; text-align:center;
+  }
+  .mate .tag{
+    display:inline-block; font-size:11px; font-weight:800;
+    border:2px solid var(--ink); border-radius:999px;
+    padding:2px 10px; margin-bottom:6px;
+  }
+  .mate.good .tag{ background:var(--leaf); color:#FFF6E8; }
+  .mate.bad .tag{ background:var(--chip); }
+  .mate svg{ width:74px; height:74px; }
+  .mate .mname{ font-size:13.5px; font-weight:800; line-height:1.4; }
+  .mate .mnote{ font-size:11.5px; color:var(--muted); }
+
+  /* ===== コラボ ===== */
+  .collab-card{
+    border:3px solid var(--ink); border-radius:18px; overflow:hidden;
+    background:var(--card); box-shadow:5px 5px 0 var(--shadow);
+    margin-bottom:24px;
+  }
+  .collab-media img{ display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }
+  .collab-ph{
+    aspect-ratio:4/3;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+    background:linear-gradient(160deg, #F4F0E8, #E4DED1);
+  }
+  .collab-ph span{
+    font-family:"Avenir Next","Futura",sans-serif;
+    font-size:46px; font-weight:600; letter-spacing:.06em; color:#4A443C;
+  }
+  .collab-ph small{ font-size:10px; letter-spacing:.28em; color:#8A8378; }
+  .collab-body{ padding:16px 18px 18px; display:flex; flex-direction:column; gap:9px; }
+  .collab-brand{ font-size:11px; font-weight:800; letter-spacing:.2em; color:var(--muted); }
+  .collab-copy{ font-size:15.5px; font-weight:800; line-height:1.6; }
+  .collab-item{ font-size:13px; font-weight:700; color:var(--muted); }
+  .collab-limit{ font-size:12.5px; font-weight:800; color:var(--blush); }
+  .collab-coupon{
+    display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    background:var(--chip);
+    border:2.5px dashed var(--ink); border-radius:12px;
+    padding:10px 12px;
+  }
+  .collab-coupon .code{
+    font-family:"Menlo","SF Mono",monospace;
+    font-weight:700; font-size:13.5px; letter-spacing:.04em;
+  }
+  .collab-cta{ display:block; text-align:center; text-decoration:none; font-size:15px; }
+  .collab-note{ font-size:11px; color:var(--muted); line-height:1.7; }
+
+  /* ===== 言語切替 ===== */
+  .lang-switch-wrap{
+    position:fixed; top:14px; right:14px; z-index:40;
+    display:flex; gap:8px;
+  }
+  .lang-switch{
+    font-size:12px; font-weight:800; letter-spacing:.06em;
+    color:var(--ink); background:var(--card);
+    border:2.5px solid var(--ink); border-radius:999px;
+    padding:6px 14px; text-decoration:none;
+    box-shadow:3px 3px 0 var(--shadow);
+    transition:transform .12s ease;
+  }
+  .lang-switch:hover{ transform:translateY(-2px); }
+
+  /* ===== シェアCTA・モーダル ===== */
+  .share-cta{ display:flex; justify-content:center; margin-bottom:22px; }
+  .share-big{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:17px; padding:16px 32px;
+    animation:sharepulse 2.6s ease-in-out 1.2s 3;
+  }
+  .share-big svg{ width:20px; height:20px; flex:0 0 auto; }
+  .sbtn{
+    display:flex; align-items:center; gap:10px;
+    text-align:left; padding:10px 12px;
+  }
+  .sic{
+    flex:0 0 auto;
+    width:30px; height:30px;
+    display:grid; place-items:center;
+    border:2px solid var(--ink); border-radius:9px;
+    color:#FFFFFF;
+  }
+  .sic svg{ width:16px; height:16px; }
+  .sic-x{ background:#0F1419; }
+  .sic-line{ background:#06C755; }
+  .sic-ig{ background:#E1306C; }
+  .sic-save{ background:var(--sun); color:#42280E; }
+  .sic-copy{ background:var(--chip); color:var(--ink); }
+  .sic-close{ background:var(--card); color:var(--ink); }
+  .nbtn{
+    display:flex; align-items:center; justify-content:center; gap:7px;
+  }
+  .nbtn svg{ width:16px; height:16px; flex:0 0 auto; opacity:.85; }
+  @media (max-width:420px){
+    .modal-sheet .r-actions{ grid-template-columns:1fr; }
+    .sbtn .sbl{ font-size:14px; }
+  }
+  @keyframes sharepulse{
+    0%, 100%{ transform:none; }
+    6%{ transform:scale(1.06) rotate(-1.2deg); }
+    12%{ transform:scale(1); }
+  }
+  .modal-overlay{
+    position:fixed; inset:0; z-index:60;
+    background:rgba(24, 12, 2, .58);
+    display:flex; align-items:center; justify-content:center;
+    padding:18px;
+  }
+  .modal-overlay[hidden]{ display:none; }
+  .modal-sheet{
+    position:relative;
+    width:min(430px, 100%);
+    max-height:88vh; overflow-y:auto;
+    background:var(--card);
+    border:3px solid var(--ink); border-radius:22px;
+    box-shadow:8px 8px 0 var(--shadow);
+    padding:24px 18px 16px;
+    animation:popin .25s ease both;
+  }
+  .modal-close{
+    position:absolute; top:10px; right:12px;
+    font:inherit; font-size:18px; font-weight:800; line-height:1;
+    width:34px; height:34px;
+    background:var(--chip); color:var(--ink);
+    border:2.5px solid var(--ink); border-radius:50%;
+    cursor:pointer;
+  }
+  .share-hook{
+    font-size:14.5px; font-weight:800; line-height:1.7;
+    text-align:center; margin:2px 26px 14px;
+  }
+  .share-preview{
+    display:flex; justify-content:center; align-items:center;
+    min-height:110px; margin-bottom:14px;
+    color:var(--muted); font-size:12px; font-weight:700;
+  }
+  .share-preview img{
+    width:52%; max-width:190px;
+    border:3px solid var(--ink); border-radius:14px;
+    box-shadow:5px 5px 0 var(--shadow);
+    transform:rotate(-2deg);
+  }
+
+  .r-actions{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+  .r-actions .btn, .r-actions .btn-sub{
+    width:100%; padding:13px 8px; font-size:13.5px; line-height:1.45;
+  }
+  #zukan-back{ display:flex; justify-content:center; }
+  #zukan-back .btn-sub{ width:auto; padding:11px 24px; }
+  .r-share-note{ text-align:center; font-size:12px; color:var(--muted); margin-top:2px; min-height:1.6em; }
+  .shared-cta{
+    text-align:center;
+    color:#42280E;
+    border:3px solid #42280E;
+    border-radius:18px;
+    background:var(--sun);
+    box-shadow:5px 5px 0 var(--shadow);
+    padding:18px 16px;
+    margin-bottom:24px;
+  }
+  .shared-cta p{ font-weight:800; font-size:15px; margin-bottom:12px; }
+  .shared-cta .btn{ background:#FFFDF2; color:#42280E; }
+
+  .reveal{ animation:popin .45s ease both; }
+  .reveal.d1{ animation-delay:.08s; }
+  .reveal.d2{ animation-delay:.16s; }
+  .reveal.d3{ animation-delay:.26s; }
+  .reveal.d4{ animation-delay:.36s; }
+  .reveal.d5{ animation-delay:.46s; }
+
+  footer{
+    text-align:center; font-size:11px; color:var(--muted);
+    margin-top:26px; line-height:1.9;
+  }
+  footer .legal-note{ font-size:10px; opacity:.8; }
+
+  @media (max-width:420px){
+    .card{ padding:24px 16px; }
+    .mates{ grid-template-columns:1fr; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;
+    }
+  }
+</style>
+
+<div class="wrap">
+  <div class="lang-switch-wrap">
+    <a class="lang-switch" id="lang-switch" href="#" hidden>EN</a>
+    <a class="lang-switch" id="lang-switch2" href="#" hidden>한국어</a>
+  </div>
+  <main>
+    <!-- ============ START ============ -->
+    <section id="scr-start" class="card pop-in" aria-label="診断スタート">
+      <span class="eyebrow">Banana Personality Lab</span>
+      <div class="hero-banana" id="hero-banana" aria-hidden="true"></div>
+      <h1>
+        <span class="num">16</span>
+        <span class="tilt t1">バ</span><span class="tilt t2">ナ</span><span class="tilt t3">ナ</span>type診断
+      </h1>
+      <p class="motto">「<span>半分バナナだから仕方ないか</span>」</p>
+      <p class="lead">
+        ヒトはバナナと遺伝子のおよそ半分を共有している——。<br>
+        つまりキミの半分は、もうバナナ。<br>
+        <strong>12の質問</strong>で、4つの族・16タイプから<br>キミの中に眠るバナナの正体を特定します。
+      </p>
+      <div class="dna-badge">
+        <span>ヒトとバナナの遺伝子共有率</span>
+        <span class="pct">約60%</span>
+      </div>
+      <div class="tribes">
+        <button type="button" id="tribe-0" style="--tc:#3E8E41">つつみこみ族</button>
+        <button type="button" id="tribe-1" style="--tc:#5B6ABF">かんがえ族</button>
+        <button type="button" id="tribe-2" style="--tc:#F2812E">ひだまり族</button>
+        <button type="button" id="tribe-3" style="--tc:#C25B8A">やせい族</button>
+      </div>
+      <p class="tribes-hint">族をタップするとバナナ図鑑が見られます</p>
+      <div class="start-actions">
+        <button class="btn" id="btn-start" type="button">診断をはじめる</button>
+        <button class="btn-sub" id="btn-aisho-open" type="button">バナナ相性診断</button>
+      </div>
+      <div class="fortune" id="fortune" hidden>
+        <p class="f-title">きょうの<span id="f-type"></span>運勢</p>
+        <p class="f-stars" id="f-stars" aria-hidden="true"></p>
+        <p class="f-text" id="f-text"></p>
+        <p class="f-lucky">ラッキーアイテム：<span id="f-item"></span>／きょうの相性バナナ：<span id="f-mate"></span></p>
+      </div>
+      <p class="start-note">所要時間：バナナ1本ぶん（約2分）</p>
+
+      <div class="about">
+        <h2 class="about-title">16バナナtype診断とは</h2>
+        <p class="about-text">ヒトとバナナが遺伝子の約60%を共有している——という科学の小ネタを入口に、12の質問でキミの中の「バナナ」を16タイプに分類する無料の性格診断です。会員登録なし・約2分。結果はシェアでき、タイプごとの相性診断や日替わりの運勢も楽しめます。</p>
+        <div class="faq">
+          <details><summary>無料ですか？</summary><p>完全無料です。会員登録もありません。</p></details>
+          <details><summary>何分かかりますか？</summary><p>12問・約2分。バナナ1本食べるくらいの時間です。</p></details>
+          <details><summary>科学的な根拠はありますか？</summary><p>ありません。エンターテインメントです。ただし、ヒトとバナナが多くの遺伝子を共有しているのは本当です（諸説あり）。</p></details>
+          <details><summary>結果は保存されますか？</summary><p>結果はお使いのブラウザにだけ記憶され、サーバーには送信されません。再訪すると「きょうの運勢」が見られます。</p></details>
+        </div>
+        <p class="type-links" id="type-links" hidden></p>
+      </div>
+    </section>
+
+    <!-- ============ 図鑑 ============ -->
+    <section id="scr-zukan" class="card" hidden aria-label="バナナ図鑑">
+      <span class="eyebrow">Banana Zukan</span>
+      <h2 class="z-title">バナナ図鑑</h2>
+      <div class="z-tabs" id="z-tabs"></div>
+      <p class="z-desc" id="z-desc"></p>
+      <div class="z-grid" id="z-grid"></div>
+      <div class="z-actions">
+        <button class="btn" id="btn-zukan-start" type="button">診断をはじめる</button>
+        <button class="btn-sub" id="btn-zukan-home" type="button">トップにもどる</button>
+      </div>
+    </section>
+
+    <!-- ============ 相性診断 ============ -->
+    <section id="scr-aisho" class="card" hidden aria-label="バナナ相性診断">
+      <span class="eyebrow">Banana Aisho Lab</span>
+      <h2 class="z-title">バナナ相性診断</h2>
+      <p class="a-lead">2本のバナナ、同じ房に入れたらどうなる？</p>
+      <div class="a-pick">
+        <div class="a-side">
+          <p>じぶん</p>
+          <div class="a-fig" id="a-fig-1"></div>
+          <select id="a-sel-1" aria-label="じぶんのタイプ"></select>
+        </div>
+        <div class="a-x" aria-hidden="true">×</div>
+        <div class="a-side">
+          <p>あいて</p>
+          <div class="a-fig" id="a-fig-2"></div>
+          <select id="a-sel-2" aria-label="あいてのタイプ"></select>
+        </div>
+      </div>
+      <div class="a-go"><button class="btn" id="btn-aisho" type="button">相性をみる</button></div>
+      <div id="a-result" hidden>
+        <p class="a-score"><b id="a-pct"></b><span>%</span></p>
+        <p class="a-tier" id="a-tier"></p>
+        <ul class="a-notes" id="a-notes"></ul>
+        <div class="r-actions">
+          <button class="btn-sub sbtn" id="btn-aisho-x" type="button"><span class="sic sic-x"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.2h3.7l-8 9.2L24 22.8h-7.4l-5.8-7.6-6.6 7.6H.5l8.6-9.8L0 1.2h7.6l5.2 6.9 6.1-6.9Zm-1.3 19.5h2L6.5 3.2h-2.2l13.3 17.5Z"/></svg></span><span class="sbl">Xでポストする</span></button>
+          <button class="btn-sub sbtn" id="btn-aisho-copy" type="button"><span class="sic sic-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l2.5-2.5a5 5 0 0 0-7-7L11 6"/><path d="M14 10a5 5 0 0 0-7 0L4.5 12.5a5 5 0 0 0 7 7L13 18"/></svg></span><span class="sbl">結果をコピー</span></button>
+        </div>
+        <p class="r-share-note" id="a-share-note"></p>
+      </div>
+      <div class="z-actions">
+        <button class="btn-sub" id="btn-aisho-home" type="button">トップにもどる</button>
+      </div>
+    </section>
+
+    <!-- ============ QUIZ ============ -->
+    <section id="scr-quiz" class="card" hidden aria-label="質問">
+      <div class="quiz-head">
+        <div class="qnum">Q<span id="q-no">1</span><small> / 12</small></div>
+        <div class="ripeness">熟度 <span id="q-pct">0</span>%</div>
+      </div>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" id="q-bar">
+        <div class="bar-fill" id="q-fill"></div>
+      </div>
+      <p class="q-text" id="q-text"></p>
+      <div class="choices">
+        <button class="choice" id="opt-a" type="button"><span class="key">A</span><span id="opt-a-text"></span></button>
+        <button class="choice" id="opt-b" type="button"><span class="key">B</span><span id="opt-b-text"></span></button>
+      </div>
+      <div class="quiz-foot">
+        <button class="btn-sub" id="btn-back" type="button">← ひとつ戻る</button>
+      </div>
+    </section>
+
+    <!-- ============ RESULT ============ -->
+    <section id="scr-result" class="card" hidden aria-label="診断結果">
+      <div class="r-stamp">RESULT</div>
+      <p class="r-intro reveal" id="r-intro">キミの中のバナナは……</p>
+      <div class="r-figure reveal d1" id="r-figure"></div>
+      <div class="grp-badge reveal d1" id="r-group"></div>
+      <h2 class="r-name reveal d1" id="r-name"></h2>
+      <p class="r-tagline reveal d2" id="r-tagline"></p>
+      <div class="code-chips reveal d2" id="r-code"></div>
+      <p class="rarity reveal d2" id="r-rarity-row">出現率 <b id="r-rarity"></b>%（バナナ調べ）</p>
+      <div class="r-desc reveal d3"><span id="r-desc"></span><span class="d-motto" id="d-motto"></span></div>
+      <p class="r-more reveal d3" id="r-more-wrap" hidden><a id="r-more" href="#">解説ページへ →</a></p>
+
+      <div class="share-cta reveal d3">
+        <button class="btn share-big" id="btn-share-open" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span class="sbl">この結果をシェアする</span></button>
+      </div>
+
+      <div class="reveal d4">
+        <p class="sec-label">バナナステータス</p>
+        <div class="stats" id="r-stats"></div>
+      </div>
+
+      <div class="reveal d4">
+        <p class="sec-label">バナナ相性</p>
+        <div class="mates">
+          <div class="mate good">
+            <span class="tag">ベストコンビ</span>
+            <div id="mate-good-fig"></div>
+            <p class="mname" id="mate-good-name"></p>
+            <p class="mnote">同じ房に入りたい相手</p>
+          </div>
+          <div class="mate bad">
+            <span class="tag">熟れ違い注意</span>
+            <div id="mate-bad-fig"></div>
+            <p class="mname" id="mate-bad-name"></p>
+            <p class="mnote">距離感が大事な相手</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d4" id="collab" hidden>
+        <p class="sec-label">コラボレーション</p>
+        <div class="collab-card">
+          <div class="collab-media" id="collab-media"></div>
+          <div class="collab-body">
+            <p class="collab-brand" id="collab-brand"></p>
+            <p class="collab-copy" id="collab-copy"></p>
+            <p class="collab-item" id="collab-item"></p>
+            <p class="collab-limit" id="collab-limit"></p>
+            <div class="collab-coupon">
+              <span class="code" id="collab-code"></span>
+              <button class="btn-sub" id="btn-coupon" type="button">コードをコピー</button>
+            </div>
+            <a class="btn collab-cta" id="collab-cta" href="#" target="_blank" rel="noopener">ON°のショップを見る</a>
+            <p class="collab-note" id="collab-note"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="shared-cta reveal d5" id="shared-cta" hidden>
+        <p>友達の結果を見たキミへ——<br>キミの中にもバナナ、いるよ。</p>
+        <button class="btn" id="btn-try" type="button">自分も診断する（12問・2分）</button>
+      </div>
+
+      <div class="r-actions reveal d5" id="zukan-back" hidden>
+        <button class="btn-sub" id="btn-zukan-back" type="button">図鑑にもどる</button>
+      </div>
+
+      <div class="share-cta reveal d5">
+        <button class="btn share-big" id="btn-share-open2" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span class="sbl">この結果をシェアする</span></button>
+      </div>
+      <div class="r-actions reveal d5" style="margin-top:10px">
+        <button class="btn-sub nbtn" id="btn-retry" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><span class="sbl">もういちど剥く</span></button>
+        <button class="btn-sub nbtn" id="btn-to-zukan" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6.5A2.5 2.5 0 0 0 4 19.5Zm0 0A2.5 2.5 0 0 0 6.5 22H20"/></svg><span class="sbl">バナナ図鑑</span></button>
+        <button class="btn-sub nbtn" id="btn-to-aisho" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21C7 16.5 3 13.3 3 9.2 3 6.4 5.2 4 8 4c1.6 0 3.1.8 4 2 .9-1.2 2.4-2 4-2 2.8 0 5 2.4 5 5.2 0 4.1-4 7.3-9 11.8Z"/></svg><span class="sbl">相性を診断</span></button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ シェアモーダル ============ -->
+  <div class="modal-overlay" id="share-modal" hidden>
+    <div class="modal-sheet" role="dialog" aria-modal="true" aria-label="シェア">
+      <button class="modal-close" id="share-close" type="button" aria-label="閉じる">×</button>
+      <p class="share-hook" id="share-hook"></p>
+      <div class="share-preview" id="share-preview"></div>
+      <div class="r-actions">
+        <button class="btn-sub sbtn" id="btn-x" type="button"><span class="sic sic-x"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.2h3.7l-8 9.2L24 22.8h-7.4l-5.8-7.6-6.6 7.6H.5l8.6-9.8L0 1.2h7.6l5.2 6.9 6.1-6.9Zm-1.3 19.5h2L6.5 3.2h-2.2l13.3 17.5Z"/></svg></span><span class="sbl">Xでポストする</span></button>
+        <button class="btn-sub sbtn" id="btn-line" type="button"><span class="sic sic-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8 0 0 1-8.5 8c-1 0-2-.13-2.9-.4L5 20.5l1-3A8 8 0 1 1 21 11.5Z"/></svg></span><span class="sbl">LINEで送る</span></button>
+        <button class="btn-sub sbtn" id="btn-image" type="button"><span class="sic sic-ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor" stroke="none"/></svg></span><span class="sbl">画像でシェア</span></button>
+        <button class="btn-sub sbtn" id="btn-save" type="button"><span class="sic sic-save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></span><span class="sbl">画像を保存</span></button>
+        <button class="btn-sub sbtn" id="btn-copy" type="button"><span class="sic sic-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l2.5-2.5a5 5 0 0 0-7-7L11 6"/><path d="M14 10a5 5 0 0 0-7 0L4.5 12.5a5 5 0 0 0 7 7L13 18"/></svg></span><span class="sbl">リンクをコピー</span></button>
+        <button class="btn-sub sbtn" id="share-close2" type="button"><span class="sic sic-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span><span class="sbl">閉じる</span></button>
+      </div>
+      <p class="r-share-note" id="share-note"></p>
+    </div>
+  </div>
+
+  <footer>
+    ※ 本診断は科学的根拠ゼロのエンターテインメントです。<br>
+    ヒトとバナナが多くの遺伝子を共有しているのは本当（諸説あり）。<br>
+    アクセス解析を使ってるよ。集めてるのは匿名のバナナ統計だけ。<br>
+    <span class="legal-note">（アクセス解析にはGoogle Analyticsを使用しています。収集するのは匿名の利用状況データのみであり、個人を特定できる情報は収集していません。）</span>
+    <span id="privacy-link" hidden><a href="/privacy.html" style="color:inherit">プライバシーポリシー</a></span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ GA4（計測IDを入れると有効化） ============ */
+  var GA_ID = "G-8ZZ75SEPXQ";
+  if(GA_ID){
+    try{
+      var gs = document.createElement("script");
+      gs.async = true;
+      gs.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+      document.head.appendChild(gs);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", GA_ID);
+    }catch(e){}
+  }
+  function track(ev, params){
+    try{ if(window.gtag) window.gtag("event", ev, params || {}); }catch(e){}
+  }
+
+  /* ============ 4軸 ============ */
+  // axis0: 房(a)/独(b)  axis1: 青(a)/熟(b)  axis2: 甘(a)/渋(b)  axis3: 厚(a)/薄(b)
+  const AXES = [["房","独"],["青","熟"],["甘","渋"],["厚","薄"]];
+
+  /* ============ 質問 ============ */
+  const QUESTIONS = [
+    { ax:0, q:"金曜の夜。いちばん幸せなのは？",
+      a:"気の合う仲間とワイワイ過ごす", b:"家でひとり、誰にも剥かれない時間" },
+    { ax:1, q:"旅行の前日、キミの状態は？",
+      a:"しおり級の計画がすでに完成している", b:"財布と勢いがあればなんとかなる" },
+    { ax:2, q:"友達から深夜の相談LINE。最初のひとことは？",
+      a:"「わかる。それはつらいよね」", b:"「原因、たぶんこれじゃない？」" },
+    { ax:3, q:"ちょっとキツいことを言われた。その後は？",
+      a:"5分後にはだいたい忘れてる", b:"布団の中で3日はリピート再生する" },
+    { ax:0, q:"悩みができたとき、どうする？",
+      a:"誰かに話してスッキリさせたい", b:"自分の中でじっくり熟成させたい" },
+    { ax:1, q:"締切との付き合い方は？",
+      a:"前倒しで終わらせて安心したい", b:"追い込まれてからが本番" },
+    { ax:2, q:"大事な決断。最後の決め手は？",
+      a:"心がときめくかどうか", b:"筋が通っているかどうか" },
+    { ax:3, q:"初めて泊まる場所では？",
+      a:"どこでも意外とすぐ眠れる", b:"枕が変わると即・寝不足" },
+    { ax:0, q:"大きなイベントが終わったあとは？",
+      a:"楽しさで逆に元気になっている", b:"楽しかったけど皮だけになっている" },
+    { ax:1, q:"新しい家電を買ったら？",
+      a:"まず説明書をひととおり読む", b:"まず電源を入れる。話はそれから" },
+    { ax:2, q:"泣ける映画を観たあとは？",
+      a:"感情のスムージーになっている", b:"「あの伏線は…」と考察が始まる" },
+    { ax:3, q:"まわりの空気について正直なところ…",
+      a:"あんまり気にしていない", b:"読みすぎて空気の成分表が作れる" },
+  ];
+
+  /* ============ 16タイプ ============ */
+  // acc: キャラのアクセサリー種別
+  const TYPES = {
+    "房青甘厚": { n:"アニキバナナ", t:"「ついてこい。房ごと面倒みる」", r:7.2, acc:"band",
+      d:"面倒見のよさで房をまとめる頼れる兄貴・姉御分。ちゃんと段取りを組んでみんなを引っ張り、多少ぶつけられてもへこまない分厚い皮メンタルの持ち主。ただし世話を焼きすぎて自分の熟れどきを逃しがち。たまには自分を甘やかそう。",
+      good:"独熟甘薄", bad:"独熟渋厚" },
+    "房青甘薄": { n:"せわやきバナナ", t:"みんなの熟れ具合、常にチェック済み", r:8.8, acc:"heart",
+      d:"房のみんなの変化にいちばん早く気づく気配りの達人。困っている仲間を放っておけない愛の人。ただ皮が薄いぶん、頑張りすぎると自分が先に傷むタイプ。人に優しくした分だけ、自分にも優しく。",
+      good:"独青渋厚", bad:"房熟渋厚" },
+    "房青渋厚": { n:"バナナ番長", t:"房の秩序はオレが守る", r:4.1, acc:"cap",
+      d:"筋を通すことに命を懸ける房の風紀委員長。ルールと計画で集団を守り、理不尽には真っ向から立ち向かう。硬派に見えて、実は仲間のためなら自分の皮が傷つくのも厭わない熱い果肉の持ち主。",
+      good:"房熟甘薄", bad:"独熟渋薄" },
+    "房青渋薄": { n:"委員長バナナ", t:"完璧な房づくり、任された", r:6.6, acc:"glasses",
+      d:"段取りの鬼にして完璧主義のまとめ役。会議のアジェンダは前日に共有済み、忘れ物はゼロ。でも実はかなり繊細で、計画が崩れると内心バナナジュース寸前。8割できてれば上出来、を合言葉に。",
+      good:"独熟甘厚", bad:"房熟甘厚" },
+    "房熟甘厚": { n:"パリピバナナ", t:"今この瞬間が、いちばん甘い", r:9.4, acc:"shades",
+      d:"その場を最高潮に持っていく天性の盛り上げ隊長。ノリと愛嬌で人を巻き込み、失敗しても「それも味！」と笑い飛ばせる強メンタル。計画性は皮ごとどこかに置いてきたが、その場対応力は全バナナ随一。",
+      good:"独青渋薄", bad:"房青渋薄" },
+    "房熟甘薄": { n:"アイドルバナナ", t:"みんなの太陽、でも楽屋ではぐったり", r:5.9, acc:"ribbon",
+      d:"いるだけで場がパッと明るくなる愛されキャラ。人の感情に敏感で、喜ばせることに全力を注ぐ。ただしステージを降りると電池切れでぐにゃぐにゃになる繊細さも。オンとオフの落差こそが魅力。",
+      good:"房青渋厚", bad:"独熟渋厚" },
+    "房熟渋厚": { n:"勝負師バナナ", t:"熟れどきは、逃さない", r:3.8, acc:"bolt",
+      d:"ここぞという瞬間を嗅ぎ分ける嗅覚と、迷わず張れる度胸の持ち主。理屈で考え、ノリで動く。負けても引きずらない切り替えの早さは、分厚い皮あってこそ。周りを置いてけぼりにしない配慮だけ忘れずに。",
+      good:"独青甘薄", bad:"房青甘薄" },
+    "房熟渋薄": { n:"トレンドバナナ", t:"その情報、皮より先に剥けてる", r:7.7, acc:"sparkle",
+      d:"流行の風向きを誰よりも早くキャッチする情報通。薄い皮は感度の高さの証で、面白いものへの反応速度は光速級。分析も鋭いが、飽きるのも早い。ハマったものを3ヶ月続けられたら本物。",
+      good:"独青甘厚", bad:"房青甘厚" },
+    "独青甘厚": { n:"職人バナナ", t:"いい熟成に、近道はない", r:6.9, acc:"band2",
+      d:"黙々と自分の道を極めるこだわりの人。派手さはないが、積み上げたものの厚みで最後に信頼を勝ち取る。優しさは口より手に出るタイプで、気づいたら誰かのために動いている。房の外にいても、みんな見てる。",
+      good:"房熟渋薄", bad:"房熟甘厚" },
+    "独青甘薄": { n:"詩人バナナ", t:"果肉の内側に、宇宙がある", r:5.4, acc:"moon",
+      d:"静かな外見の内側に、豊かすぎる感情の果肉を抱えた人。ひとりの時間に世界を深く味わい、言葉や作品ににじませる。傷つきやすいが、その繊細さこそが誰にも出せない甘みになる。",
+      good:"房熟渋厚", bad:"房熟甘厚" },
+    "独青渋厚": { n:"博士バナナ", t:"「なぜバナナは曲がるのか」考えて三日目", r:4.6, acc:"glasses2",
+      d:"気になったら底まで掘る探究の人。知識の蓄積と論理の積み上げが生きがいで、興味のスイッチが入ると寝食を忘れる。世間のノリには流されない分厚い皮を持ち、マイワールドの完成度は全タイプ1位。",
+      good:"房青甘薄", bad:"房熟甘薄" },
+    "独青渋薄": { n:"軍師バナナ", t:"三手先まで、読み終わってる", r:3.2, acc:"monocle",
+      d:"静かなる戦略家。表には出ず、全体を見渡して最善手を組み立てる参謀タイプ。観察力と分析力は随一だが、考えすぎて動けなくなる夜もある。信頼できる大将（パリピ等）と組むと無敵。",
+      good:"房熟甘厚", bad:"房熟渋厚" },
+    "独熟甘厚": { n:"ごろ寝バナナ", t:"焦らなくても、甘くなる", r:10.3, acc:"zzz",
+      d:"争いを好まない究極のマイペース。どんな環境でもだいたい快適に過ごせる適応力と、人を安心させる天然の甘さを持つ。締切? 熟せば剥かれるのがバナナの定め。周りをホッとさせる存在だが、油断すると完熟を通り越すので注意。",
+      good:"房青渋薄", bad:"房青渋厚" },
+    "独熟甘薄": { n:"芸術家バナナ", t:"今日の気分は、今日にしかない", r:5.1, acc:"beret",
+      d:"感性100%で生きるアーティスト気質。心が動いた瞬間に全エネルギーを注ぎ、動かないものには1ミリも興味がない。ムラはあるが、生み出すものの鮮度は圧倒的。その繊細さは、才能の別名。",
+      good:"房青甘厚", bad:"房青渋薄" },
+    "独熟渋厚": { n:"一匹狼バナナ", t:"房を出た。後悔はしていない", r:4.4, acc:"scar",
+      d:"自由を何より愛する野生派。群れのルールより自分の直感を信じ、単独でどこへでも行ける行動力と胆力を持つ。ドライに見えて、認めた相手にはとことん義理堅い。たまには房に顔を出すと喜ばれる。",
+      good:"房青甘薄", bad:"房青甘厚" },
+    "独熟渋薄": { n:"ミステリアスバナナ", t:"熟れ具合は、企業秘密", r:2.9, acc:"question",
+      d:"全16タイプ中もっともレアな不思議枠。直感で動くのに妙に鋭く、感情を見せないのに核心を突いてくる。本人にも自分がよくわかっていないが、それでいい。読めなさこそが最大の魅力であり武器。",
+      good:"房熟甘厚", bad:"房青渋厚" },
+  };
+
+  /* ============ 4つの族（青熟×甘渋で決まる） ============ */
+  const TRIBE_KEYS = ["青甘", "青渋", "熟甘", "熟渋"];
+  const GROUPS = {
+    "青甘": { name:"つつみこみ族", en:"CARE",  color:"#3E8E41",
+      d:"計画的で、ひとを支えるやさしさの房。困ったとき最初に手を差しのべるバナナたち。" },
+    "青渋": { name:"かんがえ族",   en:"MIND",  color:"#5B6ABF",
+      d:"論理と探究で世界を熟成させる頭脳派。房いちばんの参謀ぞろい。" },
+    "熟甘": { name:"ひだまり族",   en:"SUNNY", color:"#F2812E",
+      d:"いるだけで場があたたかくなる太陽バナナ。今日を楽しむ天才たち。" },
+    "熟渋": { name:"やせい族",     en:"WILD",  color:"#C25B8A",
+      d:"直感と自由で生きる、誰にも飼いならせないバナナ。勝負どころに強い。" },
+  };
+
+  /* ============ タイプ別スラッグ（/t/◯◯.html 用） ============ */
+  const SLUG = {
+    "房青甘厚":"aniki",    "房青甘薄":"sewayaki", "房青渋厚":"bancho",  "房青渋薄":"iincho",
+    "房熟甘厚":"paripi",   "房熟甘薄":"idol",     "房熟渋厚":"shobushi","房熟渋薄":"trend",
+    "独青甘厚":"shokunin", "独青甘薄":"shijin",   "独青渋厚":"hakase",  "独青渋薄":"gunshi",
+    "独熟甘厚":"gorone",   "独熟甘薄":"geijutsuka","独熟渋厚":"okami",  "独熟渋薄":"mystery",
+  };
+
+  /* ============ タイプ別の表情（e:目 m:口 b:まゆ ch:ほっぺ） ============ */
+  const FACES = {
+    "房青甘厚": { e:"dot",   m:"grin",  ch:true },            // アニキ: ニカッ
+    "房青甘薄": { e:"dot",   m:"smile", b:"worried", ch:true },// せわやき: 心配まゆ
+    "房青渋厚": { e:"sharp", m:"frown", b:"angry" },           // 番長: 眼光+への字
+    "房青渋薄": { e:"dot",   m:"smile" },                      // 委員長: メガネ+きちんと笑顔
+    "房熟甘厚": { e:"dot",   m:"grin",  ch:true },             // パリピ: グラサン+大口
+    "房熟甘薄": { e:"star",  m:"open",  ch:true },             // アイドル: 星目
+    "房熟渋厚": { e:"dot",   m:"smirk", b:"one" },             // 勝負師: 片まゆ+ニヤリ
+    "房熟渋薄": { e:"wink",  m:"smile" },                      // トレンド: ウインク
+    "独青甘厚": { e:"line",  m:"flat" },                       // 職人: 真剣な閉じ目
+    "独青甘薄": { e:"calm",  m:"smile", ch:true },             // 詩人: うっとり閉じ目
+    "独青渋厚": { e:"dot",   m:"open" },                       // 博士: 丸メガネ+ほほう口
+    "独青渋薄": { e:"dot",   m:"smirk" },                      // 軍師: モノクル+ニヤリ
+    "独熟甘厚": { e:"calm",  m:"open",  ch:true },             // ごろ寝: 寝目+あくび
+    "独熟甘薄": { e:"happy", m:"open",  ch:true },             // 芸術家: ひらめき顔
+    "独熟渋厚": { e:"sharp", m:"flat" },                       // 一匹狼: 傷+鋭い目
+    "独熟渋薄": { e:"calm",  m:"smirk" },                      // ミステリアス: 読めない微笑
+  };
+
+  /* ============ タイプ別の決めゼリフ（「半分バナナだから仕方ないか」のキャラ版） ============ */
+  const MOTTO = {
+    "房青甘厚": "半分バナナだから仕方ねえ、あとは任せとけ。",
+    "房青甘薄": "半分バナナだもん、お互い様だよ。",
+    "房青渋厚": "半分バナナなんだ、文句あるか。",
+    "房青渋薄": "半分バナナにつき、仕方ないものとします。",
+    "房熟甘厚": "半分バナナだし、しゃーなし！",
+    "房熟甘薄": "半分バナナなので、ゆるしてね。",
+    "房熟渋厚": "半分バナナ。それも織り込み済みだ。",
+    "房熟渋薄": "半分バナナとか、逆にアリでしょ。",
+    "独青甘厚": "……半分バナナ。仕方あるまい。",
+    "独青甘薄": "わたしの半分は、バナナでできている。",
+    "独青渋厚": "遺伝子の約60%がバナナ。仕方ないですね。",
+    "独青渋薄": "半分バナナ——想定の範囲内です。",
+    "独熟甘厚": "はんぶんバナナだし、まあいっか……。",
+    "独熟甘薄": "半分バナナ？ 最高じゃん、それ。",
+    "独熟渋厚": "半分バナナだ。それがどうした。",
+    "独熟渋薄": "半分バナナ……いや、どっちが半分だったかな。",
+  };
+
+  /* ============ バナナSVG生成 ============ */
+  function bananaSVG(code, size){
+    const group = code[0] === "房";
+    const ripe  = code[1] === "熟";
+    const sweet = code[2] === "甘";
+    const acc   = (TYPES[code] || {}).acc || "";
+
+    const bodyColor = ripe ? "var(--sun)" : "var(--green)";
+    const curve = "M52,52 Q60,152 158,150";
+
+    let s = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 210" width="'+size+'" height="'+size+'" role="img" aria-label="バナナキャラクター">';
+
+    // 仲間バナナ（房タイプ）
+    if(group){
+      s += '<g opacity="0.9">'
+        + banaMini(28, 92, -14) + banaMini(150, 88, 12)
+        + '</g>';
+    }
+
+    // 本体（ステッカー白フチ→アウトライン→ボディ）
+    s += '<path d="'+curve+'" fill="none" stroke="#FFFDF2" stroke-width="56" stroke-linecap="round"/>';
+    s += '<path d="'+curve+'" fill="none" stroke="var(--ink)" stroke-width="46" stroke-linecap="round"/>';
+    s += '<path d="'+curve+'" fill="none" stroke="'+bodyColor+'" stroke-width="38" stroke-linecap="round"/>';
+    // ハイライト
+    s += '<path d="M56,62 Q64,130 130,142" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="7" stroke-linecap="round"/>';
+    // ヘタ（茎）
+    s += '<rect x="42" y="34" width="18" height="22" rx="5" fill="var(--spot)" stroke="var(--ink)" stroke-width="4" transform="rotate(-18 51 45)"/>';
+    // 先端
+    s += '<circle cx="158" cy="150" r="9" fill="var(--spot)" stroke="var(--ink)" stroke-width="4"/>';
+
+    // シュガースポット（熟タイプ）
+    if(ripe){
+      s += '<g fill="var(--spot)" opacity=".8">'
+        + '<circle cx="70" cy="96" r="3.4"/><circle cx="88" cy="132" r="2.8"/>'
+        + '<circle cx="120" cy="146" r="3.2"/><circle cx="62" cy="72" r="2.4"/>'
+        + '</g>';
+    } else {
+      // 青タイプは先端が緑
+      s += '<path d="M132,144 Q146,150 156,150" fill="none" stroke="var(--leaf)" stroke-width="34" stroke-linecap="round" opacity=".55"/>';
+    }
+
+    // 顔（体の傾きに合わせて20度回転。座標はOG画像と同じ検証済みレイアウト）
+    const fx = 80, fy = 124;
+    const spec = FACES[code] || (sweet ? { e:"happy", m:"smile", ch:true } : { e:"dot", m:"flat" });
+    s += '<g transform="rotate(20 '+fx+' '+fy+')">';
+    s += faceEyes(spec.e, fx, fy);
+    s += faceMouth(spec.m, fx, fy);
+    if(spec.b) s += faceBrows(spec.b, fx, fy);
+    if(spec.ch){
+      s += '<circle cx="'+(fx-19)+'" cy="'+(fy-3)+'" r="4.5" fill="var(--blush)" opacity=".8"/>'
+        + '<circle cx="'+(fx+19)+'" cy="'+(fy-3)+'" r="4.5" fill="var(--blush)" opacity=".8"/>';
+    }
+    // アクセサリー（顔と同じ回転グループ内）
+    s += accessory(acc, fx, fy);
+    s += '</g>';
+    s += '</svg>';
+    // キャラはテーマ（ダークモード）に連動させず常に固定色で描く
+    for(const k in SVG_COLORS) s = s.split(k).join(SVG_COLORS[k]);
+    return s;
+  }
+
+  /* ============ 表情パーツ ============ */
+  const FACE_STROKE = 'stroke="var(--ink)" stroke-width="4.5" stroke-linecap="round" fill="none"';
+
+  function faceEyes(kind, fx, fy){
+    const ey = fy - 7;
+    switch(kind){
+      case "happy": // ∪∪ にっこり閉じ目
+        return '<g '+FACE_STROKE+'>'
+          + '<path d="M'+(fx-15)+','+(ey+2)+' q5,-8 10,0"/>'
+          + '<path d="M'+(fx+5)+','+(ey+2)+' q5,-8 10,0"/></g>';
+      case "calm": // ︶︶ まったり閉じ目
+        return '<g '+FACE_STROKE+'>'
+          + '<path d="M'+(fx-15)+','+(ey-2)+' q5,7 10,0"/>'
+          + '<path d="M'+(fx+5)+','+(ey-2)+' q5,7 10,0"/></g>';
+      case "line": // ―― 真剣な閉じ目
+        return '<g '+FACE_STROKE+'>'
+          + '<line x1="'+(fx-15)+'" y1="'+ey+'" x2="'+(fx-5)+'" y2="'+ey+'"/>'
+          + '<line x1="'+(fx+5)+'" y1="'+ey+'" x2="'+(fx+15)+'" y2="'+ey+'"/></g>';
+      case "sharp": // 鋭い目つき
+        return '<g '+FACE_STROKE+'>'
+          + '<line x1="'+(fx-15)+'" y1="'+(ey-3)+'" x2="'+(fx-4)+'" y2="'+(ey+1)+'"/>'
+          + '<line x1="'+(fx+15)+'" y1="'+(ey-3)+'" x2="'+(fx+4)+'" y2="'+(ey+1)+'"/></g>';
+      case "star": // ☆☆ 星目
+        return '<g fill="var(--sun-deep)" stroke="var(--ink)" stroke-width="2.2">'
+          + spark(fx-10, ey, 7) + spark(fx+10, ey, 7) + '</g>';
+      case "wink": // ウインク
+        return '<circle cx="'+(fx-10)+'" cy="'+ey+'" r="4.5" fill="var(--ink)"/>'
+          + '<g '+FACE_STROKE+'><path d="M'+(fx+5)+','+(ey+2)+' q5,-8 10,0"/></g>';
+      default: // ●● まる目
+        return '<circle cx="'+(fx-10)+'" cy="'+ey+'" r="4.5" fill="var(--ink)"/>'
+          + '<circle cx="'+(fx+10)+'" cy="'+ey+'" r="4.5" fill="var(--ink)"/>';
+    }
+  }
+
+  function faceMouth(kind, fx, fy){
+    switch(kind){
+      case "grin": // ニカッと大口
+        return '<path d="M'+(fx-10)+','+(fy+1)+' q10,14 20,0 Z" fill="var(--ink)"/>';
+      case "open": // まんまる口
+        return '<ellipse cx="'+fx+'" cy="'+(fy+5)+'" rx="4.5" ry="5.5" fill="var(--ink)"/>';
+      case "flat": // 一文字
+        return '<line x1="'+(fx-5)+'" y1="'+(fy+4)+'" x2="'+(fx+6)+'" y2="'+(fy+4)+'" '+FACE_STROKE+'/>';
+      case "frown": // への字
+        return '<path d="M'+(fx-8)+','+(fy+8)+' q8,-9 16,0" '+FACE_STROKE+'/>';
+      case "smirk": // ニヤリ
+        return '<path d="M'+(fx-3)+','+(fy+6)+' q7,1 11,-5" '+FACE_STROKE+'/>';
+      default: // にっこり
+        return '<path d="M'+(fx-8)+','+(fy+1)+' q8,10 16,0" '+FACE_STROKE+'/>';
+    }
+  }
+
+  function faceBrows(kind, fx, fy){
+    const st = 'stroke="var(--ink)" stroke-width="4" stroke-linecap="round"';
+    if(kind === "angry")
+      return '<g '+st+'>'
+        + '<line x1="'+(fx-16)+'" y1="'+(fy-21)+'" x2="'+(fx-5)+'" y2="'+(fy-16)+'"/>'
+        + '<line x1="'+(fx+16)+'" y1="'+(fy-21)+'" x2="'+(fx+5)+'" y2="'+(fy-16)+'"/></g>';
+    if(kind === "worried")
+      return '<g '+st+'>'
+        + '<line x1="'+(fx-16)+'" y1="'+(fy-16)+'" x2="'+(fx-5)+'" y2="'+(fy-20)+'"/>'
+        + '<line x1="'+(fx+16)+'" y1="'+(fy-16)+'" x2="'+(fx+5)+'" y2="'+(fy-20)+'"/></g>';
+    if(kind === "one")
+      return '<line x1="'+(fx+4)+'" y1="'+(fy-19)+'" x2="'+(fx+16)+'" y2="'+(fy-23)+'" '+st+'/>';
+    return "";
+  }
+
+  function banaMini(x, y, rot){
+    return '<g transform="translate('+x+','+y+') rotate('+rot+') scale(.42)">'
+      + '<path d="M0,0 Q8,66 74,64" fill="none" stroke="#FFFDF2" stroke-width="44" stroke-linecap="round"/>'
+      + '<path d="M0,0 Q8,66 74,64" fill="none" stroke="var(--ink)" stroke-width="34" stroke-linecap="round"/>'
+      + '<path d="M0,0 Q8,66 74,64" fill="none" stroke="var(--sun-deep)" stroke-width="26" stroke-linecap="round"/>'
+      + '</g>';
+  }
+
+  function accessory(acc, fx, fy){
+    const topY = fy - 34;
+    switch(acc){
+      case "band": // 赤鉢巻
+        return '<g transform="rotate(-8 '+fx+' '+topY+')">'
+          + '<rect x="'+(fx-26)+'" y="'+(topY-2)+'" width="52" height="12" rx="6" fill="var(--blush)" stroke="var(--ink)" stroke-width="3.5"/>'
+          + '</g>';
+      case "band2": // 白ねじり鉢巻
+        return '<g transform="rotate(-8 '+fx+' '+topY+')">'
+          + '<rect x="'+(fx-26)+'" y="'+(topY-2)+'" width="52" height="12" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="3.5"/>'
+          + '<line x1="'+(fx-12)+'" y1="'+(topY-2)+'" x2="'+(fx-6)+'" y2="'+(topY+10)+'" stroke="var(--ink)" stroke-width="2.5"/>'
+          + '<line x1="'+fx+'" y1="'+(topY-2)+'" x2="'+(fx+6)+'" y2="'+(topY+10)+'" stroke="var(--ink)" stroke-width="2.5"/>'
+          + '</g>';
+      case "heart":
+        return '<path transform="translate('+(fx+30)+','+(topY-8)+') scale(1.05)" d="M0,4 C-2,-2 -10,-2 -10,4 C-10,9 -3,13 0,16 C3,13 10,9 10,4 C10,-2 2,-2 0,4 Z" fill="var(--blush)" stroke="var(--ink)" stroke-width="3"/>';
+      case "cap": // 学帽風
+        return '<g transform="rotate(-6 '+fx+' '+topY+')">'
+          + '<path d="M'+(fx-24)+','+(topY+4)+' q24,-26 48,0 Z" fill="var(--ink)"/>'
+          + '<rect x="'+(fx-28)+'" y="'+(topY+2)+'" width="56" height="8" rx="4" fill="var(--ink)"/>'
+          + '</g>';
+      case "glasses": // 四角メガネ
+        return '<g fill="none" stroke="var(--ink)" stroke-width="4">'
+          + '<rect x="'+(fx-19)+'" y="'+(fy-14)+'" width="17" height="14" rx="3"/>'
+          + '<rect x="'+(fx+2)+'" y="'+(fy-14)+'" width="17" height="14" rx="3"/>'
+          + '<line x1="'+(fx-2)+'" y1="'+(fy-9)+'" x2="'+(fx+2)+'" y2="'+(fy-9)+'"/>'
+          + '</g>';
+      case "glasses2": // 丸メガネ
+        return '<g fill="none" stroke="var(--ink)" stroke-width="4">'
+          + '<circle cx="'+(fx-10)+'" cy="'+(fy-7)+'" r="8.5"/>'
+          + '<circle cx="'+(fx+10)+'" cy="'+(fy-7)+'" r="8.5"/>'
+          + '<line x1="'+(fx-1.5)+'" y1="'+(fy-8)+'" x2="'+(fx+1.5)+'" y2="'+(fy-8)+'"/>'
+          + '</g>';
+      case "monocle":
+        return '<g fill="none" stroke="var(--ink)" stroke-width="4">'
+          + '<circle cx="'+(fx+10)+'" cy="'+(fy-7)+'" r="9.5"/>'
+          + '<line x1="'+(fx+17)+'" y1="'+(fy)+'" x2="'+(fx+20)+'" y2="'+(fy+13)+'"/>'
+          + '</g>';
+      case "shades": // サングラス
+        return '<g>'
+          + '<rect x="'+(fx-20)+'" y="'+(fy-15)+'" width="18" height="13" rx="4" fill="var(--ink)"/>'
+          + '<rect x="'+(fx+2)+'" y="'+(fy-15)+'" width="18" height="13" rx="4" fill="var(--ink)"/>'
+          + '<line x1="'+(fx-2)+'" y1="'+(fy-10)+'" x2="'+(fx+2)+'" y2="'+(fy-10)+'" stroke="var(--ink)" stroke-width="4"/>'
+          + '</g>';
+      case "ribbon":
+        return '<g transform="translate('+(fx-2)+','+(topY-4)+') rotate(-10)" stroke="var(--ink)" stroke-width="3" fill="var(--blush)">'
+          + '<path d="M0,0 L-14,-8 L-13,9 Z"/><path d="M4,0 L18,-9 L17,8 Z"/>'
+          + '<circle cx="2" cy="0" r="4.5"/>'
+          + '</g>';
+      case "bolt":
+        return '<path transform="translate('+(fx+30)+','+(topY-12)+')" d="M4,0 L-5,13 L1,13 L-3,26 L8,11 L2,11 Z" fill="var(--sun-deep)" stroke="var(--ink)" stroke-width="2.5"/>';
+      case "sparkle":
+        return '<g fill="var(--sun-deep)" stroke="var(--ink)" stroke-width="2.2">'
+          + spark(fx+32, topY-6, 7) + spark(fx-34, fy+12, 5)
+          + '</g>';
+      case "moon":
+        return '<path transform="translate('+(fx+32)+','+(topY-8)+')" d="M6,0 A11,11 0 1,0 6,20 A9,9 0 1,1 6,0 Z" fill="var(--sun-deep)" stroke="var(--ink)" stroke-width="2.5"/>';
+      case "zzz":
+        return '<g font-family="Avenir Next,Futura,sans-serif" font-weight="800" fill="var(--ink)">'
+          + '<text x="'+(fx+26)+'" y="'+(topY-4)+'" font-size="16">Z</text>'
+          + '<text x="'+(fx+38)+'" y="'+(topY-16)+'" font-size="12">z</text>'
+          + '<text x="'+(fx+47)+'" y="'+(topY-26)+'" font-size="9">z</text>'
+          + '</g>';
+      case "beret":
+        return '<g transform="rotate(-10 '+fx+' '+topY+')">'
+          + '<ellipse cx="'+(fx-2)+'" cy="'+(topY+2)+'" rx="24" ry="10" fill="var(--blush)" stroke="var(--ink)" stroke-width="3.5"/>'
+          + '<circle cx="'+(fx-2)+'" cy="'+(topY-7)+'" r="3.5" fill="var(--ink)"/>'
+          + '</g>';
+      case "scar":
+        return '<g stroke="var(--ink)" stroke-width="3" stroke-linecap="round">'
+          + '<line x1="'+(fx-30)+'" y1="'+(fy-20)+'" x2="'+(fx-20)+'" y2="'+(fy-10)+'"/>'
+          + '<line x1="'+(fx-30)+'" y1="'+(fy-10)+'" x2="'+(fx-20)+'" y2="'+(fy-20)+'"/>'
+          + '</g>';
+      case "question":
+        return '<text x="'+(fx+28)+'" y="'+(topY-2)+'" font-family="Avenir Next,Futura,sans-serif" font-weight="800" font-size="24" fill="var(--blush)" stroke="var(--ink)" stroke-width="1" transform="rotate(12 '+(fx+28)+' '+(topY-2)+')">?</text>';
+      default:
+        return "";
+    }
+  }
+
+  function spark(x, y, r){
+    return '<path d="M'+x+','+(y-r)+' L'+(x+r*0.3)+','+(y-r*0.3)+' L'+(x+r)+','+y
+      +' L'+(x+r*0.3)+','+(y+r*0.3)+' L'+x+','+(y+r)+' L'+(x-r*0.3)+','+(y+r*0.3)
+      +' L'+(x-r)+','+y+' L'+(x-r*0.3)+','+(y-r*0.3)+' Z"/>';
+  }
+
+  /* ============ ステータス計算 ============ */
+  function statsFor(code){
+    const fusa = code[0]==="房", ripe = code[1]==="熟", sweet = code[2]==="甘", thick = code[3]==="厚";
+    // タイプ名から決定的なゆらぎを作る（毎回同じ値になる）
+    let seed = 0;
+    for(const ch of code) seed = (seed*31 + ch.charCodeAt(0)) % 97;
+    const jig = n => ((seed * n) % 11) - 5;
+    const clamp = v => Math.max(8, Math.min(98, v));
+    return [
+      { label: L("甘み（共感力）", "Sweetness (empathy)", "단맛 (공감력)"),    v: clamp((sweet?78:38) + (ripe?10:0) + jig(3)) },
+      { label: L("行動力（熟れ足）", "Drive (ripening speed)", "행동력 (숙성 속도)"), v: clamp((ripe?52:28) + (fusa?34:18) + jig(5)) },
+      { label: L("皮の厚さ（防御）", "Peel thickness (defense)", "껍질 두께 (방어력)"), v: clamp((thick?82:30) + (sweet?0:6) + jig(7)) },
+    ];
+  }
+
+  /* ============ 状態 ============ */
+  let answers = [];
+
+  const $ = id => document.getElementById(id);
+  const scrStart = $("scr-start"), scrQuiz = $("scr-quiz"),
+        scrResult = $("scr-result"), scrZukan = $("scr-zukan"),
+        scrAisho = $("scr-aisho");
+
+  function show(scr){
+    for(const s of [scrStart, scrQuiz, scrResult, scrZukan, scrAisho]) s.hidden = (s !== scr);
+    window.scrollTo({ top:0, behavior:"smooth" });
+  }
+
+  function savedType(){
+    try{
+      const c = localStorage.getItem("banana16_type");
+      return TYPES[c] ? c : null;
+    }catch(e){ return null; }
+  }
+
+  /* ============ ON°コラボ設定 ============ */
+  // ※ モック段階。内容確定後にこのブロックだけ書き換えれば反映される
+  const COLLAB = {
+    // モック段階: 本番(16banana.jp)では非表示、Artifact等のモック環境でのみ表示。
+    // コラボ開始時にこの行を `enabled: true,` に書き換える
+    enabled: (function(){ try{ return location.host !== "16banana.jp"; }catch(e){ return true; } })(),
+    brand: "ON° × 16バナナtype診断",
+    copySuffix: "のキミに、ON°からひとつ。",
+    itemName: "“半分の螺旋” HALF HELIX チャーム（仮）",
+    price: "¥9,900 → クーポンで ¥8,415（仮）",
+    limit: "エディションNo.タグ付き・先着20点／7月31日まで",
+    couponRate: "10%OFF",
+    couponPrefix: "BANANA",
+    shopUrl: "https://ondo---official.com/",
+    img: "collab/item.jpg", // 実画像を site/collab/item.jpg に置くと自動で差し替わる
+    note: "ご注文時にクーポンコードを入力（またはDMに添えて）してください。コードは診断タイプごとに異なり、ご注文順にエディションNo.が確定します。",
+  };
+  window.__collabPh = '<div class="collab-ph"><span>ON°</span><small>ITEM IMAGE (PLACEHOLDER)</small></div>';
+  window.__collabMockImg = "data:image/jpeg;base64,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";
+
+  function renderCollab(code, mode){
+    const box = $("collab");
+    if(!COLLAB.enabled || mode !== "self"){ box.hidden = true; return; }
+    box.hidden = false;
+    $("collab-brand").textContent = COLLAB.brand;
+    $("collab-copy").textContent = TYPES[code].n + COLLAB.copySuffix;
+    $("collab-item").textContent = COLLAB.itemName + "｜" + COLLAB.price;
+    $("collab-limit").textContent = COLLAB.limit;
+    $("collab-code").textContent = collabCode(code) + "（" + COLLAB.couponRate + "）";
+    $("collab-cta").href = COLLAB.shopUrl;
+    $("collab-note").textContent = COLLAB.note;
+    // 実ファイル → モック画像(data URI) → CSSプレースホルダ の順でフォールバック
+    $("collab-media").innerHTML =
+      '<img src="' + COLLAB.img + '" alt="' + COLLAB.brand + '"'
+      + ' onerror="if(!this.dataset.f&&window.__collabMockImg){this.dataset.f=1;this.src=window.__collabMockImg;}else{this.parentNode.innerHTML=window.__collabPh;}">';
+    track("collab_view", { banana_type: code });
+  }
+
+  function collabCode(code){
+    return COLLAB.couponPrefix + "-" + SLUG[code].toUpperCase();
+  }
+
+  /* ============ 相性診断 ============ */
+  const AISHO_TIERS = [
+    [90, "運命の房", "Destined Bunch", "운명의 송이"], [78, "最高のコンビ", "Perfect Combo", "최고의 콤비"],
+    [64, "いいかんじの房", "A Good Bunch", "느낌 좋은 송이"], [48, "じわじわ熟成中", "Still Ripening", "서서히 숙성 중"],
+    [0, "熟れ違い注意報", "Ripeness Mismatch Alert", "숙성 엇갈림 주의보"],
+  ];
+
+  function aishoCalc(a, b){
+    let score = 45;
+    const notes = [];
+    const add = (pt, text) => { score += pt; notes.push([Math.abs(pt), text]); };
+
+    if(a[0] !== b[0]) add(6, L("外へ誘う房パワーと、内で整えるソロ時間。ペース調整だけ丁寧に", "One pulls the bunch out, one keeps home base. Just sync your pace", "밖으로 이끄는 송이 파워와 안을 다지는 혼자 시간. 페이스 조절만 잘하면 OK"));
+    else if(a[0] === "房") add(10, L("どっちも房好き。予定がなくても集まってしまう、にぎやかな2本", "Two bunch-lovers. Plans or not, you end up hanging out", "둘 다 송이 체질. 약속이 없어도 어느새 모여 있는 시끌벅적 콤비"));
+    else add(4, L("おたがい一人の時間を尊重できる関係。会うのは月1でも成立する", "Mutual respect for alone time. Once a month is plenty — and that's fine", "서로의 혼자 시간을 존중하는 사이. 한 달에 한 번 만나도 성립한다"));
+
+    if(a[1] === b[1]){
+      if(a[1] === "青") add(14, L("計画派どうし。旅のしおりが2冊できるけど、そこがいい", "Two planners, two itineraries. Honestly kind of beautiful", "계획파 둘. 여행 일정표가 두 권 나오지만 그게 또 좋다"));
+      else add(14, L("ノリと勢いのシンクロ率が高い。思い立ったら即出発できる2本", "Impulse synced with impulse. You could leave RIGHT NOW", "흥과 추진력의 싱크로율 최고. 마음먹으면 바로 출발 가능한 두 사람"));
+    } else add(-8, L("計画派と勢い派で生活リズムがすれ違いがち。旅行の前夜はひと悶着覚悟", "A planner and a vibes-er. Expect friction the night before every trip", "계획파와 즉흥파라 생활 리듬이 어긋나기 쉽다. 여행 전날 밤 한바탕 각오"));
+
+    if(a[2] !== b[2]) add(12, L("感情担当と理屈担当。2本あわせてようやく完全体", "One handles feelings, one handles logic. Together: one complete banana", "감정 담당과 논리 담당. 둘이 합쳐야 비로소 완전체"));
+    else if(a[2] === "甘") add(8, L("共感の無限おかわり。話が終わらないので終電にだけ注意", "Infinite empathy refills. Just watch out for the last train", "공감 무한 리필. 이야기가 안 끝나니 막차만 조심"));
+    else add(-6, L("理屈×理屈で議論が終わらない。どっちも謝らない夜がある", "Logic vs logic: debates never end and nobody apologizes first", "논리 대 논리로 토론이 안 끝난다. 둘 다 먼저 사과 안 하는 밤이 있다"));
+
+    if(a[3] !== b[3]) add(8, L("皮厚がタンク役、薄皮がセンサー役。攻守のバランスがいい", "Tank and sensor. Great balance of offense and defense", "두꺼운 껍질이 탱커, 얇은 껍질이 센서. 공수 밸런스가 좋다"));
+    else if(a[3] === "厚") add(6, L("多少ぶつかっても翌日ケロッとしてる、頑丈な関係", "You bump, you bounce back by morning. Durable stuff", "좀 부딪혀도 다음 날이면 멀쩡한, 튼튼한 관계"));
+    else add(-4, L("繊細×繊細。深くわかり合えるぶん、共倒れ注意報", "Delicate × delicate. Deep understanding, mutual-burnout alert", "섬세 × 섬세. 깊이 통하는 만큼 같이 무너지지 않게 주의"));
+
+    if(TYPES[a].good === b || TYPES[b].good === a) add(25, L("公式認定ベストコンビ。同じ房に並ぶべき2本", "Officially certified Best Combo. You belong in the same bunch", "공식 인증 베스트 콤비. 같은 송이에 나란히 있어야 할 두 사람"));
+    if(TYPES[a].bad === b || TYPES[b].bad === a) add(-25, L("公式認定・熟れ違い注意の間柄。距離感をつかめば化ける", "Officially a ripeness mismatch. Get the distance right and it works", "공식 인증 숙성 엇갈림 주의보. 거리감만 잡으면 확 달라진다"));
+    if(a === b) notes.push([1, L("同じタイプどうし。鏡を見ているようで落ち着く（たまに気まずい）", "Same type. Like looking in a mirror (occasionally awkward)", "같은 타입끼리. 거울을 보는 것 같아 편안하다 (가끔 어색)")]);
+
+    score = Math.max(15, Math.min(99, score));
+    notes.sort((x, y) => y[0] - x[0]);
+    const tierRow = AISHO_TIERS.find(t => score >= t[0]);
+    return { score: score, tier: L(tierRow[1], tierRow[2], tierRow[3]), notes: notes.slice(0, 3).map(n => n[1]) };
+  }
+
+  function fillAishoSelect(sel, def){
+    sel.innerHTML = TRIBE_KEYS.map(k =>
+      '<optgroup label="' + GROUPS[k].name + '">'
+      + Object.keys(TYPES).filter(c => c[1] + c[2] === k).map(c =>
+        '<option value="' + c + '"' + (c === def ? ' selected' : '') + '>' + TYPES[c].n + '</option>'
+      ).join("")
+      + '</optgroup>'
+    ).join("");
+    sel.value = def;
+  }
+
+  function updateAishoFigs(){
+    const a = $("a-sel-1").value, b = $("a-sel-2").value;
+    if(TYPES[a]) $("a-fig-1").innerHTML = bananaSVG(a, 120);
+    if(TYPES[b]) $("a-fig-2").innerHTML = bananaSVG(b, 120);
+    $("a-result").hidden = true;
+  }
+
+  function openAisho(){
+    const mine = savedType() || "房青甘厚";
+    fillAishoSelect($("a-sel-1"), mine);
+    fillAishoSelect($("a-sel-2"), TYPES[mine].good);
+    updateAishoFigs();
+    show(scrAisho);
+    track("view_aisho");
+  }
+
+  let lastAisho = null;
+
+  function runAisho(){
+    const a = $("a-sel-1").value, b = $("a-sel-2").value;
+    if(!TYPES[a] || !TYPES[b]) return;
+    const r = aishoCalc(a, b);
+    lastAisho = { a: a, b: b, r: r };
+    $("a-pct").textContent = r.score;
+    $("a-tier").textContent = r.tier;
+    $("a-notes").innerHTML = r.notes.map(n => "<li>" + n + "</li>").join("");
+    $("a-result").hidden = false;
+    $("a-share-note").textContent = "";
+    track("aisho_result", { pair: TYPES[a].n + "x" + TYPES[b].n, score: r.score });
+  }
+
+  function aishoShareText(){
+    if(EN){
+      return "Banana Match Test: \"" + TYPES[lastAisho.a].n + "\" × \"" + TYPES[lastAisho.b].n
+        + "\" scored " + lastAisho.r.score + "% (" + lastAisho.r.tier + ").";
+    }
+    if(KO){
+      return "[바나나 궁합 테스트] \"" + TYPES[lastAisho.a].n + "\" × \"" + TYPES[lastAisho.b].n
+        + "\" 궁합은 " + lastAisho.r.score + "% (" + lastAisho.r.tier + ").";
+    }
+    return "【バナナ相性診断】「" + TYPES[lastAisho.a].n + "」×「" + TYPES[lastAisho.b].n
+      + "」の相性は " + lastAisho.r.score + "%（" + lastAisho.r.tier + "）でした。";
+  }
+
+  /* ============ きょうのバナナ運勢 ============ */
+  const FORTUNE_TEXTS = [
+    "熟れごろの一日。迷ったら甘いほうを選ぶと吉",
+    "皮がむけるように物事がスルスル進む日。大事な連絡は午前中に",
+    "今日は房のちから。ひとに頼ると想像の3倍うまくいく",
+    "青さが武器になる日。準備と下調べが夕方に効いてくる",
+    "シュガースポット出現中。小さなラッキーを見逃さないで",
+    "ちょっと打たれ弱い日。皮を厚めにして、無理せず過ごそう",
+    "直感が冴えるバナナ日和。最初にピンときた選択が正解",
+    "誰かの相談が舞い込みそう。聞くだけで株が上がる",
+    "追熟の一日。結果が出なくても、確実に甘くなってる",
+    "新しいものに手を伸ばすと吉。いつもと違う道で帰ってみて",
+    "房の外に出ると運が動く日。知らない場所、知らない人",
+    "今日はごろ寝も立派な戦略。休むほど明日が伸びる",
+  ];
+  const FORTUNE_ITEMS = [
+    "牛乳", "ホットケーキ", "黄色い靴下", "昼寝", "散歩", "観葉植物",
+    "アイス", "新しい音楽", "ふわふわの毛布", "コンビニの新商品",
+    "ストレッチ", "手書きのメモ", "あたたかい飲みもの", "早起き", "ラジオ", "深呼吸",
+  ];
+
+  function mulberry(a){
+    return function(){
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      let t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  function initFortune(){
+    const code = savedType();
+    if(!code) return;
+    const d = new Date();
+    const day = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+    const codes = Object.keys(TYPES);
+    const rnd = mulberry(day * 131 + codes.indexOf(code) * 7);
+    const stars = 1 + Math.floor(rnd() * 5);
+    const text = FORTUNE_TEXTS[Math.floor(rnd() * FORTUNE_TEXTS.length)];
+    const item = FORTUNE_ITEMS[Math.floor(rnd() * FORTUNE_ITEMS.length)];
+    const mates = codes.filter(c => c !== code);
+    const mate = mates[Math.floor(rnd() * mates.length)];
+    $("f-type").textContent = TYPES[code].n;
+    $("f-stars").textContent = "★★★★★".slice(0, stars) + "☆☆☆☆☆".slice(0, 5 - stars);
+    $("f-text").textContent = text;
+    $("f-item").textContent = item;
+    $("f-mate").textContent = TYPES[mate].n;
+    $("fortune").hidden = false;
+    // 計測は1日1回だけ（表示のたびに発火すると実態より多く見えるため）
+    try{
+      if(localStorage.getItem("banana16_fortune_day") !== String(day)){
+        localStorage.setItem("banana16_fortune_day", String(day));
+        track("view_fortune", { banana_type: code });
+      }
+    }catch(e){}
+  }
+
+  /* ============ 図鑑 ============ */
+  let currentTribe = "青甘";
+
+  function renderZukan(tribe){
+    currentTribe = tribe;
+    const g = GROUPS[tribe];
+    scrZukan.style.setProperty("--grp", g.color);
+    scrZukan.style.setProperty("--grp-soft", g.color + "2E");
+    $("z-tabs").innerHTML = TRIBE_KEYS.map(k =>
+      '<button type="button" class="z-tab' + (k === tribe ? " active" : "") + '"'
+      + ' style="--tc:' + GROUPS[k].color + '" data-tribe="' + k + '">'
+      + GROUPS[k].name + '</button>'
+    ).join("");
+    $("z-desc").textContent = g.name + "——" + g.d;
+    const codes = Object.keys(TYPES).filter(c => c[1] + c[2] === tribe);
+    $("z-grid").innerHTML = codes.map(c =>
+      '<button type="button" class="z-card" data-code="' + c + '">'
+      + '<span class="z-fig">' + bananaSVG(c, 110) + '</span>'
+      + '<span class="z-name">' + TYPES[c].n + '</span>'
+      + '<span class="z-tag">' + TYPES[c].t + '</span>'
+      + '</button>'
+    ).join("");
+  }
+
+  function openZukan(tribe){
+    renderZukan(tribe);
+    show(scrZukan);
+    track("view_zukan", { tribe: GROUPS[tribe].name });
+  }
+
+  /* ============ クイズ描画 ============ */
+  function renderQuestion(){
+    const i = answers.length;
+    const q = QUESTIONS[i];
+    $("q-no").textContent = i + 1;
+    $("q-pct").textContent = Math.round(i / QUESTIONS.length * 100);
+    $("q-fill").style.width = (i / QUESTIONS.length * 100) + "%";
+    $("q-bar").setAttribute("aria-valuenow", i);
+    $("q-text").textContent = q.q;
+    $("opt-a-text").textContent = q.a;
+    $("opt-b-text").textContent = q.b;
+    $("btn-back").style.visibility = i === 0 ? "hidden" : "visible";
+
+    // 出題アニメーションをリスタート
+    for(const el of [$("q-text"), $("opt-a"), $("opt-b")]){
+      el.classList.remove("pop-in");
+      void el.offsetWidth;
+      el.classList.add("pop-in");
+    }
+  }
+
+  function answer(side){
+    track("answer", { q: answers.length + 1, side: side });
+    answers.push(side);
+    if(answers.length >= QUESTIONS.length){
+      renderResult(computeCode(), "self");
+      show(scrResult);
+    } else {
+      renderQuestion();
+    }
+  }
+
+  /* ============ 結果 ============ */
+  function computeCode(){
+    const score = [0,0,0,0]; // aが多いほどプラス
+    QUESTIONS.forEach((q, i) => { score[q.ax] += (answers[i] === "a" ? 1 : -1); });
+    return score.map((v, ax) => v > 0 ? AXES[ax][0] : AXES[ax][1]).join("");
+  }
+
+  let lastCode = null;
+
+  function renderResult(code, mode){
+    mode = mode || "self";  // self | shared | zukan
+    lastCode = code;
+    const t = TYPES[code];
+
+    $("r-intro").textContent =
+      mode === "shared" ? L("この人の中のバナナは……", "Their inner banana is...", "이 사람 안의 바나나는……") :
+      mode === "zukan"  ? L("こんなバナナ……", "This banana is...", "이런 바나나……") :
+      L("キミの中のバナナは……", "Your inner banana is...", "네 안의 바나나는……");
+    $("shared-cta").hidden = mode !== "shared";
+    $("zukan-back").hidden = mode !== "zukan";
+    // 出現率は実際に診断した人（と共有された結果）だけのお楽しみ
+    $("r-rarity-row").hidden = mode === "zukan";
+
+    // 自分の診断結果は記憶して「きょうの運勢」に使う
+    if(mode === "self"){
+      try{ localStorage.setItem("banana16_type", code); }catch(e){}
+      initFortune();
+    }
+
+    // コラボ枠（診断した本人だけの特典）
+    renderCollab(code, mode);
+
+    // タイプ別解説ページへのリンク（ルート配信時のみ）
+    const atRoot = location.pathname === LANG_PREFIX + "/" || location.pathname === "/"
+      || /\/index\.html$/.test(location.pathname);
+    $("r-more-wrap").hidden = !atRoot;
+    if(atRoot){
+      $("r-more").href = LANG_PREFIX + "/banana/" + SLUG[code] + ".html";
+      $("r-more").textContent = L(t.n + "をもっと詳しく →", "More about " + t.n + " →", t.n + " 더 알아보기 →");
+    }
+
+    // 族カラー（青熟×甘渋の4グループ）
+    const g = GROUPS[code[1] + code[2]];
+    scrResult.style.setProperty("--grp", g.color);
+    scrResult.style.setProperty("--grp-soft", g.color + "2E");
+    $("r-group").innerHTML = '<span>' + g.name + '<small>' + g.en + '</small></span>';
+    track("view_result", { banana_type: code, mode: mode });
+
+    $("r-figure").innerHTML = bananaSVG(code, 216);
+    $("r-name").textContent = t.n;
+    $("r-tagline").textContent = t.t;
+    $("r-code").innerHTML = code.split("").map(c => "<span>"+axisDisp(c)+"</span>").join("");
+    $("r-rarity").textContent = t.r.toFixed(1);
+    $("r-desc").textContent = t.d;
+    $("d-motto").textContent = "……" + (MOTTO[code] || "半分バナナだから仕方ないか。");
+
+    const stats = statsFor(code);
+    $("r-stats").innerHTML = stats.map(s =>
+      '<div class="stat"><span>'+s.label+'</span>'
+      + '<span class="track"><span class="fill" data-v="'+s.v+'"></span></span>'
+      + '<span class="val">'+s.v+'</span></div>'
+    ).join("");
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      document.querySelectorAll("#r-stats .fill").forEach(el => { el.style.width = el.dataset.v + "%"; });
+    }));
+
+    $("mate-good-fig").innerHTML = bananaSVG(t.good, 74);
+    $("mate-good-name").textContent = TYPES[t.good].n;
+    $("mate-bad-fig").innerHTML = bananaSVG(t.bad, 74);
+    $("mate-bad-name").textContent = TYPES[t.bad].n;
+
+    $("share-note").textContent = "";
+
+    // リビール再生
+    document.querySelectorAll("#scr-result .reveal").forEach(el => {
+      el.style.animation = "none";
+      void el.offsetWidth;
+      el.style.animation = "";
+    });
+  }
+
+  /* ============ シェア ============ */
+  function shareText(code){
+    const t = TYPES[code];
+    if(EN){
+      return "I took the 16 Banana Type Test — my inner banana is \"" + t.n + "\" (" + codeDisp(code) + "). "
+        + "Rarity " + t.r.toFixed(1) + "%. " + (MOTTO[code] || "Well, I'm half banana anyway.");
+    }
+    if(KO){
+      return "[16바나나 유형 테스트] 내 안의 바나나는 \"" + t.n + "\" (" + codeDisp(code) + "형). "
+        + "희귀도 " + t.r.toFixed(1) + "%. " + (MOTTO[code] || "뭐, 반은 바나나니까 어쩔 수 없지.");
+    }
+    return "【16バナナtype診断】わたしの中のバナナは「" + t.n + "」（" + code + "型）でした。"
+      + "出現率" + t.r.toFixed(1) + "%。" + (MOTTO[code] || "半分バナナだから仕方ないか。");
+  }
+  function shareUrl(code){
+    // 本番（ルート配信）ではタイプ別OGP付きの /t/◯◯.html を使う（en/koは /en/t/ /ko/t/）
+    const atRoot = location.pathname === LANG_PREFIX + "/" || location.pathname === "/"
+      || /\/index\.html$/.test(location.pathname);
+    if(atRoot && SLUG[code]) return location.origin + LANG_PREFIX + "/t/" + SLUG[code] + ".html";
+    return location.origin + location.pathname + "?t=" + encodeURIComponent(code);
+  }
+  function openShare(url){
+    window.open(url, "_blank", "noopener");
+  }
+  function shareX(){
+    if(!lastCode) return;
+    track("share", { method: "x", banana_type: lastCode });
+    openShare("https://twitter.com/intent/tweet"
+      + "?text=" + encodeURIComponent(shareText(lastCode))
+      + "&url=" + encodeURIComponent(shareUrl(lastCode))
+      + "&hashtags=" + encodeURIComponent(shareHashtag()));
+  }
+  function shareLine(){
+    if(!lastCode) return;
+    track("share", { method: "line", banana_type: lastCode });
+    openShare("https://line.me/R/share?text="
+      + encodeURIComponent(shareText(lastCode) + " " + shareUrl(lastCode)));
+  }
+  /* ============ 画像シェア（Instagramストーリーズ向け 1080x1920） ============ */
+  const SVG_COLORS = {
+    "var(--ink)":"#42280E", "var(--sun)":"#FFC93C", "var(--sun-deep)":"#F2A93B",
+    "var(--green)":"#B9C94E", "var(--leaf)":"#3E8E41", "var(--blush)":"#FF7A59",
+    "var(--spot)":"#7A4A1D", "var(--card)":"#FFFDF2"
+  };
+  const CARD_FONT = '"Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN",sans-serif';
+
+  function svgForImage(code, px){
+    // CSS変数は単体SVG画像では解決されないため実色に置換
+    let s = bananaSVG(code, px);
+    for(const k in SVG_COLORS) s = s.split(k).join(SVG_COLORS[k]);
+    return s;
+  }
+  function loadSvgImage(svg){
+    return new Promise((resolve, reject) => {
+      const im = new Image();
+      im.onload = () => resolve(im);
+      im.onerror = reject;
+      im.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+    });
+  }
+  function rrect(ctx, x, y, w, h, r){
+    ctx.beginPath();
+    if(ctx.roundRect) ctx.roundRect(x, y, w, h, r);
+    else ctx.rect(x, y, w, h);
+  }
+
+  async function buildShareCanvas(code){
+    const t = TYPES[code], g = GROUPS[code[1] + code[2]];
+    const W = 1080, H = 1920;
+    const cv = document.createElement("canvas");
+    cv.width = W; cv.height = H;
+    const ctx = cv.getContext("2d");
+
+    // 背景（クリーム+ドット）
+    ctx.fillStyle = "#FFF5DB"; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = "rgba(122,74,29,.14)";
+    for(let y = 27; y < H; y += 54)
+      for(let x = 27; x < W; x += 54){ ctx.beginPath(); ctx.arc(x, y, 4, 0, 7); ctx.fill(); }
+
+    // ヘッダー
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#8A6B43"; ctx.font = "700 30px " + CARD_FONT;
+    ctx.fillText("BANANA PERSONALITY LAB", W/2, 160);
+    ctx.fillStyle = "#42280E"; ctx.font = "800 62px " + CARD_FONT;
+    ctx.fillText(L("16バナナtype診断", "16 Banana Type Test", "16바나나 유형 테스트"), W/2, 238);
+
+    // ステッカーカード
+    ctx.fillStyle = "#42280E"; rrect(ctx, 116, 316, 880, 1300, 64); ctx.fill();
+    ctx.fillStyle = "#FFFDF2"; rrect(ctx, 100, 300, 880, 1300, 64); ctx.fill();
+    ctx.lineWidth = 12; ctx.strokeStyle = "#42280E"; rrect(ctx, 100, 300, 880, 1300, 64); ctx.stroke();
+
+    ctx.fillStyle = "#8A6B43"; ctx.font = "700 40px " + CARD_FONT;
+    ctx.fillText(L("キミの中のバナナは……", "My inner banana is...", "내 안의 바나나는……"), W/2, 435);
+
+    // キャラ（族カラーの円の上に）
+    ctx.fillStyle = g.color + "2E";
+    ctx.beginPath(); ctx.arc(W/2, 765, 262, 0, 7); ctx.fill();
+    const im = await loadSvgImage(svgForImage(code, 480));
+    ctx.drawImage(im, W/2 - 240, 525, 480, 480);
+
+    // 族バッジ
+    ctx.font = "800 38px " + CARD_FONT;
+    const gt = g.name + "  " + g.en;
+    const gw = ctx.measureText(gt).width + 84;
+    ctx.fillStyle = g.color; rrect(ctx, W/2 - gw/2, 1062, gw, 74, 37); ctx.fill();
+    ctx.lineWidth = 6; ctx.strokeStyle = "#42280E"; rrect(ctx, W/2 - gw/2, 1062, gw, 74, 37); ctx.stroke();
+    ctx.fillStyle = "#FFF8E8"; ctx.fillText(gt, W/2, 1113);
+
+    // タイプ名（幅に収まるまで縮小）
+    let fs = 96;
+    ctx.fillStyle = "#42280E";
+    do{ fs -= 4; ctx.font = "800 " + fs + "px " + CARD_FONT; } while(ctx.measureText(t.n).width > 800 && fs > 48);
+    ctx.fillText(t.n, W/2, 1245);
+
+    // 肩書き
+    ctx.fillStyle = g.color; ctx.font = "700 38px " + CARD_FONT;
+    ctx.fillText(t.t, W/2, 1315);
+
+    // タイプコードチップ
+    const chip = 118, gap = 26, x0 = W/2 - (chip*4 + gap*3)/2, cy0 = 1372;
+    for(let i = 0; i < 4; i++){
+      const x = x0 + i*(chip + gap);
+      ctx.fillStyle = g.color + "2E"; rrect(ctx, x, cy0, chip, chip, 26); ctx.fill();
+      ctx.lineWidth = 6; ctx.strokeStyle = "#42280E"; rrect(ctx, x, cy0, chip, chip, 26); ctx.stroke();
+      ctx.fillStyle = "#42280E"; ctx.font = "800 60px " + CARD_FONT;
+      ctx.fillText(axisDisp(code[i]), x + chip/2, cy0 + 82);
+    }
+
+    // 出現率
+    ctx.fillStyle = "#8A6B43"; ctx.font = "700 32px " + CARD_FONT;
+    ctx.fillText(L("出現率 " + t.r.toFixed(1) + "%（バナナ調べ）", "Rarity " + t.r.toFixed(1) + "% (banana census)", "희귀도 " + t.r.toFixed(1) + "% (바나나 조사)"), W/2, 1562);
+
+    // フッター（カードの外）— キャラごとの決めゼリフ
+    const motto = MOTTO[code] || "半分バナナだから仕方ないか。";
+    let mfs = 44;
+    ctx.fillStyle = "#42280E";
+    do{ mfs -= 2; ctx.font = "800 " + mfs + "px " + CARD_FONT; } while(ctx.measureText(motto).width > 980 && mfs > 24);
+    ctx.fillText(motto, W/2, 1690);
+    ctx.font = "800 34px " + CARD_FONT;
+    ctx.fillText(L("#16バナナtype診断", "#16BananaTypeTest", "#16바나나유형테스트"), W/2, 1752);
+    let urlText = "";
+    try{ urlText = location.host + location.pathname; }catch(e){}
+    if(urlText){
+      ctx.fillStyle = "#8A6B43"; ctx.font = "700 30px " + CARD_FONT;
+      ctx.fillText(urlText, W/2, 1806);
+    }
+    return cv;
+  }
+
+  /* ============ タイプ別OGカード（1200x630・og_gen.htmlから利用） ============ */
+  async function buildOgCanvas(code){
+    const t = TYPES[code], g = GROUPS[code[1] + code[2]];
+    const W = 1200, H = 630;
+    const cv = document.createElement("canvas");
+    cv.width = W; cv.height = H;
+    const ctx = cv.getContext("2d");
+
+    ctx.fillStyle = "#FFF5DB"; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = "rgba(122,74,29,.14)";
+    for(let y = 15; y < H; y += 30)
+      for(let x = 15; x < W; x += 30){ ctx.beginPath(); ctx.arc(x, y, 2.4, 0, 7); ctx.fill(); }
+
+    ctx.fillStyle = "#42280E"; rrect(ctx, 52, 52, 1104, 534, 44); ctx.fill();
+    ctx.fillStyle = "#FFFDF2"; rrect(ctx, 40, 40, 1104, 534, 44); ctx.fill();
+    ctx.lineWidth = 7; ctx.strokeStyle = "#42280E"; rrect(ctx, 40, 40, 1104, 534, 44); ctx.stroke();
+
+    // 右: キャラ
+    ctx.fillStyle = g.color + "2E";
+    ctx.beginPath(); ctx.arc(890, 300, 212, 0, 7); ctx.fill();
+    const im = await loadSvgImage(svgForImage(code, 400));
+    ctx.drawImage(im, 690, 100, 400, 400);
+
+    // 左: テキスト
+    ctx.textAlign = "left";
+    ctx.fillStyle = "#8A6B43"; ctx.font = "700 27px " + CARD_FONT;
+    ctx.fillText(L("16バナナtype診断", "16 Banana Type Test", "16바나나 유형 테스트"), 96, 126);
+    ctx.font = "700 34px " + CARD_FONT;
+    ctx.fillText(L("わたしの中のバナナは……", "My inner banana is...", "내 안의 바나나는……"), 96, 206);
+
+    let fs = 80;
+    ctx.fillStyle = "#42280E";
+    do{ fs -= 4; ctx.font = "800 " + fs + "px " + CARD_FONT; } while(ctx.measureText(t.n).width > 540 && fs > 40);
+    ctx.fillText(t.n, 96, 298);
+
+    let fs2 = 32;
+    ctx.fillStyle = g.color;
+    do{ fs2 -= 2; ctx.font = "700 " + fs2 + "px " + CARD_FONT; } while(ctx.measureText(t.t).width > 540 && fs2 > 18);
+    ctx.fillText(t.t, 96, 354);
+
+    ctx.font = "800 28px " + CARD_FONT;
+    const gt = g.name + "  " + g.en;
+    const gw = ctx.measureText(gt).width + 56;
+    ctx.fillStyle = g.color; rrect(ctx, 96, 390, gw, 54, 27); ctx.fill();
+    ctx.lineWidth = 5; ctx.strokeStyle = "#42280E"; rrect(ctx, 96, 390, gw, 54, 27); ctx.stroke();
+    ctx.fillStyle = "#FFF8E8"; ctx.fillText(gt, 124, 428);
+
+    const chip = 74, gap = 16, cy0 = 472;
+    ctx.textAlign = "center";
+    for(let i = 0; i < 4; i++){
+      const x = 96 + i * (chip + gap);
+      ctx.fillStyle = g.color + "2E"; rrect(ctx, x, cy0, chip, chip, 18); ctx.fill();
+      ctx.lineWidth = 5; ctx.strokeStyle = "#42280E"; rrect(ctx, x, cy0, chip, chip, 18); ctx.stroke();
+      ctx.fillStyle = "#42280E"; ctx.font = "800 38px " + CARD_FONT;
+      ctx.fillText(axisDisp(code[i]), x + chip / 2, cy0 + 51);
+    }
+
+    ctx.fillStyle = "#8A6B43"; ctx.font = "700 25px " + CARD_FONT;
+    ctx.fillText(L("キミの中のバナナは？ → 16banana.jp", "What's YOUR banana? → 16banana.jp", "너의 바나나는? → 16banana.jp"), 890, 560);
+    return cv;
+  }
+
+  async function resultImageBlob(){
+    const cv = await buildShareCanvas(lastCode);
+    const blob = await new Promise(res => cv.toBlob(res, "image/png"));
+    if(!blob) throw new Error("no blob");
+    return blob;
+  }
+
+  function downloadBlob(blob){
+    const a = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    a.href = url;
+    a.download = "16banana_result.png";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 30000);
+  }
+
+  async function shareImage(){
+    if(!lastCode) return;
+    track("share", { method: "image", banana_type: lastCode });
+    const note = $("share-note");
+    note.textContent = L("画像を生成中……", "Generating image...", "이미지 생성 중……");
+    try{
+      const blob = await resultImageBlob();
+      const file = new File([blob], "16banana_result.png", { type: "image/png" });
+      if(navigator.canShare && navigator.canShare({ files: [file] })){
+        await navigator.share({ files: [file], text: shareText(lastCode) + " " + shareUrl(lastCode) });
+        note.textContent = L("共有メニューからInstagramを選んでね", "Pick Instagram from the share sheet", "공유 메뉴에서 Instagram을 선택하세요");
+      } else {
+        // 共有シート非対応（PC・非HTTPS等）はダウンロードにフォールバック
+        downloadBlob(blob);
+        note.textContent = L("画像を保存しました。Instagramのストーリーズに貼ってね", "Image saved — post it to your Stories", "이미지를 저장했어요. 인스타 스토리에 올려보세요");
+      }
+    }catch(e){
+      if(e && e.name === "AbortError"){ note.textContent = ""; return; }
+      note.textContent = L("画像の生成に失敗……「画像を保存」も試してみてね", "Couldn't generate the image — try \"Save image\"", "이미지 생성 실패…… '이미지 저장'도 시도해 보세요");
+    }
+  }
+
+  async function saveImage(){
+    if(!lastCode) return;
+    track("share", { method: "save", banana_type: lastCode });
+    const note = $("share-note");
+    note.textContent = L("画像を生成中……", "Generating image...", "이미지 생성 중……");
+    try{
+      downloadBlob(await resultImageBlob());
+      note.textContent = L("画像を保存しました", "Image saved", "이미지를 저장했어요");
+    }catch(e){
+      note.textContent = L("画像の生成に失敗……ブラウザを変えて試してみてね", "Couldn't generate the image — try another browser", "이미지 생성 실패…… 다른 브라우저로 시도해 보세요");
+    }
+  }
+
+  async function copyLink(){
+    if(!lastCode) return;
+    track("share", { method: "copy", banana_type: lastCode });
+    const payload = shareText(lastCode) + " " + shareUrl(lastCode);
+    const note = $("share-note");
+    try{
+      await navigator.clipboard.writeText(payload);
+      note.textContent = L("結果リンクをコピーしました。SNSに貼り付けてどうぞ", "Link copied — paste it anywhere", "결과 링크를 복사했어요. SNS에 붙여넣어 보세요");
+    }catch(e){
+      note.textContent = payload;
+    }
+  }
+
+  /* ============ イベント ============ */
+  function startQuiz(){
+    answers = [];
+    renderQuestion();
+    show(scrQuiz);
+    track("start_quiz");
+  }
+  $("btn-start").addEventListener("click", startQuiz);
+  $("btn-zukan-start").addEventListener("click", startQuiz);
+  $("btn-zukan-home").addEventListener("click", () => show(scrStart));
+  $("btn-zukan-back").addEventListener("click", () => openZukan(currentTribe));
+
+  // トップの族チップ → 図鑑
+  TRIBE_KEYS.forEach((k, i) => {
+    $("tribe-" + i).addEventListener("click", () => openZukan(k));
+  });
+
+  // 相性診断
+  $("btn-aisho-open").addEventListener("click", openAisho);
+  $("btn-aisho-home").addEventListener("click", () => show(scrStart));
+  $("a-sel-1").addEventListener("change", updateAishoFigs);
+  $("a-sel-2").addEventListener("change", updateAishoFigs);
+  $("btn-aisho").addEventListener("click", runAisho);
+  $("btn-aisho-x").addEventListener("click", () => {
+    if(!lastAisho) return;
+    track("share", { method: "x", kind: "aisho" });
+    openShare("https://twitter.com/intent/tweet"
+      + "?text=" + encodeURIComponent(aishoShareText())
+      + "&url=" + encodeURIComponent(location.origin + LANG_PREFIX + "/")
+      + "&hashtags=" + encodeURIComponent(shareHashtag()));
+  });
+  $("btn-aisho-copy").addEventListener("click", async () => {
+    if(!lastAisho) return;
+    track("share", { method: "copy", kind: "aisho" });
+    const payload = aishoShareText() + " " + location.origin + "/";
+    try{
+      await navigator.clipboard.writeText(payload);
+      $("a-share-note").textContent = L("結果をコピーしました", "Copied", "결과를 복사했어요");
+    }catch(e){
+      $("a-share-note").textContent = payload;
+    }
+  });
+
+  // 図鑑内のタブ・タイプカード（動的生成のためイベント委譲）
+  $("z-tabs").addEventListener("click", (e) => {
+    const b = e && e.target && e.target.closest ? e.target.closest("[data-tribe]") : null;
+    if(b) openZukan(b.dataset.tribe);
+  });
+  $("z-grid").addEventListener("click", (e) => {
+    const b = e && e.target && e.target.closest ? e.target.closest("[data-code]") : null;
+    if(b && TYPES[b.dataset.code]){
+      renderResult(b.dataset.code, "zukan");
+      show(scrResult);
+    }
+  });
+  $("opt-a").addEventListener("click", () => answer("a"));
+  $("opt-b").addEventListener("click", () => answer("b"));
+  $("btn-back").addEventListener("click", () => {
+    if(answers.length > 0){ answers.pop(); renderQuestion(); }
+  });
+  $("btn-retry").addEventListener("click", () => {
+    answers = [];
+    renderQuestion();
+    show(scrQuiz);
+  });
+  $("btn-coupon").addEventListener("click", async () => {
+    if(!lastCode) return;
+    track("coupon_copy", { banana_type: lastCode });
+    try{
+      await navigator.clipboard.writeText(collabCode(lastCode));
+      $("btn-coupon").textContent = L("コピーしました", "Copied", "복사했어요");
+      setTimeout(() => { $("btn-coupon").textContent = L("コードをコピー", "Copy code", "코드 복사"); }, 1600);
+    }catch(e){}
+  });
+  $("collab-cta").addEventListener("click", () => {
+    track("collab_click", { banana_type: lastCode || "" });
+  });
+  /* ============ シェアモーダル ============ */
+  const previewCache = {};
+
+  async function openShareModal(){
+    if(!lastCode) return;
+    track("share_open", { banana_type: lastCode });
+    const t = TYPES[lastCode];
+    $("share-hook").textContent = t.r <= 4.5
+      ? L("全国のバナナの" + t.r.toFixed(1) + "%しかいないレア枠。これは自慢案件です。",
+          "Only " + t.r.toFixed(1) + "% of bananas are this type. Go brag a little.",
+          "전체 바나나의 " + t.r.toFixed(1) + "%밖에 없는 레어 등급. 이건 자랑해야 합니다.")
+      : L("キミの中の" + t.n + "、みんなにも見せびらかそう。",
+          "Show everyone your inner " + t.n + ".",
+          "네 안의 " + t.n + ", 모두에게 자랑하자.");
+    $("share-note").textContent = "";
+    $("share-modal").hidden = false;
+    const pv = $("share-preview");
+    try{
+      if(!previewCache[lastCode]){
+        pv.textContent = L("プレビューを生成中……", "Generating preview...", "미리보기 생성 중……");
+        const cv = await buildShareCanvas(lastCode);
+        previewCache[lastCode] = cv.toDataURL("image/jpeg", 0.8);
+      }
+      pv.innerHTML = '<img src="' + previewCache[lastCode] + '" alt="">';
+    }catch(e){
+      pv.textContent = "";
+    }
+  }
+  function closeShareModal(){ $("share-modal").hidden = true; }
+
+  $("btn-share-open").addEventListener("click", openShareModal);
+  $("btn-share-open2").addEventListener("click", openShareModal);
+  $("share-close").addEventListener("click", closeShareModal);
+  $("share-close2").addEventListener("click", closeShareModal);
+  $("share-modal").addEventListener("click", (e) => {
+    if(e && e.target === $("share-modal")) closeShareModal();
+  });
+
+  $("btn-x").addEventListener("click", shareX);
+  $("btn-line").addEventListener("click", shareLine);
+  $("btn-image").addEventListener("click", shareImage);
+  $("btn-save").addEventListener("click", saveImage);
+  $("btn-to-zukan").addEventListener("click", () => {
+    openZukan(lastCode ? lastCode[1] + lastCode[2] : "青甘");
+  });
+  $("btn-to-aisho").addEventListener("click", openAisho);
+  $("btn-copy").addEventListener("click", copyLink);
+  $("btn-try").addEventListener("click", () => {
+    if(window.history && history.replaceState){
+      history.replaceState(null, "", location.pathname);
+    }
+    answers = [];
+    renderQuestion();
+    show(scrQuiz);
+  });
+
+  /* ============ Xシェアのハッシュタグ（言語別） ============ */
+  function shareHashtag(){ return L("16バナナtype診断", "16BananaTypeTest", "16바나나유형테스트"); }
+
+  /* ============ 多言語（/en/ /ko/ または ?lang=en|ko で有効化） ============ */
+  const LANG = (function(){
+    try{
+      const m = location.pathname.match(/^\/(en|ko)(\/|$)/);
+      if(m) return m[1];
+      const q = new URLSearchParams(location.search).get("lang");
+      return (q === "en" || q === "ko") ? q : "ja";
+    }catch(e){ return "ja"; }
+  })();
+  const EN = LANG === "en";
+  const KO = LANG === "ko";
+  const LANG_PREFIX = LANG === "ja" ? "" : "/" + LANG;
+
+  function L(ja, en, ko){ return KO ? (ko !== undefined ? ko : en) : (EN ? en : ja); }
+
+  const EN_AXIS = { "房":"B", "独":"S", "青":"G", "熟":"R", "甘":"H", "渋":"M", "厚":"T", "薄":"D" };
+  function axisDisp(ch){ return LANG === "ja" ? ch : (EN_AXIS[ch] || ch); }
+  function codeDisp(code){ return code.split("").map(axisDisp).join(""); }
+
+  const EN_TYPES = {
+    "房青甘厚": { n:"Captain Banana", t:"Follow me. I've got the whole bunch.",
+      d:"The dependable leader who looks after everyone. Plans ahead, pulls the group forward, and shrugs off knocks with thick-peel mental armor. Just remember to pamper yourself once in a while." },
+    "房青甘薄": { n:"Caretaker Banana", t:"Already checked how ripe everyone is",
+      d:"The first to notice when someone's off. Deep wells of kindness — but that thin peel bruises easily, so be as kind to yourself as you are to the bunch." },
+    "房青渋厚": { n:"Top Banana", t:"I keep this bunch in line",
+      d:"Rules matter; loyalty matters more. Fights injustice head-on and would take a bruise for the crew without saying a word about it." },
+    "房青渋薄": { n:"Planner Banana", t:"The perfect bunch, on schedule",
+      d:"A demon for logistics — everything finished three days early. Secretly one canceled plan away from turning into smoothie, though. Remember: 80% done is done." },
+    "房熟甘厚": { n:"Party Banana", t:"This exact moment? Peak sweetness",
+      d:"The life of every gathering. Turns strangers into friends in minutes and laughs failure off as extra flavor. Planning skills sold separately." },
+    "房熟甘薄": { n:"Idol Banana", t:"Everyone's sunshine (batteries sold out)",
+      d:"Lights up the room on stage, melts into the sofa right after. Reads feelings finely and gives everything to make people smile — guard that off-switch." },
+    "房熟渋厚": { n:"High Roller Banana", t:"Ripeness is timing. I don't miss it.",
+      d:"Smells the decisive moment and bets with both hands. Loses, shrugs, reloads — thick peel included. Just keep the bunch in the loop." },
+    "房熟渋薄": { n:"Trendy Banana", t:"Knew about it before it peeled",
+      d:"Antenna always up, notification badge always three digits. Finds the next thing first — sticking with the last thing is the real boss fight." },
+    "独青甘厚": { n:"Artisan Banana", t:"No shortcuts to a good ripening",
+      d:"Speaks little, does much. Trust them with quality and step back — the results speak at full volume, and someone's already been quietly helped." },
+    "独青甘薄": { n:"Poet Banana", t:"There is a universe inside this pulp",
+      d:"Quiet outside, oceanic inside. Feels everything deeply and distills it into words. That sensitivity is a sweetness nobody else can produce." },
+    "独青渋厚": { n:"Professor Banana", t:"Day three of wondering why bananas curve",
+      d:"Curiosity with no off-switch. Digs to the bottom of everything interesting and conserves energy on everything else. World-class rabbit holes." },
+    "独青渋薄": { n:"Strategist Banana", t:"Three moves ahead, as usual",
+      d:"The quiet tactician. Sees the whole board, speaks last, decides the game. Pairs beautifully with a loud captain." },
+    "独熟甘厚": { n:"Couch Banana", t:"It'll ripen when it ripens",
+      d:"The ultimate easygoer — comfortable anywhere, calming to everyone, allergic to rushing. All-time No.1 supplier of peace of mind. Just don't over-ripen past the weekend." },
+    "独熟甘薄": { n:"Artist Banana", t:"Today's mood only exists today",
+      d:"Runs on 100% sensibility. When inspiration strikes, nothing else exists; when it doesn't, nothing happens at all. The freshness IS the genius." },
+    "独熟渋厚": { n:"Lone Wolf Banana", t:"Left the bunch. No regrets.",
+      d:"Freedom first. Travels solo, decides solo, thrives solo — yet fiercely loyal to the few who've earned it." },
+    "独熟渋薄": { n:"Mystery Banana", t:"My ripeness is classified",
+      d:"The rarest of all 16. Moves on instinct, hits the mark anyway, and can't be read — not even by itself. That unreadability is the whole charm." },
+  };
+
+  const EN_GROUPS = {
+    "青甘": { name:"The Nurturers", d:"Planners with warm hands. First to reach out when someone's in trouble." },
+    "青渋": { name:"The Thinkers",  d:"Logic and curiosity — the brains that ripen the world." },
+    "熟甘": { name:"The Sunshines", d:"Warmth on legs. Geniuses of enjoying today." },
+    "熟渋": { name:"The Wilds",     d:"Instinct and freedom. Bananas no one can domesticate." },
+  };
+
+  const EN_MOTTO = {
+    "房青甘厚": "I'm half banana — leave it to me.",
+    "房青甘薄": "We're all half banana. We look out for each other.",
+    "房青渋厚": "Half banana. You got a problem with that?",
+    "房青渋薄": "Being half banana is, officially, an acceptable excuse.",
+    "房熟甘厚": "Half banana? That's a party fact!",
+    "房熟甘薄": "I'm half banana, so please forgive me.",
+    "房熟渋厚": "Half banana. Already priced in.",
+    "房熟渋薄": "Half banana is honestly kind of a flex.",
+    "独青甘厚": "...Half banana. So be it.",
+    "独青甘薄": "Half of me is made of banana.",
+    "独青渋厚": "About 60% of my genes are banana. It can't be helped.",
+    "独青渋薄": "Half banana — well within projections.",
+    "独熟甘厚": "Half banana... eh, whatever.",
+    "独熟甘薄": "Half banana? That's the best part of me.",
+    "独熟渋厚": "I'm half banana. So what.",
+    "独熟渋薄": "Half banana... or was it the other half?",
+  };
+
+  const EN_QUESTIONS = [
+    { q:"Friday night. What sounds perfect?",
+      a:"Hanging out with my favorite people", b:"Home alone — nobody gets to peel me tonight" },
+    { q:"The day before a trip, you are...",
+      a:"Done with an itinerary, down to the minute", b:"Wallet and vibes. We'll figure it out" },
+    { q:"A friend texts you at 2am with a problem. Your first reply:",
+      a:"“That sounds really hard. I get it.”", b:"“Okay, here's probably the cause.”" },
+    { q:"Someone said something harsh. Afterwards you...",
+      a:"Forget it in five minutes", b:"Replay it under the blanket for three days" },
+    { q:"When something's bothering you:",
+      a:"Talk it out with someone", b:"Let it ripen quietly inside" },
+    { q:"Deadlines and you:",
+      a:"Finish early, sleep easy", b:"I do my best work cornered" },
+    { q:"Big decision. The tiebreaker is:",
+      a:"Whatever makes my heart race", b:"Whatever actually makes sense" },
+    { q:"First night in an unfamiliar place:",
+      a:"I can sleep anywhere, honestly", b:"New pillow = no sleep" },
+    { q:"After a big event you're...",
+      a:"Somehow MORE energized", b:"Happy, but reduced to an empty peel" },
+    { q:"A new gadget arrives:",
+      a:"Read the manual first", b:"Power button first, questions later" },
+    { q:"After a tearjerker movie:",
+      a:"I become a smoothie of emotions", b:"“So, about that plot hole...”" },
+    { q:"Reading the room?",
+      a:"Not really my sport", b:"I could publish the room's chemical analysis" },
+  ];
+
+  const EN_FORTUNE_TEXTS = [
+    "A perfectly ripe day. When in doubt, pick the sweeter option.",
+    "Things peel open smoothly today. Send the important message before noon.",
+    "Bunch-power day: asking for help works three times better than expected.",
+    "Your green side is your weapon today. Prep now, shine this evening.",
+    "Sugar spots incoming — tiny lucky moments everywhere. Don't miss them.",
+    "A slightly bruisable day. Keep your peel thick and take it easy.",
+    "Intuition is sharp today. Your first instinct is the right one.",
+    "Someone may bring you their worries. Just listening earns you points.",
+    "A slow-ripening day. No results yet, but you're definitely getting sweeter.",
+    "Reach for something new. Take a different road home.",
+    "Luck moves when you leave the bunch. New places, new people.",
+    "Lounging is a legitimate strategy today. Rest hard, grow overnight.",
+  ];
+  const EN_FORTUNE_ITEMS = [
+    "milk", "pancakes", "yellow socks", "a nap", "a walk", "a houseplant",
+    "ice cream", "new music", "a fluffy blanket", "a convenience-store find",
+    "stretching", "a handwritten note", "a warm drink", "an early morning", "the radio", "a deep breath",
+  ];
+
+  const KO_TYPES = {
+    "房青甘厚": { n:"형님 바나나", t:"따라와. 한 송이 전부 내가 챙긴다",
+      d:"송이 전체를 살뜰히 챙기는 믿음직한 형님·언니 포지션. 계획을 착착 세워 모두를 이끌고, 웬만한 충격에는 끄떡없는 두꺼운 껍질 멘탈의 소유자. 다만 남 챙기다 자기 익을 때를 놓치기 일쑤. 가끔은 자신에게도 달콤하게." },
+    "房青甘薄": { n:"챙김이 바나나", t:"모두의 숙성도, 이미 체크 완료",
+      d:"송이 친구들의 변화를 가장 먼저 알아차리는 배려의 달인. 힘들어하는 친구를 그냥 지나치지 못하는 사랑꾼. 다만 껍질이 얇아서 무리하면 자기가 먼저 상하는 타입. 남에게 다정한 만큼 자신에게도 다정하게." },
+    "房青渋厚": { n:"바나나 짱", t:"이 송이의 질서는 내가 지킨다",
+      d:"원칙에 목숨 거는 송이의 기강반장. 룰과 계획으로 모두를 지키고, 불의에는 정면으로 맞선다. 무뚝뚝해 보여도 사실은 동료를 위해서라면 자기 껍질이 상해도 아랑곳하지 않는 뜨거운 과육의 소유자." },
+    "房青渋薄": { n:"반장 바나나", t:"완벽한 송이 만들기, 맡겨만 줘",
+      d:"준비성 끝판왕에 완벽주의 살림꾼. 회의 안건은 전날 공유 완료, 준비물 누락 제로. 하지만 사실 꽤 섬세해서 계획이 틀어지면 속으로는 바나나주스 직전. '80%면 충분하다'를 주문처럼 외울 것." },
+    "房熟甘厚": { n:"인싸 바나나", t:"바로 지금 이 순간이 제일 달다",
+      d:"분위기를 최고조로 끌어올리는 타고난 분위기 메이커. 흥과 애교로 사람들을 끌어들이고, 실패해도 '그것도 맛이지!' 하고 웃어넘기는 강철 멘탈. 계획성은 껍질째 어딘가에 두고 왔지만 순발력만큼은 전 바나나 1위." },
+    "房熟甘薄": { n:"아이돌 바나나", t:"모두의 태양, 하지만 대기실에선 방전",
+      d:"있는 것만으로 분위기가 환해지는 사랑둥이. 사람의 감정에 민감해서 즐겁게 해주는 데 온 힘을 쏟는다. 다만 무대에서 내려오면 배터리가 방전되어 흐물흐물해지는 섬세함도. 온과 오프의 낙차가 곧 매력." },
+    "房熟渋厚": { n:"승부사 바나나", t:"익을 타이밍은 절대 안 놓친다",
+      d:"결정적 순간을 알아채는 후각과 망설임 없이 베팅하는 배짱의 소유자. 머리로 생각하고 흥으로 움직인다. 져도 질질 끌지 않는 빠른 전환은 두꺼운 껍질 덕분. 주변을 두고 혼자 달리지 않는 배려만 잊지 말 것." },
+    "房熟渋薄": { n:"트렌드 바나나", t:"그 소식, 껍질보다 먼저 까였어",
+      d:"유행의 풍향을 누구보다 빨리 캐치하는 정보통. 얇은 껍질은 높은 감도의 증거로, 재미있는 것에 대한 반응 속도는 광속급. 분석도 날카롭지만 질리는 것도 빠르다. 꽂힌 걸 3개월 지속하면 진짜다." },
+    "独青甘厚": { n:"장인 바나나", t:"좋은 숙성에 지름길은 없다",
+      d:"묵묵히 자기 길을 파고드는 고집의 사람. 화려하진 않지만 쌓아온 내공의 두께로 결국 신뢰를 얻는다. 다정함은 말보다 손에서 나오는 타입이라, 정신 차려보면 누군가를 위해 움직이고 있다. 송이 밖에 있어도 다들 지켜보고 있다." },
+    "独青甘薄": { n:"시인 바나나", t:"과육 안쪽에 우주가 있다",
+      d:"조용한 겉모습 안에 넘치도록 풍부한 감정의 과육을 품은 사람. 혼자만의 시간에 세상을 깊이 음미하고 언어와 작품에 스며들게 한다. 상처받기 쉽지만 그 섬세함이야말로 누구도 흉내 못 낼 단맛이 된다." },
+    "独青渋厚": { n:"박사 바나나", t:"'바나나는 왜 휘었을까' 생각한 지 사흘째",
+      d:"궁금하면 바닥까지 파고드는 탐구의 사람. 지식을 쌓고 논리를 세우는 게 삶의 낙이고, 흥미 스위치가 켜지면 먹고 자는 걸 잊는다. 세상 분위기에 휩쓸리지 않는 두꺼운 껍질을 지녔고, 자기만의 세계 완성도는 전 타입 1위." },
+    "独青渋薄": { n:"책사 바나나", t:"세 수 앞까지 이미 다 읽었다",
+      d:"조용한 전략가. 앞에 나서지 않고 전체를 내려다보며 최선의 수를 짜는 참모 타입. 관찰력과 분석력은 최고지만 생각이 많아 움직이지 못하는 밤도 있다. 믿을 만한 대장(인싸 등)과 짝을 이루면 무적." },
+    "独熟甘厚": { n:"뒹굴 바나나", t:"조급해하지 않아도 달아진다",
+      d:"다툼을 싫어하는 궁극의 마이페이스. 어떤 환경에서도 대체로 편안하게 지내는 적응력과 사람을 안심시키는 천연 단맛의 소유자. 마감? 익으면 까이는 게 바나나의 운명. 주위를 편안하게 해주는 존재지만 방심하면 완숙을 지나쳐버리니 주의." },
+    "独熟甘薄": { n:"예술가 바나나", t:"오늘의 기분은 오늘밖에 없다",
+      d:"감성 100%로 사는 아티스트 기질. 마음이 움직인 순간 온 에너지를 쏟고, 움직이지 않는 것엔 1mm도 관심이 없다. 기복은 있지만 만들어내는 것의 신선도는 압도적. 그 섬세함은 재능의 다른 이름." },
+    "独熟渋厚": { n:"혼족 바나나", t:"송이를 나왔다. 후회는 없다",
+      d:"자유를 무엇보다 사랑하는 야생파. 무리의 룰보다 자기 직감을 믿고, 혼자서 어디든 갈 수 있는 행동력과 담력의 소유자. 쿨해 보여도 인정한 상대에게는 끝까지 의리를 지킨다. 가끔 송이에 얼굴을 비추면 다들 좋아한다." },
+    "独熟渋薄": { n:"미스터리 바나나", t:"숙성도는 기업 비밀",
+      d:"전 16타입 중 가장 레어한 미스터리 포지션. 직감으로 움직이는데 묘하게 날카롭고, 감정을 안 보여주는데 핵심을 찌른다. 본인도 자신을 잘 모르지만 그걸로 충분하다. 읽히지 않는 것이야말로 최대의 매력이자 무기." },
+  };
+
+  const KO_GROUPS = {
+    "青甘": { name:"포근족", d:"계획적이고 사람을 보듬는 다정한 송이. 곤란할 때 가장 먼저 손을 내미는 바나나들." },
+    "青渋": { name:"생각족", d:"논리와 탐구로 세상을 숙성시키는 두뇌파. 송이 최고의 참모들." },
+    "熟甘": { name:"햇살족", d:"있는 것만으로 주변이 따뜻해지는 태양 바나나. 오늘을 즐기는 천재들." },
+    "熟渋": { name:"야생족", d:"직감과 자유로 사는, 누구도 길들일 수 없는 바나나. 승부처에 강하다." },
+  };
+
+  const KO_MOTTO = {
+    "房青甘厚": "반은 바나나니까 어쩔 수 없지. 나머진 나한테 맡겨.",
+    "房青甘薄": "반은 바나나잖아, 피차일반이지.",
+    "房青渋厚": "반은 바나나다. 뭐 불만 있냐.",
+    "房青渋薄": "반은 바나나인 관계로, 어쩔 수 없는 것으로 처리합니다.",
+    "房熟甘厚": "반은 바나나니까, 뭐 어때!",
+    "房熟甘薄": "반은 바나나라서 그래요, 봐주세요.",
+    "房熟渋厚": "반은 바나나. 그것도 계산에 넣어놨다.",
+    "房熟渋薄": "반은 바나나라니, 오히려 힙한데?",
+    "独青甘厚": "……반은 바나나. 어쩔 수 없군.",
+    "独青甘薄": "내 절반은 바나나로 되어 있다.",
+    "独青渋厚": "유전자의 약 60%가 바나나. 어쩔 수 없죠.",
+    "独青渋薄": "반은 바나나 — 예상 범위 내입니다.",
+    "独熟甘厚": "반은 바나나니까, 뭐 됐지 뭐…….",
+    "独熟甘薄": "반이 바나나라고? 최고잖아, 그거.",
+    "独熟渋厚": "반은 바나나다. 그래서 뭐.",
+    "独熟渋薄": "반은 바나나…… 아니, 어느 쪽이 반이었더라.",
+  };
+
+  const KO_QUESTIONS = [
+    { q:"금요일 밤, 가장 행복한 건?",
+      a:"마음 맞는 친구들과 왁자지껄", b:"집에서 혼자, 아무도 나를 까지 못하는 시간" },
+    { q:"여행 전날, 너의 상태는?",
+      a:"분 단위 일정표가 이미 완성돼 있다", b:"지갑과 텐션만 있으면 어떻게든 된다" },
+    { q:"새벽에 친구가 고민 상담 톡을 보냈다. 첫마디는?",
+      a:"\"알지, 그거 진짜 힘들지\"", b:"\"원인, 아마 이거 아닐까?\"" },
+    { q:"좀 아픈 말을 들었다. 그 후엔?",
+      a:"5분 뒤엔 거의 잊는다", b:"이불 속에서 3일은 무한 재생한다" },
+    { q:"고민이 생기면 어떻게 해?",
+      a:"누군가에게 말해서 털어버리고 싶다", b:"내 안에서 천천히 숙성시키고 싶다" },
+    { q:"마감과의 관계는?",
+      a:"미리 끝내놓고 안심하고 싶다", b:"몰려야 진짜 실력이 나온다" },
+    { q:"중요한 결정, 마지막 결정타는?",
+      a:"심장이 두근거리는가", b:"논리가 맞아떨어지는가" },
+    { q:"처음 자보는 곳에서는?",
+      a:"어디서든 의외로 잘 잔다", b:"베개만 바뀌어도 바로 수면 부족" },
+    { q:"큰 행사가 끝난 뒤에는?",
+      a:"신나서 오히려 에너지가 넘친다", b:"즐거웠지만 껍질만 남아 있다" },
+    { q:"새 가전을 사면?",
+      a:"먼저 설명서를 한번 훑는다", b:"일단 전원부터 켠다. 얘기는 그다음" },
+    { q:"눈물 나는 영화를 본 뒤에는?",
+      a:"감정의 스무디가 되어 있다", b:"\"그 복선은 말이지…\" 하고 분석이 시작된다" },
+    { q:"분위기 파악, 솔직히 말하면…",
+      a:"별로 신경 안 쓴다", b:"너무 잘 읽어서 공기 성분표도 만들 수 있다" },
+  ];
+
+  const KO_FORTUNE_TEXTS = [
+    "딱 알맞게 익은 하루. 고민되면 더 달콤한 쪽을 고르면 길하다",
+    "껍질 벗겨지듯 일이 술술 풀리는 날. 중요한 연락은 오전 중에",
+    "오늘은 송이의 힘. 남에게 기대면 상상의 3배로 잘 풀린다",
+    "초록빛 신중함이 무기가 되는 날. 준비와 사전조사가 저녁에 빛난다",
+    "슈가스팟 출현 중. 작은 행운을 놓치지 말 것",
+    "조금 상처받기 쉬운 날. 껍질을 두껍게 하고 무리하지 말자",
+    "직감이 예리해지는 바나나 날씨. 처음 딱 온 선택이 정답",
+    "누군가 고민을 들고 찾아올 듯. 들어주기만 해도 주가가 오른다",
+    "후숙의 하루. 결과가 안 보여도 확실히 달아지고 있다",
+    "새로운 것에 손을 뻗으면 길하다. 평소와 다른 길로 돌아가 보자",
+    "송이 밖으로 나가면 운이 움직이는 날. 낯선 장소, 낯선 사람",
+    "오늘은 뒹굴거리는 것도 훌륭한 전략. 쉴수록 내일이 자란다",
+  ];
+  const KO_FORTUNE_ITEMS = [
+    "우유", "팬케이크", "노란 양말", "낮잠", "산책", "화분",
+    "아이스크림", "새로운 음악", "포근한 담요", "편의점 신상",
+    "스트레칭", "손편지", "따뜻한 음료", "일찍 일어나기", "라디오", "심호흡",
+  ];
+
+  function applyEnglish(){
+    // データ差し替え
+    Object.keys(EN_TYPES).forEach(c => Object.assign(TYPES[c], EN_TYPES[c]));
+    Object.keys(EN_GROUPS).forEach(k => Object.assign(GROUPS[k], EN_GROUPS[k]));
+    Object.assign(MOTTO, EN_MOTTO);
+    QUESTIONS.forEach((q, i) => {
+      q.q = EN_QUESTIONS[i].q; q.a = EN_QUESTIONS[i].a; q.b = EN_QUESTIONS[i].b;
+    });
+    FORTUNE_TEXTS.splice(0, FORTUNE_TEXTS.length, ...EN_FORTUNE_TEXTS);
+    FORTUNE_ITEMS.splice(0, FORTUNE_ITEMS.length, ...EN_FORTUNE_ITEMS);
+
+    // 静的DOMの差し替え
+    const qs = s => document.querySelector(s);
+    const set = (s, fn) => { const el = qs(s); if(el) fn(el); };
+    set("#scr-start h1", el => { el.innerHTML = '<span class="num">16</span> Banana Type Test'; });
+    set(".motto", el => { el.innerHTML = '“<span>Well, I’m half banana anyway</span>”'; });
+    set(".lead", el => { el.innerHTML =
+      "Humans share roughly 60% of their genes with bananas.<br>Which means: you're already half banana.<br><strong>12 questions</strong> reveal which of the 16 bananas is hiding inside you."; });
+    set(".dna-badge", el => { el.innerHTML =
+      '<span>Genes shared between humans &amp; bananas</span><span class="pct">~60%</span>'; });
+    TRIBE_KEYS.forEach((k, i) => set("#tribe-" + i, el => { el.textContent = GROUPS[k].name; }));
+    set(".tribes-hint", el => { el.textContent = "Tap a tribe to browse the Banana Dex"; });
+    set("#btn-start", el => { el.textContent = "Start the test"; });
+    set("#btn-aisho-open", el => { el.textContent = "Banana Match Test"; });
+    set(".start-note", el => { el.textContent = "Takes about 2 minutes — one banana's worth"; });
+    set(".about-title", el => { el.textContent = "About the 16 Banana Type Test"; });
+    set(".about-text", el => { el.textContent =
+      "Humans share about 60% of their genes with bananas — that little science fact is the doorway. 12 questions sort your inner banana into one of 16 types. Free, no sign-up, about 2 minutes. Share your result, test your chemistry with friends, and check your daily banana fortune."; });
+    set(".faq", el => { el.innerHTML =
+      "<details><summary>Is it free?</summary><p>Completely free. No sign-up either.</p></details>"
+      + "<details><summary>How long does it take?</summary><p>12 questions, about 2 minutes. One banana's worth of your time.</p></details>"
+      + "<details><summary>Is it scientific?</summary><p>Not at all — it's entertainment. The part about humans and bananas sharing most of their genes is real, though (more or less).</p></details>"
+      + "<details><summary>Is my result stored?</summary><p>Only in your own browser. Nothing is sent to any server. Come back tomorrow for your daily fortune.</p></details>"; });
+    set(".f-title", el => { el.innerHTML = 'Today’s <span id="f-type"></span> fortune'; });
+    set(".f-lucky", el => { el.innerHTML = 'Lucky item: <span id="f-item"></span> / today’s match: <span id="f-mate"></span>'; });
+    set("#scr-zukan .z-title", el => { el.textContent = "Banana Dex"; });
+    set("#scr-zukan .eyebrow", el => { el.textContent = "Banana Dex"; });
+    set("#btn-zukan-start", el => { el.textContent = "Start the test"; });
+    set("#btn-zukan-home", el => { el.textContent = "Back to top"; });
+    set("#scr-aisho .z-title", el => { el.textContent = "Banana Match Test"; });
+    set("#scr-aisho .eyebrow", el => { el.textContent = "Banana Match Lab"; });
+    set(".a-lead", el => { el.textContent = "Two bananas, one bunch — how would it go?"; });
+    set("#scr-aisho .a-side:first-child > p", el => { el.textContent = "You"; });
+    set("#scr-aisho .a-side:last-child > p", el => { el.textContent = "Them"; });
+    set("#btn-aisho", el => { el.textContent = "Check the match"; });
+    set("#btn-aisho-x .sbl", el => { el.textContent = "Post on X"; });
+    set("#btn-aisho-copy .sbl", el => { el.textContent = "Copy result"; });
+    set("#btn-aisho-home", el => { el.textContent = "Back to top"; });
+    set(".ripeness", el => { el.innerHTML = 'Ripeness <span id="q-pct">0</span>%'; });
+    set("#btn-back", el => { el.textContent = "← Back"; });
+    set(".shared-cta p", el => { el.innerHTML = "You've seen their banana —<br>now find out yours."; });
+    set("#btn-try", el => { el.textContent = "Take the test yourself (12Q · 2min)"; });
+    set("#r-rarity-row", el => { el.innerHTML = 'Rarity <b id="r-rarity"></b>% (banana census)'; });
+    set("#scr-result .sec-label", el => { el.textContent = "Banana Stats"; });
+    const secs = document.querySelectorAll("#scr-result .sec-label");
+    if(secs && secs.length >= 2) secs[1].textContent = "Banana Chemistry";
+    set(".mate.good .tag", el => { el.textContent = "Best Combo"; });
+    set(".mate.bad .tag", el => { el.textContent = "Handle with care"; });
+    set(".mate.good .mnote", el => { el.textContent = "You belong in the same bunch"; });
+    set(".mate.bad .mnote", el => { el.textContent = "Mind the distance — it works"; });
+    set("#btn-share-open .sbl", el => { el.textContent = "Share my result"; });
+    set("#btn-share-open2 .sbl", el => { el.textContent = "Share my result"; });
+    set("#share-close2 .sbl", el => { el.textContent = "Close"; });
+    set("#btn-x .sbl", el => { el.textContent = "Post on X"; });
+    set("#btn-line .sbl", el => { el.textContent = "Share on LINE"; });
+    set("#btn-image .sbl", el => { el.textContent = "Share as image"; });
+    set("#btn-save .sbl", el => { el.textContent = "Save image"; });
+    set("#btn-copy .sbl", el => { el.textContent = "Copy link"; });
+    set("#btn-retry .sbl", el => { el.textContent = "Peel again"; });
+    set("#btn-to-zukan .sbl", el => { el.textContent = "Banana Dex"; });
+    set("#btn-to-aisho .sbl", el => { el.textContent = "Match test"; });
+    set("#btn-zukan-back", el => { el.textContent = "Back to the Dex"; });
+    set("footer", el => { el.innerHTML =
+      "This test is pure entertainment with zero scientific basis.<br>"
+      + "The part about humans and bananas sharing most of their genes is real (more or less).<br>"
+      + "We use analytics — anonymous banana statistics only.<br>"
+      + '<span class="legal-note">(Google Analytics collects anonymous usage data only. No personally identifiable information is collected.)</span>'; });
+  }
+
+  function applyKorean(){
+    // データ差し替え
+    Object.keys(KO_TYPES).forEach(c => Object.assign(TYPES[c], KO_TYPES[c]));
+    Object.keys(KO_GROUPS).forEach(k => Object.assign(GROUPS[k], KO_GROUPS[k]));
+    Object.assign(MOTTO, KO_MOTTO);
+    QUESTIONS.forEach((q, i) => {
+      q.q = KO_QUESTIONS[i].q; q.a = KO_QUESTIONS[i].a; q.b = KO_QUESTIONS[i].b;
+    });
+    FORTUNE_TEXTS.splice(0, FORTUNE_TEXTS.length, ...KO_FORTUNE_TEXTS);
+    FORTUNE_ITEMS.splice(0, FORTUNE_ITEMS.length, ...KO_FORTUNE_ITEMS);
+
+    // 静的DOMの差し替え
+    const qs = s => document.querySelector(s);
+    const set = (s, fn) => { const el = qs(s); if(el) fn(el); };
+    set("#scr-start h1", el => { el.innerHTML = '<span class="num">16</span>바나나 유형 테스트'; });
+    set(".motto", el => { el.innerHTML = '“<span>뭐, 반은 바나나니까 어쩔 수 없지</span>”'; });
+    set(".lead", el => { el.innerHTML =
+      "인간과 바나나는 유전자의 약 60%를 공유합니다.<br>즉, 당신은 이미 반쯤 바나나.<br><strong>12개의 질문</strong>으로 당신 안에 숨어 있는 16가지 바나나 중 하나를 찾아냅니다."; });
+    set(".dna-badge", el => { el.innerHTML =
+      '<span>인간과 바나나가 공유하는 유전자</span><span class="pct">약 60%</span>'; });
+    TRIBE_KEYS.forEach((k, i) => set("#tribe-" + i, el => { el.textContent = GROUPS[k].name; }));
+    set(".tribes-hint", el => { el.textContent = "족을 누르면 바나나 도감으로"; });
+    set("#btn-start", el => { el.textContent = "테스트 시작하기"; });
+    set("#btn-aisho-open", el => { el.textContent = "바나나 궁합 테스트"; });
+    set(".start-note", el => { el.textContent = "약 2분 — 바나나 한 개 분량의 시간"; });
+    set(".about-title", el => { el.textContent = "16바나나 유형 테스트란?"; });
+    set(".about-text", el => { el.textContent =
+      "인간과 바나나는 유전자의 약 60%를 공유한다 — 이 작은 과학 상식이 입구입니다. 12개의 질문으로 당신 안의 바나나를 16가지 타입 중 하나로 분류합니다. 무료, 가입 불필요, 약 2분. 결과를 공유하고 친구와 궁합을 확인하고 오늘의 바나나 운세도 즐겨보세요."; });
+    set(".faq", el => { el.innerHTML =
+      "<details><summary>무료인가요?</summary><p>완전 무료입니다. 가입도 필요 없어요.</p></details>"
+      + "<details><summary>시간은 얼마나 걸리나요?</summary><p>12문항, 약 2분. 바나나 한 개 분량의 시간입니다.</p></details>"
+      + "<details><summary>과학적인가요?</summary><p>전혀요. 엔터테인먼트입니다. 다만 인간과 바나나가 유전자 대부분을 공유한다는 부분은 (대체로) 사실입니다.</p></details>"
+      + "<details><summary>결과가 저장되나요?</summary><p>당신의 브라우저 안에만 저장됩니다. 서버로 전송되지 않아요. 내일 다시 오면 오늘의 운세를 볼 수 있어요.</p></details>"; });
+    set(".f-title", el => { el.innerHTML = '오늘의 <span id="f-type"></span> 운세'; });
+    set(".f-lucky", el => { el.innerHTML = '행운의 아이템: <span id="f-item"></span> / 오늘의 궁합: <span id="f-mate"></span>'; });
+    set("#scr-zukan .z-title", el => { el.textContent = "바나나 도감"; });
+    set("#scr-zukan .eyebrow", el => { el.textContent = "바나나 도감"; });
+    set("#btn-zukan-start", el => { el.textContent = "테스트 시작하기"; });
+    set("#btn-zukan-home", el => { el.textContent = "맨 위로"; });
+    set("#scr-aisho .z-title", el => { el.textContent = "바나나 궁합 테스트"; });
+    set("#scr-aisho .eyebrow", el => { el.textContent = "바나나 궁합 연구소"; });
+    set(".a-lead", el => { el.textContent = "두 바나나가 한 송이가 된다면, 어떤 느낌일까?"; });
+    set("#scr-aisho .a-side:first-child > p", el => { el.textContent = "나"; });
+    set("#scr-aisho .a-side:last-child > p", el => { el.textContent = "상대"; });
+    set("#btn-aisho", el => { el.textContent = "궁합 확인하기"; });
+    set("#btn-aisho-x .sbl", el => { el.textContent = "X에 올리기"; });
+    set("#btn-aisho-copy .sbl", el => { el.textContent = "결과 복사"; });
+    set("#btn-aisho-home", el => { el.textContent = "맨 위로"; });
+    set(".ripeness", el => { el.innerHTML = '숙성도 <span id="q-pct">0</span>%'; });
+    set("#btn-back", el => { el.textContent = "← 뒤로"; });
+    set(".shared-cta p", el => { el.innerHTML = "이 사람의 바나나는 확인 완료 —<br>이제 당신 차례."; });
+    set("#btn-try", el => { el.textContent = "나도 테스트하기 (12문항·2분)"; });
+    set("#r-rarity-row", el => { el.innerHTML = '희귀도 <b id="r-rarity"></b>% (바나나 조사)'; });
+    set("#scr-result .sec-label", el => { el.textContent = "바나나 스탯"; });
+    const secs = document.querySelectorAll("#scr-result .sec-label");
+    if(secs && secs.length >= 2) secs[1].textContent = "바나나 궁합";
+    set(".mate.good .tag", el => { el.textContent = "최고의 콤비"; });
+    set(".mate.bad .tag", el => { el.textContent = "숙성 엇갈림 주의"; });
+    set(".mate.good .mnote", el => { el.textContent = "같은 송이에 나란히 있을 사이"; });
+    set(".mate.bad .mnote", el => { el.textContent = "거리만 잘 잡으면 괜찮은 사이"; });
+    set("#btn-share-open .sbl", el => { el.textContent = "결과 공유하기"; });
+    set("#btn-share-open2 .sbl", el => { el.textContent = "결과 공유하기"; });
+    set("#share-close2 .sbl", el => { el.textContent = "닫기"; });
+    set("#btn-x .sbl", el => { el.textContent = "X에 올리기"; });
+    set("#btn-line .sbl", el => { el.textContent = "LINE으로 공유"; });
+    set("#btn-image .sbl", el => { el.textContent = "이미지로 공유"; });
+    set("#btn-save .sbl", el => { el.textContent = "이미지 저장"; });
+    set("#btn-copy .sbl", el => { el.textContent = "링크 복사"; });
+    set("#btn-retry .sbl", el => { el.textContent = "다시 까보기"; });
+    set("#btn-to-zukan .sbl", el => { el.textContent = "바나나 도감"; });
+    set("#btn-to-aisho .sbl", el => { el.textContent = "궁합 테스트"; });
+    set("#btn-zukan-back", el => { el.textContent = "도감으로 돌아가기"; });
+    set("footer", el => { el.innerHTML =
+      "이 테스트는 과학적 근거가 전혀 없는 엔터테인먼트입니다.<br>"
+      + "인간과 바나나가 유전자 대부분을 공유한다는 부분은 (대체로) 사실입니다.<br>"
+      + "사이트 개선을 위해 익명 바나나 통계만 수집합니다.<br>"
+      + '<span class="legal-note">(Google Analytics는 익명 사용 데이터만 수집하며, 개인 식별 정보는 수집하지 않습니다.)</span>'; });
+  }
+
+  /* ============ 言語モード適用（描画より先に実行） ============ */
+  if(EN) applyEnglish();
+  if(KO) applyKorean();
+
+  /* ============ 言語切替ボタン ============ */
+  (function(){
+    const els = [$("lang-switch"), $("lang-switch2")];
+    const others = ["ja", "en", "ko"].filter(l => l !== LANG);
+    const label = { ja: "日本語", en: "EN", ko: "한국어" };
+    const hrefFor = (l) => {
+      if(location.host === "16banana.jp") return l === "ja" ? "/" : "/" + l + "/";
+      const base = location.pathname.replace(/^\/(en|ko)(?=\/|$)/, "") || "/";
+      return l === "ja" ? base : base + "?lang=" + l;
+    };
+    try{
+      els.forEach((el, i) => {
+        if(!el) return;
+        el.href = hrefFor(others[i]);
+        el.textContent = label[others[i]];
+        el.hidden = false;
+      });
+    }catch(e){}
+  })();
+
+  /* ============ ヒーローバナナ（タイプ外のデフォルト笑顔） ============ */
+  $("hero-banana").innerHTML = bananaSVG("単熟甘厚", 190);
+
+  /* ============ きょうの運勢（再訪ユーザー向け） ============ */
+  initFortune();
+
+  /* ============ タイプ解説ページへのリンク一覧（ルート配信時のみ） ============ */
+  (function(){
+    const atRoot = location.pathname === "/" || /\/index\.html$/.test(location.pathname);
+    if(!atRoot) return;
+    const el = $("type-links");
+    el.innerHTML = "タイプ別解説: "
+      + Object.keys(TYPES).map(c => '<a href="/banana/' + SLUG[c] + '.html">' + TYPES[c].n + '</a>').join("／")
+      + '／<a href="/banana/"><b>全タイプ一覧</b></a>';
+    el.hidden = false;
+    $("privacy-link").hidden = false;
+  })();
+
+  /* ============ ビルドツール・OG画像ジェネレータ用フック ============ */
+  window.BANANA = {
+    TYPES: TYPES, GROUPS: GROUPS, SLUG: SLUG, FACES: FACES, TRIBE_KEYS: TRIBE_KEYS, MOTTO: MOTTO,
+    bananaSVG: bananaSVG, buildOgCanvas: buildOgCanvas,
+    aishoCalc: aishoCalc, statsFor: statsFor,
+  };
+
+  /* ============ 共有リンクからの着地（?t=タイプコード） ============ */
+  (function(){
+    try{
+      const code = new URLSearchParams(location.search).get("t");
+      if(code && TYPES[code]){
+        renderResult(code, "shared");
+        show(scrResult);
+      }
+    }catch(e){ /* URLSearchParams非対応環境ではトップ表示のまま */ }
+  })();
+})();
+</script>
+
+</body>
+</html>
